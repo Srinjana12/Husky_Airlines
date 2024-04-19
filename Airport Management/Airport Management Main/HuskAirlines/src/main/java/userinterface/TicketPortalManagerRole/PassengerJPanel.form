@@ -69,9 +69,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSeatPreference">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="In Some one&apos;s Lap"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSeatPreferenceActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="610" y="110" width="259" height="29"/>
@@ -92,16 +92,13 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFoodPreference">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Carrot"/>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="610" y="150" width="259" height="29"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="BtnInsertMulPass">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="SansSerif" size="18" style="1"/>
@@ -193,9 +190,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFieldName">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Peter Pertgrew"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFieldNameActionPerformed"/>
       </Events>
@@ -206,9 +200,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFieldDOB">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="12/12/2001"/>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="140" y="130" width="259" height="29"/>
@@ -216,9 +207,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPassportExpiryDate">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="12"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPassportExpiryDateActionPerformed"/>
       </Events>
@@ -229,9 +217,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFieldCity">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Chicago"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFieldCityActionPerformed"/>
       </Events>
@@ -242,9 +227,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFieldAddress">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Boston"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFieldAddressActionPerformed"/>
       </Events>
@@ -255,9 +237,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPassportNo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="123456789"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPassportNoActionPerformed"/>
       </Events>
@@ -268,9 +247,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFieldContactNo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="1234567890"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFieldContactNoActionPerformed"/>
       </Events>
@@ -281,9 +257,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmailAddress">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Peter@mouse.hp"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmailAddressActionPerformed"/>
       </Events>
@@ -385,9 +358,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmergencyContactName">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Voldemort"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmergencyContactNameActionPerformed"/>
       </Events>
@@ -411,9 +381,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmergencyContactNo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="999999999"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmergencyContactNoActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="740" y="380" width="240" height="29"/>
@@ -500,7 +470,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="10" y="650" width="250" height="50"/>
+          <AbsoluteConstraints x="10" y="640" width="250" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -654,9 +624,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="textAddress">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Ron&apos;s House"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textAddressActionPerformed"/>
       </Events>
@@ -679,7 +646,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="40" y="0" width="950" height="-1"/>
+          <AbsoluteConstraints x="160" y="0" width="450" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -690,6 +657,63 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="770" y="540" width="220" height="210"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnFakerFill">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="a1" green="9e" red="72" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Faker-Fill"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFakerFillActionPerformed"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="690" y="0" width="180" height="50"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnClear">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="a1" green="9e" red="72" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Clear Feilds"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="890" y="0" width="180" height="50"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnInsertPass">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="a1" green="9e" red="72" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Insert 10 Passenger"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInsertPassActionPerformed"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="870" y="60" width="200" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
