@@ -15,6 +15,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.HospitalAllocationWorkRequest;
 import Email.SendGridEmail;
+import com.github.javafaker.Faker;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.io.IOException;
@@ -30,22 +31,23 @@ import javax.swing.JPanel;
  *
  * @author 
  */
-public class RegisterHomelessJPanel extends javax.swing.JPanel {
+public class PassengerJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form RegisterHomelessJPanel
+     * Creates new form PassengerJPanel
      */
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private UserAccount userAccount;
     private EcoSystem business;
-//    JScrollPane scrollPane = new JScrollPane(RegisterHomelessJPanel);
+//    JScrollPane scrollPane = new JScrollPane(PassengerJPanel);
 //    scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 //    scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
 //    scrollPane.setBounds(50, 30, 300, 50);
 
-    public RegisterHomelessJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, EcoSystem business) {
+    public PassengerJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, EcoSystem business) {
         initComponents();
+
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
         this.userAccount = account;
@@ -54,7 +56,7 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
 
     private boolean emailPatternCorrect() {
         Pattern p = Pattern.compile("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
-        Matcher m = p.matcher(txtFieldEmailAddress.getText());
+        Matcher m = p.matcher(txtEmailAddress.getText());
         boolean b = m.matches();
         return b;
     }
@@ -120,10 +122,10 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtFieldQualifications = new javax.swing.JTextField();
+        txtSeatPreference = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        txtFieldAccomplishments = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        txtFoodPreference = new javax.swing.JTextField();
+        BtnInsertMulPass = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -132,12 +134,12 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         jLabel31 = new javax.swing.JLabel();
         txtFieldName = new javax.swing.JTextField();
         txtFieldDOB = new javax.swing.JTextField();
-        txtFieldDependents = new javax.swing.JTextField();
+        txtPassportExpiryDate = new javax.swing.JTextField();
         txtFieldCity = new javax.swing.JTextField();
         txtFieldAddress = new javax.swing.JTextField();
-        txtFieldSSNNo = new javax.swing.JTextField();
+        txtPassportNo = new javax.swing.JTextField();
         txtFieldContactNo = new javax.swing.JTextField();
-        txtFieldEmailAddress = new javax.swing.JTextField();
+        txtEmailAddress = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -145,9 +147,9 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         radioBtnMaleGender = new javax.swing.JRadioButton();
         jLabel25 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtFieldEmploymentStatus = new javax.swing.JTextField();
+        txtEmergencyContactName = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        txtFieldTotalIncome = new javax.swing.JTextField();
+        txtEmergencyContactNo = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         radioBtnCriminalCheckYes = new javax.swing.JRadioButton();
@@ -156,18 +158,21 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         btnSubmit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
-        radioBtnillnessYes = new javax.swing.JRadioButton();
-        radioBtnillnessNo = new javax.swing.JRadioButton();
+        radioBtnPreIllnessYes = new javax.swing.JRadioButton();
+        radioBtnPreIllnessNo = new javax.swing.JRadioButton();
         jLabel26 = new javax.swing.JLabel();
-        radioBtnCarrierYes = new javax.swing.JRadioButton();
-        radioBtnCarrierNo = new javax.swing.JRadioButton();
+        radioBtnAnyMedYes = new javax.swing.JRadioButton();
+        radioBtnAnyMedNo = new javax.swing.JRadioButton();
         jLabel28 = new javax.swing.JLabel();
-        radioBtnDiseaseYes = new javax.swing.JRadioButton();
-        radioBtnDiseaseNo = new javax.swing.JRadioButton();
+        radioBtnAccommodationYes = new javax.swing.JRadioButton();
+        radioBtnAccommodationNo = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
-        textFieldPrefLocation = new javax.swing.JTextField();
+        textAddress = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        btnFakerFill = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
+        btnInsertPass = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(223, 190, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -192,41 +197,47 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 963, -1, 0));
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel5.setText("Any accomplishments:");
+        jLabel5.setText("Food Preference:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, 171, 28));
-        add(txtFieldQualifications, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 259, 29));
+
+        txtSeatPreference.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSeatPreferenceActionPerformed(evt);
+            }
+        });
+        add(txtSeatPreference, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 259, 29));
 
         jLabel11.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel11.setText("Date of Birth:");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 125, 120, 30));
-        add(txtFieldAccomplishments, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 259, 29));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 120, 30));
+        add(txtFoodPreference, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 259, 29));
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel2.setText("Education Details:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 590, 30));
+        BtnInsertMulPass.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        BtnInsertMulPass.setText("Preferences:");
+        add(BtnInsertMulPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 590, 30));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel3.setText("Qualification:");
+        jLabel3.setText("Seat Preference:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 171, 29));
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel6.setText("Name:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 85, 120, 30));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 120, 30));
 
         jLabel12.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel12.setText("Gender:");
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 120, 30));
 
         jLabel13.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel13.setText("Dependents:");
+        jLabel13.setText("Passport expiry date:");
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 150, 30));
 
         jLabel15.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel15.setText("Current Location:");
+        jLabel15.setText("Source Location:");
         add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 150, 30));
 
         jLabel31.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel31.setText("Current City:");
+        jLabel31.setText("Destination City:");
         add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 120, 30));
 
         txtFieldName.addActionListener(new java.awt.event.ActionListener() {
@@ -237,12 +248,18 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         add(txtFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 86, 259, 29));
         add(txtFieldDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 259, 29));
 
-        txtFieldDependents.addActionListener(new java.awt.event.ActionListener() {
+        txtPassportExpiryDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFieldDependentsActionPerformed(evt);
+                txtPassportExpiryDateActionPerformed(evt);
             }
         });
-        add(txtFieldDependents, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 259, 29));
+        add(txtPassportExpiryDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 259, 29));
+
+        txtFieldCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldCityActionPerformed(evt);
+            }
+        });
         add(txtFieldCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 259, 29));
 
         txtFieldAddress.addActionListener(new java.awt.event.ActionListener() {
@@ -251,12 +268,30 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
             }
         });
         add(txtFieldAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 259, 29));
-        add(txtFieldSSNNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 259, 29));
+
+        txtPassportNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPassportNoActionPerformed(evt);
+            }
+        });
+        add(txtPassportNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 259, 29));
+
+        txtFieldContactNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldContactNoActionPerformed(evt);
+            }
+        });
         add(txtFieldContactNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 259, 29));
-        add(txtFieldEmailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 259, 29));
+
+        txtEmailAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailAddressActionPerformed(evt);
+            }
+        });
+        add(txtEmailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 259, 29));
 
         jLabel14.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel14.setText("SSN:");
+        jLabel14.setText("Passport No.:");
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 120, 30));
 
         jLabel32.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
@@ -284,26 +319,38 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         add(radioBtnMaleGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 179, -1, -1));
 
         jLabel25.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel25.setText("Financial Details:");
+        jLabel25.setText("Emergency Contact Information:");
         add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 510, 30));
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel7.setText("Employment Status:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, 260, 34));
-        add(txtFieldEmploymentStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, 270, 29));
+        jLabel7.setText("Name of emergency contact information:");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 260, 34));
+
+        txtEmergencyContactName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmergencyContactNameActionPerformed(evt);
+            }
+        });
+        add(txtEmergencyContactName, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, 240, 29));
 
         jLabel29.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel29.setText("Monthly income from all the source: ");
-        add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 230, 29));
-        add(txtFieldTotalIncome, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, 240, 29));
+        jLabel29.setText("Contact no of emergency contact:");
+        add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 300, 29));
+
+        txtEmergencyContactNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmergencyContactNoActionPerformed(evt);
+            }
+        });
+        add(txtEmergencyContactNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, 240, 29));
 
         jLabel10.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel10.setText(" Information for Criminal Check ");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 430, 30));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 430, 30));
 
         jLabel18.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel18.setText("Have you ever pled guilty to OR being convicted OR found guilty of misdemeanor in any U.S. or non-U.S. OR military court?");
-        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 230, 560, 30));
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 560, 30));
 
         radioBtnCriminalCheckYes.setText("Yes");
         radioBtnCriminalCheckYes.addActionListener(new java.awt.event.ActionListener() {
@@ -311,7 +358,7 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
                 radioBtnCriminalCheckYesActionPerformed(evt);
             }
         });
-        add(radioBtnCriminalCheckYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, -1, -1));
+        add(radioBtnCriminalCheckYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, -1));
 
         radioBtnCriminalCheckNo.setText("No");
         radioBtnCriminalCheckNo.addActionListener(new java.awt.event.ActionListener() {
@@ -319,10 +366,10 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
                 radioBtnCriminalCheckNoActionPerformed(evt);
             }
         });
-        add(radioBtnCriminalCheckNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, -1));
+        add(radioBtnCriminalCheckNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel16.setText("Medical Details:");
+        jLabel16.setText("Medical and Special Requirements Confirmation Details:");
         add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 570, 30));
 
         btnSubmit.setBackground(new java.awt.Color(114, 158, 161));
@@ -333,7 +380,7 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 700, 250, 50));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 250, 50));
 
         btnBack.setBackground(new java.awt.Color(114, 158, 161));
         btnBack.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -346,78 +393,114 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 40));
 
         jLabel27.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel27.setText("Have you had any major illness?");
-        add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 630, 20));
+        jLabel27.setText("Do you have any pre-existing medical conditions or disabilities that may require assistance during the flight?");
+        add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 700, 20));
 
-        radioBtnillnessYes.setText("Yes");
-        radioBtnillnessYes.addActionListener(new java.awt.event.ActionListener() {
+        radioBtnPreIllnessYes.setText("Yes");
+        radioBtnPreIllnessYes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioBtnillnessYesActionPerformed(evt);
+                radioBtnPreIllnessYesActionPerformed(evt);
             }
         });
-        add(radioBtnillnessYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, -1, -1));
+        add(radioBtnPreIllnessYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 550, -1, -1));
 
-        radioBtnillnessNo.setText("No");
-        radioBtnillnessNo.addActionListener(new java.awt.event.ActionListener() {
+        radioBtnPreIllnessNo.setText("No");
+        radioBtnPreIllnessNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioBtnillnessNoActionPerformed(evt);
+                radioBtnPreIllnessNoActionPerformed(evt);
             }
         });
-        add(radioBtnillnessNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, -1, -1));
+        add(radioBtnPreIllnessNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 550, -1, -1));
 
         jLabel26.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel26.setText("Have you ever been told that you are a carrier of a genetic/inherited disease?");
-        add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 590, 567, 20));
+        jLabel26.setText("Are you currently taking any medications that we should be aware of in case of an emergency?");
+        add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 610, 20));
 
-        radioBtnCarrierYes.setText("Yes");
-        radioBtnCarrierYes.addActionListener(new java.awt.event.ActionListener() {
+        radioBtnAnyMedYes.setText("Yes");
+        radioBtnAnyMedYes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioBtnCarrierYesActionPerformed(evt);
+                radioBtnAnyMedYesActionPerformed(evt);
             }
         });
-        add(radioBtnCarrierYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 590, -1, -1));
+        add(radioBtnAnyMedYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 580, -1, -1));
 
-        radioBtnCarrierNo.setText("No");
-        radioBtnCarrierNo.addActionListener(new java.awt.event.ActionListener() {
+        radioBtnAnyMedNo.setText("No");
+        radioBtnAnyMedNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioBtnCarrierNoActionPerformed(evt);
+                radioBtnAnyMedNoActionPerformed(evt);
             }
         });
-        add(radioBtnCarrierNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 590, -1, -1));
+        add(radioBtnAnyMedNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 580, -1, -1));
 
         jLabel28.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel28.setText("Have you ever been told that you have a genetic/inherited disease?");
-        add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 850, -1));
+        jLabel28.setText("Do you have any special requirements or accommodations needed during the flight, such as wheelchair assistance or dietary restrictions? ");
+        add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, 880, -1));
 
-        radioBtnDiseaseYes.setText("Yes");
-        radioBtnDiseaseYes.addActionListener(new java.awt.event.ActionListener() {
+        radioBtnAccommodationYes.setText("Yes");
+        radioBtnAccommodationYes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioBtnDiseaseYesActionPerformed(evt);
+                radioBtnAccommodationYesActionPerformed(evt);
             }
         });
-        add(radioBtnDiseaseYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 640, -1, -1));
+        add(radioBtnAccommodationYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 610, -1, -1));
 
-        radioBtnDiseaseNo.setText("No");
-        radioBtnDiseaseNo.addActionListener(new java.awt.event.ActionListener() {
+        radioBtnAccommodationNo.setText("No");
+        radioBtnAccommodationNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioBtnDiseaseNoActionPerformed(evt);
+                radioBtnAccommodationNoActionPerformed(evt);
             }
         });
-        add(radioBtnDiseaseNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 640, -1, -1));
+        add(radioBtnAccommodationNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 610, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel4.setText("Preferred Location:");
+        jLabel4.setText("Address:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 120, 30));
-        add(textFieldPrefLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 259, 29));
+
+        textAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textAddressActionPerformed(evt);
+            }
+        });
+        add(textAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 259, 29));
 
         jLabel8.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(104, 144, 146));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("REGISTER A PASSENGER");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 6, 950, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 450, -1));
 
         jLabel17.setToolTipText("");
-        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 570, 220, 210));
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 540, 220, 210));
+
+        btnFakerFill.setBackground(new java.awt.Color(114, 158, 161));
+        btnFakerFill.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnFakerFill.setText("Faker-Fill");
+        btnFakerFill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFakerFillActionPerformed(evt);
+            }
+        });
+        add(btnFakerFill, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 180, 50));
+
+        btnClear.setBackground(new java.awt.Color(114, 158, 161));
+        btnClear.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnClear.setText("Clear Feilds");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+        add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 0, 180, 50));
+
+        btnInsertPass.setBackground(new java.awt.Color(114, 158, 161));
+        btnInsertPass.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnInsertPass.setText("Insert 10 Passenger");
+        btnInsertPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertPassActionPerformed(evt);
+            }
+        });
+        add(btnInsertPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 60, 200, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void radioBtnCriminalCheckYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnCriminalCheckYesActionPerformed
@@ -425,16 +508,16 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         radioBtnCriminalCheckNo.setSelected(false);
     }//GEN-LAST:event_radioBtnCriminalCheckYesActionPerformed
 
-    private void radioBtnillnessYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnillnessYesActionPerformed
+    private void radioBtnPreIllnessYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnPreIllnessYesActionPerformed
         // TODO add your handling code here:
-        radioBtnillnessNo.setSelected(false);
-    }//GEN-LAST:event_radioBtnillnessYesActionPerformed
+        radioBtnPreIllnessNo.setSelected(false);
+    }//GEN-LAST:event_radioBtnPreIllnessYesActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        VolunteerWorkAreaJPanel dwjp = (VolunteerWorkAreaJPanel) component;
+        TicketingPortalManagerAreaJPanel dwjp = (TicketingPortalManagerAreaJPanel) component;
         dwjp.populateRequestTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
@@ -446,14 +529,14 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         if (txtFieldName.getText().equals("") || txtFieldDOB.getText().equals("")
                 || txtFieldCity.getText().equals("")
                 || txtFieldAddress.getText().equals("")
-                || txtFieldSSNNo.getText().equals("")
-                || txtFieldEmailAddress.getText().equals("")
-                || txtFieldDependents.getText().equals("")
-                || txtFieldQualifications.getText().equals("")
-                || txtFieldAccomplishments.getText().equals("")
-                || txtFieldEmploymentStatus.getText().equals("")
-                || txtFieldTotalIncome.getText().equals("")
-                || textFieldPrefLocation.getText().equals("")) {
+                || txtPassportNo.getText().equals("")
+                || txtEmailAddress.getText().equals("")
+                || txtPassportExpiryDate.getText().equals("")
+                || txtSeatPreference.getText().equals("")
+                || txtFoodPreference.getText().equals("")
+                || txtEmergencyContactName.getText().equals("")
+                || txtEmergencyContactNo.getText().equals("")
+                || textAddress.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Please Enter all the Required Fields!");
             return;
         }
@@ -480,25 +563,25 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
             return;
         }
 
-        if (txtFieldSSNNo.getText().length() != 9) {
+        if (txtPassportNo.getText().length() != 9) {
             JOptionPane.showMessageDialog(null, "Enter only 9 digits of SSN (without '-')");
             return;
         }
 
         try {
-            Integer.parseInt(txtFieldDependents.getText());
+            Integer.parseInt(txtPassportExpiryDate.getText());
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Please type in a number for Dependents");
             return;
         }
         try {
-            Integer.parseInt(txtFieldTotalIncome.getText());
+            Integer.parseInt(txtEmergencyContactNo.getText());
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Please type in a number for Income");
             return;
         }
 
-        if (Integer.parseInt(txtFieldTotalIncome.getText()) > 1500) {
+        if (Integer.parseInt(txtEmergencyContactNo.getText()) > 1500) {
             JOptionPane.showMessageDialog(null, "The person cannot be allowed to register as his monthly income is greater than $1500.");
             return;
         }
@@ -510,15 +593,15 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Select a yes or no for criminal record!");
             return;
         }
-        if (!radioBtnillnessYes.isSelected() && !radioBtnillnessNo.isSelected()) {
+        if (!radioBtnPreIllnessYes.isSelected() && !radioBtnPreIllnessNo.isSelected()) {
             JOptionPane.showMessageDialog(null, "Select a yes or no for illness criteria!");
             return;
         }
-        if (!radioBtnCarrierYes.isSelected() && !radioBtnCarrierNo.isSelected()) {
+        if (!radioBtnAnyMedYes.isSelected() && !radioBtnAnyMedNo.isSelected()) {
             JOptionPane.showMessageDialog(null, "Select a yes or no for carrier of disease!");
             return;
         }
-        if (!radioBtnDiseaseYes.isSelected() && !radioBtnDiseaseNo.isSelected()) {
+        if (!radioBtnAccommodationYes.isSelected() && !radioBtnAccommodationNo.isSelected()) {
             JOptionPane.showMessageDialog(null, "Select a yes or no for genetic inherited disease");
             return;
         }
@@ -527,15 +610,15 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         String dob = txtFieldDOB.getText();
         String city = txtFieldCity.getText();
         String addresss = txtFieldAddress.getText();
-        String ssnNo = txtFieldSSNNo.getText();
+        String ssnNo = txtPassportNo.getText();
         String contactNo = txtFieldContactNo.getText();
-        String emailAddresss = txtFieldEmailAddress.getText();
-        int dependents = Integer.parseInt(txtFieldDependents.getText());
-        String qualifications = txtFieldQualifications.getText();
-        String accomplishments = txtFieldAccomplishments.getText();
-        String employmentStatus = txtFieldEmploymentStatus.getText();
-        int income = Integer.parseInt(txtFieldTotalIncome.getText());
-        String prefLocation = textFieldPrefLocation.getText();
+        String emailAddresss = txtEmailAddress.getText();
+        int dependents = Integer.parseInt(txtPassportExpiryDate.getText());
+        String qualifications = txtSeatPreference.getText();
+        String accomplishments = txtFoodPreference.getText();
+        String employmentStatus = txtEmergencyContactName.getText();
+        int income = Integer.parseInt(txtEmergencyContactNo.getText());
+        String prefLocation = textAddress.getText();
         String gender = "Male";
         if (radioBtnFemaleGender.isSelected()) {
             gender = "Female";
@@ -545,22 +628,22 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
             criminalRecord = true;
         }
         boolean majorIllnes = false;
-        if (radioBtnillnessYes.isSelected()) {
+        if (radioBtnPreIllnessYes.isSelected()) {
             majorIllnes = true;
         }
         boolean carrierDisease = false;
-        if (radioBtnCarrierYes.isSelected()) {
+        if (radioBtnAnyMedYes.isSelected()) {
             carrierDisease = true;
         }
         boolean geneticDisease = false;
-        if (radioBtnDiseaseYes.isSelected()) {
+        if (radioBtnAccommodationYes.isSelected()) {
             geneticDisease = true;
         }
 
         try {
             SendGridEmail.sendMail(emailAddresss);
         } catch (IOException ex) {
-            Logger.getLogger(RegisterHomelessJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PassengerJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         Passenger person = new Passenger(name, dob, city, addresss, ssnNo,
                 contactNo, emailAddresss, dependents, qualifications, accomplishments,
@@ -656,25 +739,25 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         txtFieldDOB.setText("");
         txtFieldCity.setText("");
         txtFieldAddress.setText("");
-        txtFieldSSNNo.setText("");
+        txtPassportNo.setText("");
         txtFieldContactNo.setText("");
-        txtFieldEmailAddress.setText("");
-        txtFieldDependents.setText("");
-        txtFieldQualifications.setText("");
-        txtFieldAccomplishments.setText("");
-        txtFieldEmploymentStatus.setText("");
-        txtFieldTotalIncome.setText("");
-        textFieldPrefLocation.setText("");
+        txtEmailAddress.setText("");
+        txtPassportExpiryDate.setText("");
+        txtSeatPreference.setText("");
+        txtFoodPreference.setText("");
+        txtEmergencyContactName.setText("");
+        txtEmergencyContactNo.setText("");
+        textAddress.setText("");
         radioBtnMaleGender.setSelected(false);
         radioBtnFemaleGender.setSelected(false);
         radioBtnCriminalCheckYes.setSelected(false);
         radioBtnCriminalCheckNo.setSelected(false);
-        radioBtnillnessYes.setSelected(false);
-        radioBtnillnessNo.setSelected(false);
-        radioBtnCarrierYes.setSelected(false);
-        radioBtnCarrierNo.setSelected(false);
-        radioBtnDiseaseYes.setSelected(false);
-        radioBtnDiseaseNo.setSelected(false);
+        radioBtnPreIllnessYes.setSelected(false);
+        radioBtnPreIllnessNo.setSelected(false);
+        radioBtnAnyMedYes.setSelected(false);
+        radioBtnAnyMedNo.setSelected(false);
+        radioBtnAccommodationYes.setSelected(false);
+        radioBtnAccommodationNo.setSelected(false);
 
     }
     private void radioBtnMaleGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnMaleGenderActionPerformed
@@ -691,45 +774,99 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
         radioBtnCriminalCheckYes.setSelected(false);
     }//GEN-LAST:event_radioBtnCriminalCheckNoActionPerformed
 
-    private void radioBtnillnessNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnillnessNoActionPerformed
+    private void radioBtnPreIllnessNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnPreIllnessNoActionPerformed
         // TODO add your handling code here:
-        radioBtnillnessYes.setSelected(false);
-    }//GEN-LAST:event_radioBtnillnessNoActionPerformed
+        radioBtnPreIllnessYes.setSelected(false);
+    }//GEN-LAST:event_radioBtnPreIllnessNoActionPerformed
 
-    private void radioBtnCarrierYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnCarrierYesActionPerformed
+    private void radioBtnAnyMedYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnAnyMedYesActionPerformed
         // TODO add your handling code here:
-        radioBtnCarrierNo.setSelected(false);
-    }//GEN-LAST:event_radioBtnCarrierYesActionPerformed
+        radioBtnAnyMedNo.setSelected(false);
+    }//GEN-LAST:event_radioBtnAnyMedYesActionPerformed
 
-    private void radioBtnCarrierNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnCarrierNoActionPerformed
+    private void radioBtnAnyMedNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnAnyMedNoActionPerformed
         // TODO add your handling code here:
-        radioBtnCarrierYes.setSelected(false);
-    }//GEN-LAST:event_radioBtnCarrierNoActionPerformed
+        radioBtnAnyMedYes.setSelected(false);
+    }//GEN-LAST:event_radioBtnAnyMedNoActionPerformed
 
-    private void radioBtnDiseaseYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnDiseaseYesActionPerformed
+    private void radioBtnAccommodationYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnAccommodationYesActionPerformed
         // TODO add your handling code here:
-        radioBtnDiseaseNo.setSelected(false);
-    }//GEN-LAST:event_radioBtnDiseaseYesActionPerformed
+        radioBtnAccommodationNo.setSelected(false);
+    }//GEN-LAST:event_radioBtnAccommodationYesActionPerformed
 
-    private void radioBtnDiseaseNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnDiseaseNoActionPerformed
+    private void radioBtnAccommodationNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnAccommodationNoActionPerformed
         // TODO add your handling code here:
-        radioBtnDiseaseYes.setSelected(false);
-    }//GEN-LAST:event_radioBtnDiseaseNoActionPerformed
+        radioBtnAccommodationYes.setSelected(false);
+    }//GEN-LAST:event_radioBtnAccommodationNoActionPerformed
 
     private void txtFieldAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldAddressActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFieldAddressActionPerformed
 
-    private void txtFieldDependentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldDependentsActionPerformed
+    private void txtPassportExpiryDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassportExpiryDateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFieldDependentsActionPerformed
+    }//GEN-LAST:event_txtPassportExpiryDateActionPerformed
 
     private void txtFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFieldNameActionPerformed
 
+    private void txtFieldCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldCityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldCityActionPerformed
+
+    private void txtFieldContactNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldContactNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldContactNoActionPerformed
+
+    private void txtPassportNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassportNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPassportNoActionPerformed
+
+    private void txtEmailAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailAddressActionPerformed
+
+    private void textAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textAddressActionPerformed
+
+    private void txtEmergencyContactNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmergencyContactNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmergencyContactNameActionPerformed
+
+    private void txtSeatPreferenceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSeatPreferenceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSeatPreferenceActionPerformed
+
+    private void txtEmergencyContactNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmergencyContactNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmergencyContactNoActionPerformed
+
+    private void btnFakerFillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFakerFillActionPerformed
+        // TODO add your handling code here:
+        createFakerDataObject();
+    }//GEN-LAST:event_btnFakerFillActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        // TODO add your handling code here:
+        clearFields();
+    }//GEN-LAST:event_btnClearActionPerformed
+
+    private void btnInsertPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertPassActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i < 10; i++) {
+            createFakerDataObject();
+            btnSubmitActionPerformed(evt);
+        }
+    }//GEN-LAST:event_btnInsertPassActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BtnInsertMulPass;
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnFakerFill;
+    private javax.swing.JButton btnInsertPass;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -740,7 +877,6 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -757,28 +893,103 @@ public class RegisterHomelessJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton radioBtnCarrierNo;
-    private javax.swing.JRadioButton radioBtnCarrierYes;
+    private javax.swing.JRadioButton radioBtnAccommodationNo;
+    private javax.swing.JRadioButton radioBtnAccommodationYes;
+    private javax.swing.JRadioButton radioBtnAnyMedNo;
+    private javax.swing.JRadioButton radioBtnAnyMedYes;
     private javax.swing.JRadioButton radioBtnCriminalCheckNo;
     private javax.swing.JRadioButton radioBtnCriminalCheckYes;
-    private javax.swing.JRadioButton radioBtnDiseaseNo;
-    private javax.swing.JRadioButton radioBtnDiseaseYes;
     private javax.swing.JRadioButton radioBtnFemaleGender;
     private javax.swing.JRadioButton radioBtnMaleGender;
-    private javax.swing.JRadioButton radioBtnillnessNo;
-    private javax.swing.JRadioButton radioBtnillnessYes;
-    private javax.swing.JTextField textFieldPrefLocation;
-    private javax.swing.JTextField txtFieldAccomplishments;
+    private javax.swing.JRadioButton radioBtnPreIllnessNo;
+    private javax.swing.JRadioButton radioBtnPreIllnessYes;
+    private javax.swing.JTextField textAddress;
+    private javax.swing.JTextField txtEmailAddress;
+    private javax.swing.JTextField txtEmergencyContactName;
+    private javax.swing.JTextField txtEmergencyContactNo;
     private javax.swing.JTextField txtFieldAddress;
     private javax.swing.JTextField txtFieldCity;
     private javax.swing.JTextField txtFieldContactNo;
     private javax.swing.JTextField txtFieldDOB;
-    private javax.swing.JTextField txtFieldDependents;
-    private javax.swing.JTextField txtFieldEmailAddress;
-    private javax.swing.JTextField txtFieldEmploymentStatus;
     private javax.swing.JTextField txtFieldName;
-    private javax.swing.JTextField txtFieldQualifications;
-    private javax.swing.JTextField txtFieldSSNNo;
-    private javax.swing.JTextField txtFieldTotalIncome;
+    private javax.swing.JTextField txtFoodPreference;
+    private javax.swing.JTextField txtPassportExpiryDate;
+    private javax.swing.JTextField txtPassportNo;
+    private javax.swing.JTextField txtSeatPreference;
     // End of variables declaration//GEN-END:variables
+
+    private void createFakerDataObject() {
+        Faker faker = new Faker();
+        String name = faker.name().fullName(); // Miss Samanta Schmidt
+        txtFieldName.setText(name);
+        String streetAddress = faker.address().streetAddress(); // 60018 Sawayn Brooks Suite 449
+        textAddress.setText(streetAddress);
+        String destinationCity = faker.address().city(); // New Amieshire
+        txtFieldCity.setText(destinationCity);
+        String dob = faker.date().birthday().toString(); // 12/12/2000
+        txtFieldDOB.setText(dob);
+        String email = faker.internet().emailAddress(); //abc@bs.com
+        txtEmailAddress.setText(email);
+        String phone = faker.phoneNumber().cellPhone(); // 1234567890
+        txtFieldContactNo.setText(phone);
+        String passport = faker.idNumber().ssnValid(); // 123456789
+        txtPassportNo.setText(passport);
+        String sourceLocation = faker.address().city(); // New Amieshire`
+        txtFieldAddress.setText(sourceLocation);
+        String passportExpiry = faker.date().birthday().toString(); // 12/12/2020
+        txtPassportExpiryDate.setText(passportExpiry);
+        String emergencyContactName = faker.name().fullName(); // Miss Samanta Schmidt
+        txtEmergencyContactName.setText(emergencyContactName);
+        String emergencyContactNo = faker.phoneNumber().cellPhone(); // 1234567890
+        txtEmergencyContactNo.setText(emergencyContactNo);
+
+        String[] seatPreferences = {"Window", "Middle", "Aisle"};
+        String seatPreference = seatPreferences[faker.random().nextInt(seatPreferences.length)];
+        txtSeatPreference.setText(seatPreference);
+
+        String[] foodPreferences = {"Veg", "Non-Veg", "Vegan"};
+        String foodPreference = foodPreferences[faker.random().nextInt(foodPreferences.length)];
+        txtFoodPreference.setText(foodPreference);
+
+        if (faker.bool().bool()) {
+            radioBtnMaleGender.setSelected(true);
+            radioBtnFemaleGender.setSelected(false);
+        } else {
+            radioBtnMaleGender.setSelected(false);
+            radioBtnFemaleGender.setSelected(true);
+        }
+
+        if (faker.bool().bool()) {
+            radioBtnCriminalCheckYes.setSelected(true);
+            radioBtnCriminalCheckNo.setSelected(false);
+        } else {
+            radioBtnCriminalCheckYes.setSelected(false);
+            radioBtnCriminalCheckNo.setSelected(true);
+        }
+
+        if (faker.bool().bool()) {
+            radioBtnPreIllnessYes.setSelected(true);
+            radioBtnPreIllnessNo.setSelected(false);
+        } else {
+            radioBtnPreIllnessYes.setSelected(false);
+            radioBtnPreIllnessNo.setSelected(true);
+        }
+
+        if (faker.bool().bool()) {
+            radioBtnAnyMedYes.setSelected(true);
+            radioBtnAnyMedNo.setSelected(false);
+        } else {
+            radioBtnAnyMedYes.setSelected(false);
+            radioBtnAnyMedNo.setSelected(true);
+        }
+
+        if (faker.bool().bool()) {
+            radioBtnAccommodationYes.setSelected(true);
+            radioBtnAccommodationNo.setSelected(false);
+        } else {
+            radioBtnAccommodationYes.setSelected(false);
+            radioBtnAccommodationNo.setSelected(true);
+        }
+
+    }
 }
