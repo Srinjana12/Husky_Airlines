@@ -9,43 +9,43 @@ public class Passenger {
     private int PersonID;
     private String name;
     private String dob;
-    private String city;
-    private String currentAddress;
-    private String SSNNo;
+    private String Destinationcity;
+    private String SourceLoc;
+    private String passportNo;
     private String contactNo;
     private String emailAddress;
-    private int dependents;
-    private String qualifications;
-    private String accomplishments;
-    private String employmentStatus;
-    private int income;
+    private int passportExpiry;
+    private String seatPreference;
+    private String foodPreference;
+    private String emergencyName;
+    private int emergencyNo;
     private String gender;
     private boolean hasCriminalRecord;
-    private boolean majorIllness;
-    private boolean carrierDisease;
-    private boolean geneticDisease;
-    private String preferredLocation;
+    private boolean preconditions;
+    private boolean anyMedication;
+    private boolean accomodationRequired;
+    private String address;
     private static int counter = 0;
 
     public Passenger(String name, String dob, String city, String address, String SSNNo, String contactNo, String emailAddress, int dependents, String qualifications, String accomplishments, String employmentStatus, int income, String gender, boolean hasCriminalRecord, boolean majorIllness, boolean carrierDisease, boolean geneticDisease, String prefLocation) {
         this.name = name;
         this.dob = dob;
-        this.city = city;
-        this.currentAddress = address;
-        this.SSNNo = SSNNo;
+        this.Destinationcity = city;
+        this.SourceLoc = address;
+        this.passportNo = SSNNo;
         this.contactNo = contactNo;
         this.emailAddress = emailAddress;
-        this.dependents = dependents;
-        this.qualifications = qualifications;
-        this.accomplishments = accomplishments;
-        this.employmentStatus = employmentStatus;
-        this.income = income;
+        this.passportExpiry = dependents;
+        this.seatPreference = qualifications;
+        this.foodPreference = accomplishments;
+        this.emergencyName = employmentStatus;
+        this.emergencyNo = income;
         this.gender = gender;
         this.hasCriminalRecord = hasCriminalRecord;
-        this.majorIllness = majorIllness;
-        this.carrierDisease = carrierDisease;
-        this.geneticDisease = geneticDisease;
-        this.preferredLocation = prefLocation;
+        this.preconditions = majorIllness;
+        this.anyMedication = carrierDisease;
+        this.accomodationRequired = geneticDisease;
+        this.address = prefLocation;
         PersonID = counter;
         ++counter;
     }
@@ -71,27 +71,27 @@ public class Passenger {
     }
 
     public String getCity() {
-        return city;
+        return Destinationcity;
     }
 
     public void setCity(String city) {
-        this.city = city;
+        this.Destinationcity = city;
     }
 
     public String getCurrentAddress() {
-        return currentAddress;
+        return SourceLoc;
     }
 
     public void setCurrentAddress(String currentAddress) {
-        this.currentAddress = currentAddress;
+        this.SourceLoc = currentAddress;
     }
 
     public String getSSNNo() {
-        return SSNNo;
+        return passportNo;
     }
 
     public void setSSNNo(String SSNNo) {
-        this.SSNNo = SSNNo;
+        this.passportNo = SSNNo;
     }
 
     public String getContactNo() {
@@ -111,43 +111,43 @@ public class Passenger {
     }
 
     public int getDependents() {
-        return dependents;
+        return passportExpiry;
     }
 
     public void setDependents(int dependents) {
-        this.dependents = dependents;
+        this.passportExpiry = dependents;
     }
 
     public String getQualifications() {
-        return qualifications;
+        return seatPreference;
     }
 
     public void setQualifications(String qualifications) {
-        this.qualifications = qualifications;
+        this.seatPreference = qualifications;
     }
 
     public String getAccomplishments() {
-        return accomplishments;
+        return foodPreference;
     }
 
     public void setAccomplishments(String accomplishments) {
-        this.accomplishments = accomplishments;
+        this.foodPreference = accomplishments;
     }
 
     public String getEmploymentStatus() {
-        return employmentStatus;
+        return emergencyName;
     }
 
     public void setEmploymentStatus(String employmentStatus) {
-        this.employmentStatus = employmentStatus;
+        this.emergencyName = employmentStatus;
     }
 
     public int getIncome() {
-        return income;
+        return emergencyNo;
     }
 
     public void setIncome(int income) {
-        this.income = income;
+        this.emergencyNo = income;
     }
 
     public String getGender() {
@@ -167,35 +167,35 @@ public class Passenger {
     }
 
     public boolean isMajorIllness() {
-        return majorIllness;
+        return preconditions;
     }
 
     public void setMajorIllness(boolean majorIllness) {
-        this.majorIllness = majorIllness;
+        this.preconditions = majorIllness;
     }
 
     public boolean isCarrierDisease() {
-        return carrierDisease;
+        return anyMedication;
     }
 
     public void setCarrierDisease(boolean carrierDisease) {
-        this.carrierDisease = carrierDisease;
+        this.anyMedication = carrierDisease;
     }
 
     public boolean isGeneticDisease() {
-        return geneticDisease;
+        return accomodationRequired;
     }
 
     public void setGeneticDisease(boolean geneticDisease) {
-        this.geneticDisease = geneticDisease;
+        this.accomodationRequired = geneticDisease;
     }
 
     public String getPreferredLocation() {
-        return preferredLocation;
+        return address;
     }
 
     public void setPreferredLocation(String preferredLocation) {
-        this.preferredLocation = preferredLocation;
+        this.address = preferredLocation;
     }
 
     public String toString() {

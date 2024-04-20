@@ -15,11 +15,14 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.SecurityCheckWorkRequest;
 import Email.SendGridEmail;
+import com.github.javafaker.DateAndTime;
 import com.github.javafaker.Faker;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -60,8 +63,69 @@ public class PassengerJPanel extends javax.swing.JPanel {
         boolean b = m.matches();
         return b;
     }
+    public String convertFakerTimestammpIntoMMDDYY(String fakerDate){
+       System.out.print
+        ("date is " + fakerDate);
+        String formattedDdateInDDMMYY = "";
+            try {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy");
+        Date formattedBirthday = dateFormat.parse(fakerDate);
+        SimpleDateFormat newFormat = new SimpleDateFormat("MM/dd/yyyy");
+        formattedDdateInDDMMYY = newFormat.format(formattedBirthday);
+        
+        } catch (Exception e) {
+            formattedDdateInDDMMYY = "12/12/2000";
+            e.printStackTrace(); // handle exception
+        }
+        return formattedDdateInDDMMYY;
+    }
+     public boolean validateDate(String dateString) {
+        Pattern pattern;
+        Matcher matcher;
+
+        // Regex pattern for MM/dd/yyyy
+        pattern = Pattern.compile("(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/((19|20)\\d\\d)");
+
+        matcher = pattern.matcher(dateString);
+
+        if (matcher.matches()) {
+            matcher.reset();
+
+            if (matcher.find()) {
+                String month = matcher.group(1);
+                String day = matcher.group(2);
+                int year = Integer.parseInt(matcher.group(3));
+
+                if (day.equals("31")) {
+                    // April, June, September, November cannot have 31 days
+                    if (month.equals("4") || month.equals("6") || month.equals("9") || month.equals("11")) {
+                        return false;
+                    }
+                }
+
+                // Check February for leap year rules
+                if (month.equals("2") || month.equals("02")) {
+                    boolean isLeapYear = (year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0));
+
+                    if (day.equals("30") || day.equals("31")) {
+                        return false;
+                    }
+
+                    if (day.equals("29") && !isLeapYear) {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 
     public boolean Datevalidate() {
+        
         Pattern pattern;
         Matcher matcher;
 
@@ -474,13 +538,13 @@ public class PassengerJPanel extends javax.swing.JPanel {
 
         btnFakerFill.setBackground(new java.awt.Color(114, 158, 161));
         btnFakerFill.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnFakerFill.setText("Faker-Fill");
+        btnFakerFill.setText("Scan ID ");
         btnFakerFill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFakerFillActionPerformed(evt);
             }
         });
-        add(btnFakerFill, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 180, 50));
+        add(btnFakerFill, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 180, 50));
 
         btnClear.setBackground(new java.awt.Color(114, 158, 161));
         btnClear.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -541,8 +605,8 @@ public class PassengerJPanel extends javax.swing.JPanel {
             return;
         }
 
-        if (!Datevalidate()) {
-            JOptionPane.showMessageDialog(null, "Date of Birth should be in the format: DD/MM/YYYY");
+        if (!validateDate(txtFieldDOB.getText())) {
+            JOptionPane.showMessageDialog(null, "Date of Birth should be in the format: MM/DD/YYYY");
             return;
         }
 
@@ -845,7 +909,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
 
     private void btnFakerFillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFakerFillActionPerformed
         // TODO add your handling code here:
-        createFakerDataObject();
+        fillDataInFormFieldsViaFakerAPI();
     }//GEN-LAST:event_btnFakerFillActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
@@ -856,7 +920,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
     private void btnInsertPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertPassActionPerformed
         // TODO add your handling code here:
         for (int i = 0; i < 10; i++) {
-            createFakerDataObject();
+            fillDataInFormFieldsViaFakerAPI();
             btnSubmitActionPerformed(evt);
         }
     }//GEN-LAST:event_btnInsertPassActionPerformed
@@ -918,7 +982,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtSeatPreference;
     // End of variables declaration//GEN-END:variables
 
-    private void createFakerDataObject() {
+    private void fillDataInFormFieldsViaFakerAPI() {
         Faker faker = new Faker();
         String name = faker.name().fullName(); // Miss Samanta Schmidt
         txtFieldName.setText(name);
@@ -926,7 +990,9 @@ public class PassengerJPanel extends javax.swing.JPanel {
         textAddress.setText(streetAddress);
         String destinationCity = faker.address().city(); // New Amieshire
         txtFieldCity.setText(destinationCity);
-        String dob = faker.date().birthday().toString(); // 12/12/2000
+        String tempdob = faker.date().birthday().toString();
+        
+        String dob =convertFakerTimestammpIntoMMDDYY(tempdob);         
         txtFieldDOB.setText(dob);
         String email = faker.internet().emailAddress(); //abc@bs.com
         txtEmailAddress.setText(email);
@@ -936,7 +1002,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
         txtPassportNo.setText(passport);
         String sourceLocation = faker.address().city(); // New Amieshire`
         txtFieldAddress.setText(sourceLocation);
-        String passportExpiry = faker.date().birthday().toString(); // 12/12/2020
+        String passportExpiry = convertFakerTimestammpIntoMMDDYY(faker.date().future(10000, TimeUnit.DAYS).toString()); // 12/12/2020
         txtPassportExpiryDate.setText(passportExpiry);
         String emergencyContactName = faker.name().fullName(); // Miss Samanta Schmidt
         txtEmergencyContactName.setText(emergencyContactName);
