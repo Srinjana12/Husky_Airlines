@@ -6,7 +6,7 @@ package userinterface.JourneyReport;
 
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.ReportGenerationWorkRequest;
+import Business.WorkQueue.JourneyReportGenerationWorkRequest;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
@@ -28,7 +28,7 @@ import javax.swing.table.DefaultTableModel;
 public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    ReportGenerationWorkRequest request;
+    JourneyReportGenerationWorkRequest request;
     private UserAccount userAccount;
     private EcoSystem business;
     private static Font catFont = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
@@ -39,7 +39,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
-    public JourneyReportWorkRequestJPanel(JPanel userProcessContainer, ReportGenerationWorkRequest request, UserAccount userAccount, EcoSystem business) {
+    public JourneyReportWorkRequestJPanel(JPanel userProcessContainer, JourneyReportGenerationWorkRequest request, UserAccount userAccount, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
@@ -54,16 +54,16 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         DefaultTableModel model2 = (DefaultTableModel) tblHousingDetails.getModel();
         model1.setRowCount(0);
         model2.setRowCount(0);
-        if (request.getHomelessPerson() != null) {
+        if (request.getPassengerPerson() != null) {
             Object[] row = new Object[4];
-            row[0] = request.getHomelessPerson().getName();
-            row[1] = request.getHomelessPerson().getIncome();
-            row[2] = request.getHomelessPerson().getDependents();
-            row[3] = request.getHomelessPerson().getContactNo();
+            row[0] = request.getPassengerPerson().getName();
+            row[1] = request.getPassengerPerson().getIncome();
+            row[2] = request.getPassengerPerson().getDependents();
+            row[3] = request.getPassengerPerson().getContactNo();
             model1.addRow(row);
         }
         Object[] row = new Object[2];
-        row[0] = request.gethospitalAllocationWorkRequest().getDiseasesForHomeless().get(0);
+        row[0] = request.gethospitalAllocationWorkRequest().getImmigrationDetails().get(0);
         row[1] = request.getFinalmedicines();
         model2.addRow(row);
 
@@ -237,31 +237,31 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
 //        }
 //    }
 
-        String name = request.getHomelessPerson().getName();
-        String contact = request.getHomelessPerson().getContactNo();
-        int income = request.getHomelessPerson().getIncome();
-        String dob = request.getHomelessPerson().getDob();
-        String city = request.getHomelessPerson().getCity();
-        String ssn = request.getHomelessPerson().getSSNNo();
-        String contactNo = request.getHomelessPerson().getContactNo();
-        String emailAddress = request.getHomelessPerson().getEmailAddress();
-        String qualifications = request.getHomelessPerson().getQualifications();  
-        int income1 = request.getHomelessPerson().getIncome();
-        String gender = request.getHomelessPerson().getGender();
-        String preferredLocation = request.getHomelessPerson().getPreferredLocation();
-        boolean geneticDisease = request.getHomelessPerson().isGeneticDisease();
-        boolean majorIllness = request.getHomelessPerson().isMajorIllness();
-        boolean carrierDisease = request.getHomelessPerson().isCarrierDisease();
-        boolean hasCriminalRecord = request.getHomelessPerson().isHasCriminalRecord();
-        int dependents = request.getHomelessPerson().getDependents();
-        String accomplishments = request.getHomelessPerson().getAccomplishments();
-        String employmentStatus = request.getHomelessPerson().getEmploymentStatus();
-        String houseAddress = request.getHomelessPerson().getCurrentAddress();
-        String hospital = request.gethospitalAllocationWorkRequest().gethospitalToBePlaced();
-        String department = request.gethospitalAllocationWorkRequest().getDepartment();
+        String name = request.getPassengerPerson().getName();
+        String contact = request.getPassengerPerson().getContactNo();
+        int income = request.getPassengerPerson().getIncome();
+        String dob = request.getPassengerPerson().getDob();
+        String city = request.getPassengerPerson().getCity();
+        String ssn = request.getPassengerPerson().getSSNNo();
+        String contactNo = request.getPassengerPerson().getContactNo();
+        String emailAddress = request.getPassengerPerson().getEmailAddress();
+        String qualifications = request.getPassengerPerson().getQualifications();  
+        int income1 = request.getPassengerPerson().getIncome();
+        String gender = request.getPassengerPerson().getGender();
+        String preferredLocation = request.getPassengerPerson().getPreferredLocation();
+        boolean geneticDisease = request.getPassengerPerson().isGeneticDisease();
+        boolean majorIllness = request.getPassengerPerson().isMajorIllness();
+        boolean carrierDisease = request.getPassengerPerson().isCarrierDisease();
+        boolean hasCriminalRecord = request.getPassengerPerson().isHasCriminalRecord();
+        int dependents = request.getPassengerPerson().getDependents();
+        String accomplishments = request.getPassengerPerson().getAccomplishments();
+        String employmentStatus = request.getPassengerPerson().getEmploymentStatus();
+        String houseAddress = request.getPassengerPerson().getCurrentAddress();
+        String hospital = request.gethospitalAllocationWorkRequest().getTerminalReported();
+        String department = request.gethospitalAllocationWorkRequest().getDepartmentDetais();
         String finalmedicines = request.getFinalmedicines();
-        String diseasedetails = request.gethospitalAllocationWorkRequest().getDiseasesForHomeless().get(0);
-        ArrayList<String> symptoms = request.gethospitalAllocationWorkRequest().getSymptoms();
+        String diseasedetails = request.gethospitalAllocationWorkRequest().getImmigrationDetails().get(0);
+        ArrayList<String> symptoms = request.gethospitalAllocationWorkRequest().getAllocatedSeat();
         try {
             Document document = new Document();
             PdfWriter.getInstance(document, new FileOutputStream("HealthReport_" + counter + ".pdf"));

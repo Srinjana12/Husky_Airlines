@@ -11,8 +11,8 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.SeatAllocation;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.DepartmentFacilitationWorkRequest;
-import Business.WorkQueue.SymptomsCheckWorkRequest;
+import Business.WorkQueue.TicketVerificationWorkRequest;
+import Business.WorkQueue.SeatAllocationWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.text.ParseException;
@@ -43,11 +43,11 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
      * Creates new form TicketVerificationWorkRequestJPanel
      */
     JPanel userProcessContainer;
-    DepartmentFacilitationWorkRequest request;
+    TicketVerificationWorkRequest request;
     private UserAccount userAccount;
     private EcoSystem business;
 
-    TicketVerificationWorkRequestJPanel(JPanel userProcessContainer, DepartmentFacilitationWorkRequest request, UserAccount userAccount, EcoSystem business) {
+    TicketVerificationWorkRequestJPanel(JPanel userProcessContainer, TicketVerificationWorkRequest request, UserAccount userAccount, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
@@ -59,14 +59,14 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
     public void populateTable() {
         DefaultTableModel model1 = (DefaultTableModel) tblHomelessPersonRecord.getModel();
         model1.setRowCount(0);
-        if (request.getHomelessPerson() != null) {
+        if (request.getPassengerPerson() != null) {
             Object[] row = new Object[6];
-            row[0] = request.getHomelessPerson().getName();
-            row[1] = request.getHomelessPerson().getContactNo();
-            row[2] = request.getHomelessPerson().getEmailAddress();
-            row[3] = request.getHomelessPerson().getCurrentAddress();
-            row[4] = request.getHospitalAllocationWorkRequest().gethospitalToBePlaced();
-            row[5] = request.getHomelessPerson().getDependents();
+            row[0] = request.getPassengerPerson().getName();
+            row[1] = request.getPassengerPerson().getContactNo();
+            row[2] = request.getPassengerPerson().getEmailAddress();
+            row[3] = request.getPassengerPerson().getCurrentAddress();
+            row[4] = request.getHospitalAllocationWorkRequest().getTerminalReported();
+            row[5] = request.getPassengerPerson().getDependents();
             model1.addRow(row);
         }
     }
@@ -104,7 +104,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel1.setText("Was the person placed at selected Hospital?");
+        jLabel1.setText("Has the passenger reported at selected Terminal?");
 
         backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
@@ -126,7 +126,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Name", "Contact No", "Email Address", "Pickup Address", "Hospital Address", "Dependents"
+                "Name", "Contact No", "Email Address", "Source", "Terminal", "Passport Expiry Date"
             }
         ));
         jScrollPane1.setViewportView(tblHomelessPersonRecord);
@@ -144,7 +144,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("Passenger Details:");
 
-        departmentFacilitatorWorkRequest_departmentJComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "General", "ENT", "Heart", "Kidney" }));
+        departmentFacilitatorWorkRequest_departmentJComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
         departmentFacilitatorWorkRequest_departmentJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 departmentFacilitatorWorkRequest_departmentJComboBoxActionPerformed(evt);
@@ -152,7 +152,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel8.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel8.setText("Select Department");
+        jLabel8.setText("Gate No:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -236,15 +236,15 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         request.setTestResult("Sent to Symptoms Check");
         request.setStatus("Completed");
         request.getHospitalAllocationWorkRequest().setTestResult("Completed by Department Facilitator and send to Symptoms Checker");
-        request.getHospitalAllocationWorkRequest().setDepartment(departmentFacilitatorWorkRequest_departmentJComboBox.getSelectedItem().toString());
+        request.getHospitalAllocationWorkRequest().setDepartmentDetails(departmentFacilitatorWorkRequest_departmentJComboBox.getSelectedItem().toString());
         UserAccount account = new UserAccount();
         account.setUsername("None");
         request.getHospitalAllocationWorkRequest().setReceiver(account);
-        SymptomsCheckWorkRequest symptomsCheckWorkRequest = new SymptomsCheckWorkRequest();
+        SeatAllocationWorkRequest symptomsCheckWorkRequest = new SeatAllocationWorkRequest();
         symptomsCheckWorkRequest.setMessage("Check Symptoms");
         symptomsCheckWorkRequest.setSender(userAccount);
         symptomsCheckWorkRequest.setStatus("Sent");
-        symptomsCheckWorkRequest.setHomelessPerson(request.getHomelessPerson());
+        symptomsCheckWorkRequest.setHomelessPerson(request.getPassengerPerson());
         symptomsCheckWorkRequest.setHospitalAllocationWorkRequest(request.getHospitalAllocationWorkRequest());
         Date d = new Date();
         symptomsCheckWorkRequest.setRequestDate(d);

@@ -9,7 +9,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.TicketBooking;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.HospitalAllocationWorkRequest;
+import Business.WorkQueue.SecurityCheckWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.util.Properties;
@@ -52,9 +52,9 @@ public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()) {
-            HospitalAllocationWorkRequest wr = (HospitalAllocationWorkRequest) request;
+            SecurityCheckWorkRequest wr = (SecurityCheckWorkRequest) request;
             Object[] row = new Object[4];
-            row[0] = wr.getHomelessPerson() != null ? wr.getHomelessPerson().getName() : "No name";
+            row[0] = wr.getPassengerPerson() != null ? wr.getPassengerPerson().getName() : "No name";
             row[1] = request.getReceiver();
             row[2] = request.getTestResult();
             //String result = ((LabTestWorkRequest) request).getTestResult();
