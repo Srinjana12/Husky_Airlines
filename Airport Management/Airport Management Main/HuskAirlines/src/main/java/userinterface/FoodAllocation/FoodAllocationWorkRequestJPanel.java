@@ -11,8 +11,8 @@ import Business.Network.Network;
 import Business.Organization.Immigration;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.BloodTestWorkRequest;
-import Business.WorkQueue.DiseaseAnalyzerWorkRequest;
+import Business.WorkQueue.FoodAllocationWorkRequest;
+import Business.WorkQueue.ImmigrationCheckWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.Date;
@@ -27,14 +27,14 @@ import javax.swing.table.DefaultTableModel;
 public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    BloodTestWorkRequest request;
+    FoodAllocationWorkRequest request;
     private UserAccount userAccount;
     private EcoSystem business;
 
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
-    public FoodAllocationWorkRequestJPanel(JPanel userProcessContainer, BloodTestWorkRequest request, UserAccount userAccount, EcoSystem business) {
+    public FoodAllocationWorkRequestJPanel(JPanel userProcessContainer, FoodAllocationWorkRequest request, UserAccount userAccount, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
@@ -51,24 +51,24 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
         DefaultTableModel model2 = (DefaultTableModel) tblHomelessPersonRecords2.getModel();
         model1.setRowCount(0);
         model2.setRowCount(0);
-        if (request.getHomelessPerson() != null) {
+        if (request.getPassengerPerson() != null) {
             Object[] row = new Object[8];
-            row[0] = request.getHomelessPerson().getName();
-            row[1] = request.getHomelessPerson().getDob();
-            row[2] = request.getHomelessPerson().getCity();
-            row[3] = request.getHomelessPerson().getCurrentAddress();
-            row[4] = request.getHomelessPerson().getSSNNo();
-            row[5] = request.getHomelessPerson().getContactNo();
-            row[6] = request.getHomelessPerson().getEmailAddress();
-            row[7] = request.getHomelessPerson().getDependents();
+            row[0] = request.getPassengerPerson().getName();
+            row[1] = request.getPassengerPerson().getDob();
+            row[2] = request.getPassengerPerson().getCity();
+            row[3] = request.getPassengerPerson().getCurrentAddress();
+            row[4] = request.getPassengerPerson().getSSNNo();
+            row[5] = request.getPassengerPerson().getContactNo();
+            row[6] = request.getPassengerPerson().getEmailAddress();
+            row[7] = request.getPassengerPerson().getDependents();
             model1.addRow(row);
             Object[] rowSecond = new Object[6];
-            rowSecond[0] = request.gethospitalAllocationWorkRequest().getSymptoms().toString();
-            rowSecond[1] = request.getHomelessPerson().getGender();
-            rowSecond[2] = request.getHomelessPerson().isHasCriminalRecord() ? "Yes" : "No";
-            rowSecond[3] = request.getHomelessPerson().isMajorIllness() ? "Yes" : "No";
-            rowSecond[4] = request.getHomelessPerson().isCarrierDisease() ? "Yes" : "No";
-            rowSecond[5] = request.getHomelessPerson().isGeneticDisease() ? "Yes" : "No";
+            rowSecond[0] = request.gethospitalAllocationWorkRequest().getAllocatedSeat().toString();
+            rowSecond[1] = request.getPassengerPerson().getGender();
+            rowSecond[2] = request.getPassengerPerson().isHasCriminalRecord() ? "Yes" : "No";
+            rowSecond[3] = request.getPassengerPerson().isMajorIllness() ? "Yes" : "No";
+            rowSecond[4] = request.getPassengerPerson().isCarrierDisease() ? "Yes" : "No";
+            rowSecond[5] = request.getPassengerPerson().isGeneticDisease() ? "Yes" : "No";
             model2.addRow(rowSecond);
 
         }
@@ -208,11 +208,11 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
         account.setUsername("None");
         request.gethospitalAllocationWorkRequest().setReceiver(account);
         request.gethospitalAllocationWorkRequest().setTestResult("Completed by Covid Blood Tester and and sent to Disease Analyzerr");
-        DiseaseAnalyzerWorkRequest fcRequest = new DiseaseAnalyzerWorkRequest();
+        ImmigrationCheckWorkRequest fcRequest = new ImmigrationCheckWorkRequest();
         fcRequest.setMessage("Disease Analysis");
         fcRequest.setSender(userAccount);
         fcRequest.setStatus("Sent");
-        fcRequest.setHomelessPerson(request.getHomelessPerson());
+        fcRequest.setHomelessPerson(request.getPassengerPerson());
         fcRequest.sethospitalAllocationWorkRequest(request.gethospitalAllocationWorkRequest());
         Date d = new Date();
         fcRequest.setRequestDate(d);

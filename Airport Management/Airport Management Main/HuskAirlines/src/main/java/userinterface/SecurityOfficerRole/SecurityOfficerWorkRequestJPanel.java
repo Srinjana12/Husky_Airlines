@@ -11,8 +11,8 @@ import Business.Network.Network;
 import Business.Organization.TicketVerification;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.DepartmentFacilitationWorkRequest;
-import Business.WorkQueue.HospitalAllocationWorkRequest;
+import Business.WorkQueue.TicketVerificationWorkRequest;
+import Business.WorkQueue.SecurityCheckWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.io.FileOutputStream;
@@ -35,14 +35,14 @@ import javax.swing.table.DefaultTableModel;
 public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    HospitalAllocationWorkRequest request;
+    SecurityCheckWorkRequest request;
     private UserAccount userAccount;
     private EcoSystem business;
 
     /**
      * Creates new form HospitalAllocatorWorkRequestJPanel
      */
-    public SecurityOfficerWorkRequestJPanel(JPanel userProcessContainer, HospitalAllocationWorkRequest request, UserAccount account, EcoSystem business) {
+    public SecurityOfficerWorkRequestJPanel(JPanel userProcessContainer, SecurityCheckWorkRequest request, UserAccount account, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
@@ -59,27 +59,27 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         DefaultTableModel model2 = (DefaultTableModel) tblHomelessPersonRecords2.getModel();
         model1.setRowCount(0);
         model2.setRowCount(0);
-        if (request.getHomelessPerson() != null) {
+        if (request.getPassengerPerson() != null) {
             Object[] row = new Object[8];
-            row[0] = request.getHomelessPerson().getName();
-            row[1] = request.getHomelessPerson().getDob();
-            row[2] = request.getHomelessPerson().getCity();
-            row[3] = request.getHomelessPerson().getCurrentAddress();
-            row[4] = request.getHomelessPerson().getSSNNo();
-            row[5] = request.getHomelessPerson().getContactNo();
-            row[6] = request.getHomelessPerson().getEmailAddress();
-            row[7] = request.getHomelessPerson().getDependents();
+            row[0] = request.getPassengerPerson().getName();
+            row[1] = request.getPassengerPerson().getDob();
+            row[2] = request.getPassengerPerson().getCity();
+            row[3] = request.getPassengerPerson().getCurrentAddress();
+            row[4] = request.getPassengerPerson().getSSNNo();
+            row[5] = request.getPassengerPerson().getContactNo();
+            row[6] = request.getPassengerPerson().getEmailAddress();
+            row[7] = request.getPassengerPerson().getDependents();
             model1.addRow(row);
             Object[] rowSecond = new Object[9];
-            rowSecond[0] = request.getHomelessPerson().getQualifications();
-            rowSecond[1] = request.getHomelessPerson().getAccomplishments();
-            rowSecond[2] = request.getHomelessPerson().getIncome();
-            rowSecond[3] = request.getHomelessPerson().getEmploymentStatus();
-            rowSecond[4] = request.getHomelessPerson().getGender();
-            rowSecond[5] = request.getHomelessPerson().isHasCriminalRecord() ? "Yes" : "No";
-            rowSecond[6] = request.getHomelessPerson().isMajorIllness() ? "Yes" : "No";
-            rowSecond[7] = request.getHomelessPerson().isCarrierDisease() ? "Yes" : "No";
-            rowSecond[8] = request.getHomelessPerson().isGeneticDisease() ? "Yes" : "No";
+            rowSecond[0] = request.getPassengerPerson().getQualifications();
+            rowSecond[1] = request.getPassengerPerson().getAccomplishments();
+            rowSecond[2] = request.getPassengerPerson().getIncome();
+            rowSecond[3] = request.getPassengerPerson().getEmploymentStatus();
+            rowSecond[4] = request.getPassengerPerson().getGender();
+            rowSecond[5] = request.getPassengerPerson().isHasCriminalRecord() ? "Yes" : "No";
+            rowSecond[6] = request.getPassengerPerson().isMajorIllness() ? "Yes" : "No";
+            rowSecond[7] = request.getPassengerPerson().isCarrierDisease() ? "Yes" : "No";
+            rowSecond[8] = request.getPassengerPerson().isGeneticDisease() ? "Yes" : "No";
             model2.addRow(rowSecond);
 
         }
@@ -121,7 +121,7 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Qualifications", "Accomplishments", "Income", "Employment Status", "Gender", "Criminal Record", "Major Illness", "Carrier Illness", "Genetic Illness"
+                "Seat Preference", "Food Preference", "Emergency Contact No. ", "Name Of Emergency Contact", "Gender", "Criminal Record", "Medical Condition", "Medication", "Special Requirements"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -140,7 +140,7 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Name", "DOB", "City", "Current Address", "SSN", "Contact No", "Email Addressl", "Dependents"
+                "Name", "DOB", "Source", "Destination", "Passport No", "Contact No", "Email Addressl", "Passport Expiry Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -291,11 +291,11 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         request.setReceiver(account);
         request.setTestResult("Completed by Hospital Allocator and passed to Department Facilitator.");
 
-        DepartmentFacilitationWorkRequest sfRequest = new DepartmentFacilitationWorkRequest();
+        TicketVerificationWorkRequest sfRequest = new TicketVerificationWorkRequest();
         sfRequest.setMessage("Department Facilitation");
         sfRequest.setHospitalAllocationWorkRequest(request);
-        sfRequest.setHomelessPerson(request.getHomelessPerson());
-        sfRequest.getHospitalAllocationWorkRequest().sethospitalToBePlaced(hospital_allocator_select_hospitalComboBox.getSelectedItem().toString());
+        sfRequest.setPassengerPerson(request.getPassengerPerson());
+        sfRequest.getHospitalAllocationWorkRequest().setTerminalReported(hospital_allocator_select_hospitalComboBox.getSelectedItem().toString());
         sfRequest.setSender(userAccount);
         sfRequest.setStatus("Sent");
         Date d = new Date();

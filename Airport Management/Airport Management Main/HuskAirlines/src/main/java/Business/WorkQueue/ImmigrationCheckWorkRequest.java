@@ -12,26 +12,26 @@ import java.util.List;
  *
  * @author 
  */
-public class DiseaseAnalyzerWorkRequest extends WorkRequest {
+public class ImmigrationCheckWorkRequest extends WorkRequest {
 
-    private Passenger homelessPerson;
-    private HospitalAllocationWorkRequest hospitalAllocationWorkRequest;
+    private Passenger passengerPerson;
+    private SecurityCheckWorkRequest securityCheckWorkRequest;
     private List<List<String>> diseasedetails;
 
-    public Passenger getHomelessPerson() {
-        return homelessPerson;
+    public Passenger getPassengerPerson() {
+        return passengerPerson;
     }
 
     public void setHomelessPerson(Passenger homelessPerson) {
-        this.homelessPerson = homelessPerson;
+        this.passengerPerson = homelessPerson;
     }
 
-    public HospitalAllocationWorkRequest gethospitalAllocationWorkRequest() {
-        return hospitalAllocationWorkRequest;
+    public SecurityCheckWorkRequest gethospitalAllocationWorkRequest() {
+        return securityCheckWorkRequest;
     }
 
-    public void sethospitalAllocationWorkRequest(HospitalAllocationWorkRequest hospitalAllocationWorkRequest) {
-        this.hospitalAllocationWorkRequest = hospitalAllocationWorkRequest;
+    public void sethospitalAllocationWorkRequest(SecurityCheckWorkRequest hospitalAllocationWorkRequest) {
+        this.securityCheckWorkRequest = hospitalAllocationWorkRequest;
     }
 
     public List<List<String>> getDiseasedetailsForHomeless() {
@@ -44,7 +44,7 @@ public class DiseaseAnalyzerWorkRequest extends WorkRequest {
 
     @Override
     public String toString() {
-        return getHomelessPerson() != null ? getHomelessPerson().getName() : "No name";
+        return getPassengerPerson() != null ? getPassengerPerson().getName() : "No name";
     }
 
 }

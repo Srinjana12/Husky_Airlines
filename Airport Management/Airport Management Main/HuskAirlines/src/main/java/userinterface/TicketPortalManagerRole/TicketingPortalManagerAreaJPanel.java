@@ -9,7 +9,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.TicketBooking;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.HospitalAllocationWorkRequest;
+import Business.WorkQueue.SecurityCheckWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.util.Properties;
@@ -25,10 +25,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
+public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form VolunteerWorkAreaJPanel
+     * Creates new form TicketingPortalManagerAreaJPanel
      */
     private JPanel userProcessContainer;
     private TicketBooking organization;
@@ -36,7 +36,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     private EcoSystem business;
 
-    public VolunteerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, TicketBooking organization, Enterprise enterprise, EcoSystem business) {
+    public TicketingPortalManagerAreaJPanel(JPanel userProcessContainer, UserAccount account, TicketBooking organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
@@ -52,9 +52,9 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()) {
-            HospitalAllocationWorkRequest wr = (HospitalAllocationWorkRequest) request;
+            SecurityCheckWorkRequest wr = (SecurityCheckWorkRequest) request;
             Object[] row = new Object[4];
-            row[0] = wr.getHomelessPerson() != null ? wr.getHomelessPerson().getName() : "No name";
+            row[0] = wr.getPassengerPerson() != null ? wr.getPassengerPerson().getName() : "No name";
             row[1] = request.getReceiver();
             row[2] = request.getTestResult();
             //String result = ((LabTestWorkRequest) request).getTestResult();
@@ -83,7 +83,6 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         RegisterHomelessJButton.setBackground(new java.awt.Color(114, 158, 161));
         RegisterHomelessJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         RegisterHomelessJButton.setText("Register Passenger");
-        RegisterHomelessJButton.setActionCommand("Register Passenger");
         RegisterHomelessJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RegisterHomelessJButtonActionPerformed(evt);
@@ -143,9 +142,9 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addGap(28, 28, 28)
                 .addComponent(RegisterHomelessJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(374, Short.MAX_VALUE))
         );
@@ -154,7 +153,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
     private void RegisterHomelessJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterHomelessJButtonActionPerformed
         // TODO add your handling code here:
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("RegisterHomelessJPanel", new RegisterHomelessJPanel(userProcessContainer, userAccount, enterprise, business));
+        userProcessContainer.add("RegisterHomelessJPanel", new PassengerJPanel(userProcessContainer, userAccount, enterprise, business));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_RegisterHomelessJButtonActionPerformed
 

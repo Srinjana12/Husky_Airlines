@@ -6,7 +6,7 @@ package userinterface.JourneyReport;
 
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.ReportGenerationWorkRequest;
+import Business.WorkQueue.JourneyReportGenerationWorkRequest;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
@@ -28,7 +28,7 @@ import javax.swing.table.DefaultTableModel;
 public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    ReportGenerationWorkRequest request;
+    JourneyReportGenerationWorkRequest request;
     private UserAccount userAccount;
     private EcoSystem business;
     private static Font catFont = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
@@ -39,7 +39,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
-    public JourneyReportWorkRequestJPanel(JPanel userProcessContainer, ReportGenerationWorkRequest request, UserAccount userAccount, EcoSystem business) {
+    public JourneyReportWorkRequestJPanel(JPanel userProcessContainer, JourneyReportGenerationWorkRequest request, UserAccount userAccount, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
@@ -54,16 +54,16 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         DefaultTableModel model2 = (DefaultTableModel) tblHousingDetails.getModel();
         model1.setRowCount(0);
         model2.setRowCount(0);
-        if (request.getHomelessPerson() != null) {
+        if (request.getPassengerPerson() != null) {
             Object[] row = new Object[4];
-            row[0] = request.getHomelessPerson().getName();
-            row[1] = request.getHomelessPerson().getIncome();
-            row[2] = request.getHomelessPerson().getDependents();
-            row[3] = request.getHomelessPerson().getContactNo();
+            row[0] = request.getPassengerPerson().getName();
+            row[1] = request.getPassengerPerson().getIncome();
+            row[2] = request.getPassengerPerson().getDependents();
+            row[3] = request.getPassengerPerson().getContactNo();
             model1.addRow(row);
         }
         Object[] row = new Object[2];
-        row[0] = request.gethospitalAllocationWorkRequest().getDiseasesForHomeless().get(0);
+        row[0] = request.gethospitalAllocationWorkRequest().getImmigrationDetails().get(0);
         row[1] = request.getFinalmedicines();
         model2.addRow(row);
 
@@ -193,12 +193,12 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
             return;
         }
         request.setStatus("Completed");
-        request.gethospitalAllocationWorkRequest().setTestResult("Completed and Health Report is generated!");
+        request.gethospitalAllocationWorkRequest().setTestResult("Completed and Journey Report is generated!");
         UserAccount account = new UserAccount();
         account.setUsername("None");
         request.gethospitalAllocationWorkRequest().setReceiver(account);
         downloadPdfBtn.setEnabled(true);
-        JOptionPane.showMessageDialog(null, "Health Report is generated successfully.");
+        JOptionPane.showMessageDialog(null, "Journey Report is generated successfully.");
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -214,19 +214,60 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void downloadPdfBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downloadPdfBtnActionPerformed
-        String name = request.getHomelessPerson().getName();
-        String houseAddress = request.getHomelessPerson().getCurrentAddress();
-        String department = request.gethospitalAllocationWorkRequest().getDepartment();
+//        String name = request.getHomelessPerson().getName();
+//        String houseAddress = request.getHomelessPerson().getCurrentAddress();
+//        String department = request.gethospitalAllocationWorkRequest().getDepartment();
+//        String finalmedicines = request.getFinalmedicines();
+//        String diseasedetails = request.gethospitalAllocationWorkRequest().getDiseasesForHomeless().get(0);
+//        ArrayList<String> symptoms = request.gethospitalAllocationWorkRequest().getSymptoms();
+//        String hospitaltobeplaced = request.gethospitalAllocationWorkRequest().gethospitalToBePlaced();
+//        try {
+//            Document document = new Document();
+//            PdfWriter.getInstance(document, new FileOutputStream("HealthReport_" + counter + ".pdf"));
+//            document.open();
+//            addMetaData(document);
+//            addTitlePage(document, name, houseAddress, hospitaltobeplaced, department, diseasedetails, finalmedicines, symptoms);
+//            document.close();
+//            counter++;
+//            JOptionPane.showMessageDialog(null, "Health Report file has been downloaded");
+//
+//        } catch (Exception e) {
+//            //            e.printStackTrace();
+//            JOptionPane.showMessageDialog(null, "Pdf generator error");
+//        }
+//    }
+
+        String name = request.getPassengerPerson().getName();
+        String contact = request.getPassengerPerson().getContactNo();
+        int income = request.getPassengerPerson().getIncome();
+        String dob = request.getPassengerPerson().getDob();
+        String city = request.getPassengerPerson().getCity();
+        String ssn = request.getPassengerPerson().getSSNNo();
+        String contactNo = request.getPassengerPerson().getContactNo();
+        String emailAddress = request.getPassengerPerson().getEmailAddress();
+        String qualifications = request.getPassengerPerson().getQualifications();  
+        int income1 = request.getPassengerPerson().getIncome();
+        String gender = request.getPassengerPerson().getGender();
+        String preferredLocation = request.getPassengerPerson().getPreferredLocation();
+        boolean geneticDisease = request.getPassengerPerson().isGeneticDisease();
+        boolean majorIllness = request.getPassengerPerson().isMajorIllness();
+        boolean carrierDisease = request.getPassengerPerson().isCarrierDisease();
+        boolean hasCriminalRecord = request.getPassengerPerson().isHasCriminalRecord();
+        int dependents = request.getPassengerPerson().getDependents();
+        String accomplishments = request.getPassengerPerson().getAccomplishments();
+        String employmentStatus = request.getPassengerPerson().getEmploymentStatus();
+        String houseAddress = request.getPassengerPerson().getCurrentAddress();
+        String hospital = request.gethospitalAllocationWorkRequest().getTerminalReported();
+        String department = request.gethospitalAllocationWorkRequest().getDepartmentDetais();
         String finalmedicines = request.getFinalmedicines();
-        String diseasedetails = request.gethospitalAllocationWorkRequest().getDiseasesForHomeless().get(0);
-        ArrayList<String> symptoms = request.gethospitalAllocationWorkRequest().getSymptoms();
-        String hospitaltobeplaced = request.gethospitalAllocationWorkRequest().gethospitalToBePlaced();
+        String diseasedetails = request.gethospitalAllocationWorkRequest().getImmigrationDetails().get(0);
+        ArrayList<String> symptoms = request.gethospitalAllocationWorkRequest().getAllocatedSeat();
         try {
             Document document = new Document();
             PdfWriter.getInstance(document, new FileOutputStream("HealthReport_" + counter + ".pdf"));
             document.open();
             addMetaData(document);
-            addTitlePage(document, name, houseAddress, hospitaltobeplaced, department, diseasedetails, finalmedicines, symptoms);
+            addTitlePage(document, name, contact, income, dob, city, ssn, contactNo, emailAddress, qualifications, income1, gender, preferredLocation, geneticDisease, majorIllness, carrierDisease, hasCriminalRecord, dependents, accomplishments, employmentStatus, houseAddress, hospital, department, finalmedicines, diseasedetails, symptoms);
             document.close();
             counter++;
             JOptionPane.showMessageDialog(null, "Health Report file has been downloaded");
@@ -241,33 +282,60 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
     // Reader
     // under File -> Properties
     private static void addMetaData(Document document) {
-        document.addTitle("Health Report PDF");
+        document.addTitle("Journey Report PDF");
         document.addSubject("");
         document.addKeywords("");
-        document.addAuthor("Homeless Helpers");
-        document.addCreator("Homeless Helpers");
+        document.addAuthor("Husky Air");
+        document.addCreator("Husky Air");
     }
 
-    private static void addTitlePage(Document document, String name, String houseAddress, String hospitaltobeplaced, String department, String diseaseDetails, String finalmedicines, ArrayList<String> symptoms)
+    private static void addTitlePage(Document document, String name, String contact, int income, String dob, String city, String ssn, String contactNo, String emailAddress, String qualifications, int income1, String gender, String preferredLocation, boolean geneticDisease, boolean majorIllness, boolean carrierDisease, boolean hasCriminalRecord, int dependents, String accomplishments, String employmentStatus, String houseAddress, String hospital, String department, String finalmedicines, String diseasedetails, ArrayList<String> symptoms)
             throws DocumentException {
 
         Paragraph preface = new Paragraph();
 
         addEmptyLine(preface, 1);
-        preface.add(new Paragraph("Homeless Helpers Health Report", catFont));
+        preface.add(new Paragraph("Husky Air", catFont));
         addEmptyLine(preface, 1);
-        preface.add(new Paragraph("Health Report generated by: " + System.getProperty("user.name") + ", " + new Date(), subFont));
+        preface.add(new Paragraph("Journey REPORT", catFont));
+        addEmptyLine(preface, 1);
+        preface.add(new Paragraph("Journey Report generated by: " + System.getProperty("user.name") + ", " + new Date(), subFont));
         addEmptyLine(preface, 3);
-        String paragraph = "Health report is generated for " + name.toUpperCase() + "\nWent to Hospital: " + hospitaltobeplaced + "\nWent to department: " + department
-                + " Facing Symptoms: " + symptoms.toString()
-                + " staying at " + houseAddress + " \n Disease & Recommended Medicines Details " + diseaseDetails
-                + ", The final medicines are: " + finalmedicines + "\nThank you for being the part of Homeless Helpers";
+
+        String paragraph = "Journey report is generated for " + name.toUpperCase() + "\n" +
+                            "Income: " + income + "\n" +
+                            "Date of Birth: " + dob + "\n" +
+                            "City: " + city + "\n" +
+                            "SSN: " + ssn + "\n" +
+                            "Contact No: " + contactNo + "\n" +
+                            "Email Address: " + emailAddress + "\n" +
+                            "Qualifications: " + qualifications + "\n" +
+                            "Gender: " + gender + "\n" +
+                            "Preferred Location: " + preferredLocation + "\n" +
+                            "Genetic Disease: " + geneticDisease + "\n" +
+                            "Major Illness: " + majorIllness + "\n" +
+                            "Carrier Disease: " + carrierDisease + "\n" +
+                            "Has Criminal Record: " + hasCriminalRecord + "\n" +
+                            "Dependents: " + dependents + "\n" +
+                            "Accomplishments: " + accomplishments + "\n" +
+                            "Employment Status: " + employmentStatus + "\n" +
+                            "House Address: " + houseAddress + "\n" +
+                            "Was the person placed at selected Hospital?: YES" + "\n" +
+                            "Pass/Fail Symptoms Check: YES" + "\n" +
+                            "Went to Hospital: " + hospital + "\n" +
+                            "Went to department: " + department + "\n" +
+                            "Facing Symptoms: " + symptoms.toString() + "\n" +
+                            "COVID Negative/Positive: Positive" + "\n" +
+                            "Disease & Recommended Medicines Details: " + diseasedetails + "\n" +
+                            "The final medicines are: " + finalmedicines + "\n" +
+                            "Thank you for flying with Husky Air!"+ "\n";
+
         preface.add(new Paragraph(paragraph, smallBold));
 
         addEmptyLine(preface, 1);
 
         preface.add(new Paragraph(
-                "Feel free to connect us again at Homeless Helpers",
+                "Please Fly with us again!",
                 smallBold));
 
         document.add(preface);

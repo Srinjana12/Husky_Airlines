@@ -8,8 +8,8 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.FoodAllocation;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.BloodTestWorkRequest;
-import Business.WorkQueue.DiseaseAnalyzerWorkRequest;
+import Business.WorkQueue.FoodAllocationWorkRequest;
+import Business.WorkQueue.ImmigrationCheckWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -51,7 +51,7 @@ public class FoodAllocationTestWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()) {
-            BloodTestWorkRequest wr = (BloodTestWorkRequest) request;
+            FoodAllocationWorkRequest wr = (FoodAllocationWorkRequest) request;
             Object[] row = new Object[5];
             row[0] = wr;
             row[1] = request.getSender().getEmployee().getName();
@@ -67,9 +67,9 @@ public class FoodAllocationTestWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) SentWorkReqJTable.getModel();
         model.setRowCount(0);
         for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()) {
-            DiseaseAnalyzerWorkRequest wr = (DiseaseAnalyzerWorkRequest) request;
+            ImmigrationCheckWorkRequest wr = (ImmigrationCheckWorkRequest) request;
             Object[] row = new Object[4];
-            row[0] = wr.getHomelessPerson() != null ? wr.getHomelessPerson().getName() : "No name";
+            row[0] = wr.getPassengerPerson() != null ? wr.getPassengerPerson().getName() : "No name";
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
             //String result = ((LabTestWorkRequest) request).getTestResult();
@@ -211,7 +211,7 @@ public class FoodAllocationTestWorkAreaJPanel extends javax.swing.JPanel {
         }
 
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-        BloodTestWorkRequest request1 = (BloodTestWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        FoodAllocationWorkRequest request1 = (FoodAllocationWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == null) {
             request1.gethospitalAllocationWorkRequest().setReceiver(userAccount);
             request.setReceiver(userAccount);
@@ -232,7 +232,7 @@ public class FoodAllocationTestWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-        BloodTestWorkRequest request = (BloodTestWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        FoodAllocationWorkRequest request = (FoodAllocationWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == userAccount) {
             if (request.getStatus().equalsIgnoreCase("Completed")) {
                 JOptionPane.showMessageDialog(null, "This request has already been completed! Choose another request");

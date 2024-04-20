@@ -8,9 +8,9 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.LuggageCheckout;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.DiseaseAnalyzerWorkRequest;
-import Business.WorkQueue.PharmacyWorkRequest;
-import Business.WorkQueue.ReportGenerationWorkRequest;
+import Business.WorkQueue.ImmigrationCheckWorkRequest;
+import Business.WorkQueue.LuggageCheckOutWorkRequest;
+import Business.WorkQueue.JourneyReportGenerationWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -49,7 +49,7 @@ public class TransportationSecurityAdministratorWorkAreaJPanel extends javax.swi
 
         model.setRowCount(0);
         for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()) {
-            PharmacyWorkRequest wr = (PharmacyWorkRequest) request;
+            LuggageCheckOutWorkRequest wr = (LuggageCheckOutWorkRequest) request;
             Object[] row = new Object[5];
             row[0] = wr;
             row[1] = request.getSender().getEmployee().getName();
@@ -69,9 +69,9 @@ public class TransportationSecurityAdministratorWorkAreaJPanel extends javax.swi
 
         model.setRowCount(0);
         for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()) {
-            ReportGenerationWorkRequest wr = (ReportGenerationWorkRequest) request;
+            JourneyReportGenerationWorkRequest wr = (JourneyReportGenerationWorkRequest) request;
             Object[] row = new Object[4];
-            row[0] = wr.getHomelessPerson() != null ? wr.getHomelessPerson().getName() : "No name";
+            row[0] = wr.getPassengerPerson() != null ? wr.getPassengerPerson().getName() : "No name";
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
             //String result = ((LabTestWorkRequest) request).getTestResult();
@@ -261,7 +261,7 @@ public class TransportationSecurityAdministratorWorkAreaJPanel extends javax.swi
             return;
         }
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-        PharmacyWorkRequest request1 = (PharmacyWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        LuggageCheckOutWorkRequest request1 = (LuggageCheckOutWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == null) {
             request1.getHospitalAllocationWorkRequest().setReceiver(userAccount);
             request.setReceiver(userAccount);
@@ -280,7 +280,7 @@ public class TransportationSecurityAdministratorWorkAreaJPanel extends javax.swi
             return;
         }
 
-        PharmacyWorkRequest request = (PharmacyWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        LuggageCheckOutWorkRequest request = (LuggageCheckOutWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == userAccount) {
             if (request.getStatus().equalsIgnoreCase("Completed")) {
                 JOptionPane.showMessageDialog(null, "This request has already been completed!Choose another request");
