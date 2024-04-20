@@ -11,8 +11,8 @@ import Business.Network.Network;
 import Business.Organization.FoodAllocation;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.BloodTestWorkRequest;
-import Business.WorkQueue.SymptomsCheckWorkRequest;
+import Business.WorkQueue.FoodAllocationWorkRequest;
+import Business.WorkQueue.SeatAllocationWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.ArrayList;
@@ -32,11 +32,11 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
      * Creates new form ShelterFacilitationWorkRequestJPanel
      */
     JPanel userProcessContainer;
-    SymptomsCheckWorkRequest request;
+    SeatAllocationWorkRequest request;
     private UserAccount userAccount;
     private EcoSystem business;
 
-    SeatAllocationWorkRequestJPanel(JPanel userProcessContainer, SymptomsCheckWorkRequest request, UserAccount userAccount, EcoSystem business) {
+    SeatAllocationWorkRequestJPanel(JPanel userProcessContainer, SeatAllocationWorkRequest request, UserAccount userAccount, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
@@ -53,23 +53,23 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         DefaultTableModel model2 = (DefaultTableModel) tblHomelessPersonRecords2.getModel();
         model1.setRowCount(0);
         model2.setRowCount(0);
-        if (request.getHomelessPerson() != null) {
+        if (request.getPassengerPerson() != null) {
             Object[] row = new Object[8];
-            row[0] = request.getHomelessPerson().getName();
-            row[1] = request.getHomelessPerson().getDob();
-            row[2] = request.getHomelessPerson().getCity();
-            row[3] = request.getHomelessPerson().getCurrentAddress();
-            row[4] = request.getHomelessPerson().getSSNNo();
-            row[5] = request.getHomelessPerson().getContactNo();
-            row[6] = request.getHomelessPerson().getEmailAddress();
-            row[7] = request.getHomelessPerson().getDependents();
+            row[0] = request.getPassengerPerson().getName();
+            row[1] = request.getPassengerPerson().getDob();
+            row[2] = request.getPassengerPerson().getCity();
+            row[3] = request.getPassengerPerson().getCurrentAddress();
+            row[4] = request.getPassengerPerson().getSSNNo();
+            row[5] = request.getPassengerPerson().getContactNo();
+            row[6] = request.getPassengerPerson().getEmailAddress();
+            row[7] = request.getPassengerPerson().getDependents();
             model1.addRow(row);
             Object[] rowSecond = new Object[5];
-            rowSecond[0] = request.getHomelessPerson().getGender();
-            rowSecond[1] = request.getHomelessPerson().isHasCriminalRecord() ? "Yes" : "No";
-            rowSecond[2] = request.getHomelessPerson().isMajorIllness() ? "Yes" : "No";
-            rowSecond[3] = request.getHomelessPerson().isCarrierDisease() ? "Yes" : "No";
-            rowSecond[4] = request.getHomelessPerson().isGeneticDisease() ? "Yes" : "No";
+            rowSecond[0] = request.getPassengerPerson().getGender();
+            rowSecond[1] = request.getPassengerPerson().isHasCriminalRecord() ? "Yes" : "No";
+            rowSecond[2] = request.getPassengerPerson().isMajorIllness() ? "Yes" : "No";
+            rowSecond[3] = request.getPassengerPerson().isCarrierDisease() ? "Yes" : "No";
+            rowSecond[4] = request.getPassengerPerson().isGeneticDisease() ? "Yes" : "No";
             model2.addRow(rowSecond);
 
         }
@@ -262,11 +262,11 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         request.getHospitalAllocationWorkRequest().setTestResult("Completed by Symptoms Checker and send to Covid Blood Tester");
         ArrayList<String> symptoms = new ArrayList<>();
 
-        BloodTestWorkRequest bloodTestWorkRequest = new BloodTestWorkRequest();
+        FoodAllocationWorkRequest bloodTestWorkRequest = new FoodAllocationWorkRequest();
         bloodTestWorkRequest.setMessage("Check Blood for Covid");
         bloodTestWorkRequest.setSender(userAccount);
         bloodTestWorkRequest.setStatus("Sent");
-        bloodTestWorkRequest.setHomelessPerson(request.getHomelessPerson());
+        bloodTestWorkRequest.setHomelessPerson(request.getPassengerPerson());
         bloodTestWorkRequest.sethospitalAllocationWorkRequest(request.getHospitalAllocationWorkRequest());
         if (flueCheckBox.isSelected()) {
             symptoms.add("Flu");
@@ -284,7 +284,7 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
             symptoms.add("Kidney");
         }
 
-        request.getHospitalAllocationWorkRequest().setSymptoms(symptoms);
+        request.getHospitalAllocationWorkRequest().setAllocatedSeat(symptoms);
         Date d = new Date();
         bloodTestWorkRequest.setRequestDate(d);
         Organization org = null;

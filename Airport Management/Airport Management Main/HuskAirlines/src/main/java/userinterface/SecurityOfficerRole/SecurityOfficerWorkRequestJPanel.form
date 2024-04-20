@@ -134,16 +134,65 @@
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="9" rowCount="0">
-                    <Column editable="false" title="Qualifications" type="java.lang.Object"/>
-                    <Column editable="false" title="Accomplishments" type="java.lang.Object"/>
-                    <Column editable="false" title="Income" type="java.lang.Object"/>
-                    <Column editable="false" title="Employment Status" type="java.lang.Object"/>
+                    <Column editable="false" title="Seat Preference" type="java.lang.Object"/>
+                    <Column editable="false" title="Food Preference" type="java.lang.Object"/>
+                    <Column editable="false" title="Emergency Contact No. " type="java.lang.Object"/>
+                    <Column editable="false" title="Name Of Emergency Contact" type="java.lang.Object"/>
                     <Column editable="false" title="Gender" type="java.lang.Object"/>
                     <Column editable="false" title="Criminal Record" type="java.lang.Object"/>
-                    <Column editable="false" title="Major Illness" type="java.lang.Object"/>
-                    <Column editable="false" title="Carrier Illness" type="java.lang.Object"/>
-                    <Column editable="false" title="Genetic Illness" type="java.lang.Object"/>
+                    <Column editable="false" title="Medical Condition" type="java.lang.Object"/>
+                    <Column editable="false" title="Medication" type="java.lang.Object"/>
+                    <Column editable="false" title="Special Requirements" type="java.lang.Object"/>
                   </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
                 </Property>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -168,13 +217,57 @@
                   <Table columnCount="8" rowCount="0">
                     <Column editable="false" title="Name" type="java.lang.Object"/>
                     <Column editable="false" title="DOB" type="java.lang.Object"/>
-                    <Column editable="false" title="City" type="java.lang.Object"/>
-                    <Column editable="false" title="Current Address" type="java.lang.Object"/>
-                    <Column editable="false" title="SSN" type="java.lang.Object"/>
+                    <Column editable="false" title="Source" type="java.lang.Object"/>
+                    <Column editable="false" title="Destination" type="java.lang.Object"/>
+                    <Column editable="false" title="Passport No" type="java.lang.Object"/>
                     <Column editable="false" title="Contact No" type="java.lang.Object"/>
                     <Column editable="false" title="Email Addressl" type="java.lang.Object"/>
-                    <Column editable="false" title="Dependents" type="java.lang.Object"/>
+                    <Column editable="false" title="Passport Expiry Date" type="java.lang.Object"/>
                   </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
                 </Property>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>

@@ -8,8 +8,8 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.SecurityCheckin;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.DepartmentFacilitationWorkRequest;
-import Business.WorkQueue.HospitalAllocationWorkRequest;
+import Business.WorkQueue.TicketVerificationWorkRequest;
+import Business.WorkQueue.SecurityCheckWorkRequest;
 
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
@@ -195,7 +195,7 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (WorkRequest request : hospitalOrganization.getWorkQueue().getWorkRequestList()) {
-            HospitalAllocationWorkRequest wr = (HospitalAllocationWorkRequest) request;
+            SecurityCheckWorkRequest wr = (SecurityCheckWorkRequest) request;
             Object[] row = new Object[5];
             row[0] = wr;
             row[1] = request.getSender().getEmployee().getName();
@@ -212,7 +212,7 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()) {
-            DepartmentFacilitationWorkRequest wr = (DepartmentFacilitationWorkRequest) request;
+            TicketVerificationWorkRequest wr = (TicketVerificationWorkRequest) request;
             Object[] row = new Object[4];
             row[0] = wr;
             row[1] = request.getReceiver();
@@ -253,7 +253,7 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-        HospitalAllocationWorkRequest request = (HospitalAllocationWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        SecurityCheckWorkRequest request = (SecurityCheckWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == userAccount) {
             if (request.getStatus().equalsIgnoreCase("Completed")) {
                 JOptionPane.showMessageDialog(null, "This request has already been completed!Choose another request");

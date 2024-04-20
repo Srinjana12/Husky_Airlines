@@ -8,8 +8,8 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.TicketVerification;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.DepartmentFacilitationWorkRequest;
-import Business.WorkQueue.SymptomsCheckWorkRequest;
+import Business.WorkQueue.TicketVerificationWorkRequest;
+import Business.WorkQueue.SeatAllocationWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -49,7 +49,7 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (WorkRequest request : departmentFacilitationOrganization.getWorkQueue().getWorkRequestList()) {
-            DepartmentFacilitationWorkRequest wr = (DepartmentFacilitationWorkRequest) request;
+            TicketVerificationWorkRequest wr = (TicketVerificationWorkRequest) request;
             Object[] row = new Object[5];
             row[0] = wr;
             row[1] = request.getSender().getEmployee().getName();
@@ -66,9 +66,9 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()) {
-            SymptomsCheckWorkRequest wr = (SymptomsCheckWorkRequest) request;
+            SeatAllocationWorkRequest wr = (SeatAllocationWorkRequest) request;
             Object[] row = new Object[4];
-            row[0] = wr.getHomelessPerson() != null ? wr.getHomelessPerson().getName() : "No name";
+            row[0] = wr.getPassengerPerson() != null ? wr.getPassengerPerson().getName() : "No name";
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
             //String result = ((LabTestWorkRequest) request).getTestResult();
@@ -231,7 +231,7 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-        DepartmentFacilitationWorkRequest request1 = (DepartmentFacilitationWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        TicketVerificationWorkRequest request1 = (TicketVerificationWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == null) {
             request1.getHospitalAllocationWorkRequest().setReceiver(userAccount);
             request.setReceiver(userAccount);
@@ -252,7 +252,7 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a row from table to proceed!");
             return;
         }
-        DepartmentFacilitationWorkRequest request = (DepartmentFacilitationWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        TicketVerificationWorkRequest request = (TicketVerificationWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == userAccount) {
             if (request.getStatus().equalsIgnoreCase("Completed")) {
                 JOptionPane.showMessageDialog(null, "This request has already been completed!Choose another request");

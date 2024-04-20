@@ -8,8 +8,8 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.SeatAllocation;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.BloodTestWorkRequest;
-import Business.WorkQueue.SymptomsCheckWorkRequest;
+import Business.WorkQueue.FoodAllocationWorkRequest;
+import Business.WorkQueue.SeatAllocationWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -51,7 +51,7 @@ public class SeatAllocationWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()) {
-            SymptomsCheckWorkRequest wr = (SymptomsCheckWorkRequest) request;
+            SeatAllocationWorkRequest wr = (SeatAllocationWorkRequest) request;
             Object[] row = new Object[5];
             row[0] = wr;
             row[1] = request.getSender().getEmployee().getName();
@@ -71,9 +71,9 @@ public class SeatAllocationWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()) {
-            BloodTestWorkRequest wr = (BloodTestWorkRequest) request;
+            FoodAllocationWorkRequest wr = (FoodAllocationWorkRequest) request;
             Object[] row = new Object[4];
-            row[0] = wr.getHomelessPerson() != null ? wr.getHomelessPerson().getName() : "No name";
+            row[0] = wr.getPassengerPerson() != null ? wr.getPassengerPerson().getName() : "No name";
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
             //String result = ((LabTestWorkRequest) request).getTestResult();
@@ -264,7 +264,7 @@ public class SeatAllocationWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-        SymptomsCheckWorkRequest request = (SymptomsCheckWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        SeatAllocationWorkRequest request = (SeatAllocationWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == userAccount) {
             if (request.getStatus().equalsIgnoreCase("Completed")) {
                 JOptionPane.showMessageDialog(null, "This request has already been completed!Choose another request");
@@ -296,7 +296,7 @@ public class SeatAllocationWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-        SymptomsCheckWorkRequest request1 = (SymptomsCheckWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        SeatAllocationWorkRequest request1 = (SeatAllocationWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == null) {
             request1.getHospitalAllocationWorkRequest().setReceiver(userAccount);
             request.setReceiver(userAccount);

@@ -11,9 +11,9 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.JourneyReport;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.DiseaseAnalyzerWorkRequest;
-import Business.WorkQueue.PharmacyWorkRequest;
-import Business.WorkQueue.ReportGenerationWorkRequest;
+import Business.WorkQueue.ImmigrationCheckWorkRequest;
+import Business.WorkQueue.LuggageCheckOutWorkRequest;
+import Business.WorkQueue.JourneyReportGenerationWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.ArrayList;
@@ -30,14 +30,14 @@ import javax.swing.table.DefaultTableModel;
 public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    PharmacyWorkRequest request;
+    LuggageCheckOutWorkRequest request;
     private UserAccount userAccount;
     private EcoSystem business;
 
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
-    public TransportationSecurityAdministratorWorkRequestJPanel(JPanel userProcessContainer, PharmacyWorkRequest request, UserAccount userAccount, EcoSystem business) {
+    public TransportationSecurityAdministratorWorkRequestJPanel(JPanel userProcessContainer, LuggageCheckOutWorkRequest request, UserAccount userAccount, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
@@ -49,12 +49,12 @@ public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.
     public void populateTable() {
         DefaultTableModel model1 = (DefaultTableModel) tblPersonRecords.getModel();
         model1.setRowCount(0);
-        if (request.getHomelessPerson() != null) {
+        if (request.getPassengerPerson() != null) {
             Object[] row = new Object[4];
-            row[0] = request.getHomelessPerson().getName();
-            row[1] = request.getHomelessPerson().getIncome();
-            row[2] = request.getHospitalAllocationWorkRequest().getDiseasesForHomeless().get(0);
-            row[3] = request.getHomelessPerson().getContactNo();
+            row[0] = request.getPassengerPerson().getName();
+            row[1] = request.getPassengerPerson().getIncome();
+            row[2] = request.getHospitalAllocationWorkRequest().getImmigrationDetails().get(0);
+            row[3] = request.getPassengerPerson().getContactNo();
             model1.addRow(row);
         }
 
@@ -227,11 +227,11 @@ public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.
         account.setUsername("None");
         request.getHospitalAllocationWorkRequest().setReceiver(account);
         request.getHospitalAllocationWorkRequest().setTestResult("Completed by Scheme Provider and sent to ReportFinalizer");
-        ReportGenerationWorkRequest fcRequest = new ReportGenerationWorkRequest();
+        JourneyReportGenerationWorkRequest fcRequest = new JourneyReportGenerationWorkRequest();
         fcRequest.setMessage("Finalize Report");
         fcRequest.setSender(userAccount);
         fcRequest.setStatus("Sent");
-        fcRequest.setHomelessPerson(request.getHomelessPerson());
+        fcRequest.setHomelessPerson(request.getPassengerPerson());
         fcRequest.sethospitalAllocationWorkRequest(request.getHospitalAllocationWorkRequest());
         fcRequest.setFinalmedicines(schemes.get(0));
         Date d = new Date();

@@ -13,7 +13,7 @@ import Business.Network.Network;
 import Business.Organization.SecurityCheckin;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.HospitalAllocationWorkRequest;
+import Business.WorkQueue.SecurityCheckWorkRequest;
 import Email.SendGridEmail;
 import com.github.javafaker.Faker;
 import java.awt.CardLayout;
@@ -703,8 +703,8 @@ public class PassengerJPanel extends javax.swing.JPanel {
 //            userAccount.getWorkQueue().getWorkRequestList().add(mealDistributionWorkRequest);
 //        }
 //        JOptionPane.showMessageDialog(this, "Request Sent to Meal Distribution Organization!");
-        HospitalAllocationWorkRequest allocationWorkRequest = new HospitalAllocationWorkRequest();
-        allocationWorkRequest.setHomelessPerson(person);
+        SecurityCheckWorkRequest allocationWorkRequest = new SecurityCheckWorkRequest();
+        allocationWorkRequest.setPassengerPerson(person);
         allocationWorkRequest.setMessage("Hospital Allocation Request");
         allocationWorkRequest.setSender(userAccount);
         allocationWorkRequest.setStatus("Sent");
