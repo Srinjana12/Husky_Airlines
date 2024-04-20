@@ -8,7 +8,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.JourneyReport;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.ReportGenerationWorkRequest;
+import Business.WorkQueue.JourneyReportGenerationWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -46,7 +46,7 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) reportrequeststable.getModel();
         model.setRowCount(0);
         for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()) {
-            ReportGenerationWorkRequest wr = (ReportGenerationWorkRequest) request;
+            JourneyReportGenerationWorkRequest wr = (JourneyReportGenerationWorkRequest) request;
             Object[] row = new Object[5];
             row[0] = wr;
             row[1] = request.getSender().getEmployee().getName();
@@ -311,7 +311,7 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         WorkRequest request = (WorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
-        ReportGenerationWorkRequest request1 = (ReportGenerationWorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
+        JourneyReportGenerationWorkRequest request1 = (JourneyReportGenerationWorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == null) {
             request1.gethospitalAllocationWorkRequest().setReceiver(userAccount);
             request.setReceiver(userAccount);
@@ -330,7 +330,7 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a row from table to proceed!");
             return;
         }
-        ReportGenerationWorkRequest request = (ReportGenerationWorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
+        JourneyReportGenerationWorkRequest request = (JourneyReportGenerationWorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == userAccount) {
             if (request.getStatus().equalsIgnoreCase("Completed")) {
                 JOptionPane.showMessageDialog(null, "This request has already been completed!Choose another request");
@@ -360,7 +360,7 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         WorkRequest request = (WorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
-        ReportGenerationWorkRequest request1 = (ReportGenerationWorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
+        JourneyReportGenerationWorkRequest request1 = (JourneyReportGenerationWorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == null) {
             request1.gethospitalAllocationWorkRequest().setReceiver(userAccount);
             request.setReceiver(userAccount);
@@ -379,7 +379,7 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a row from table to proceed!");
             return;
         }
-        ReportGenerationWorkRequest request = (ReportGenerationWorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
+        JourneyReportGenerationWorkRequest request = (JourneyReportGenerationWorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == userAccount) {
             if (request.getStatus().equalsIgnoreCase("Completed")) {
                 JOptionPane.showMessageDialog(null, "This request has already been completed!Choose another request");

@@ -8,8 +8,8 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Immigration;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.DiseaseAnalyzerWorkRequest;
-import Business.WorkQueue.PharmacyWorkRequest;
+import Business.WorkQueue.ImmigrationCheckWorkRequest;
+import Business.WorkQueue.LuggageCheckOutWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -51,7 +51,7 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
 
         model.setRowCount(0);
         for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()) {
-            DiseaseAnalyzerWorkRequest wr = (DiseaseAnalyzerWorkRequest) request;
+            ImmigrationCheckWorkRequest wr = (ImmigrationCheckWorkRequest) request;
             Object[] row = new Object[5];
             row[0] = wr;
             row[1] = request.getSender().getEmployee().getName();
@@ -71,9 +71,9 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
 
         model.setRowCount(0);
         for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()) {
-            PharmacyWorkRequest wr = (PharmacyWorkRequest) request;
+            LuggageCheckOutWorkRequest wr = (LuggageCheckOutWorkRequest) request;
             Object[] row = new Object[4];
-            row[0] = wr.getHomelessPerson() != null ? wr.getHomelessPerson().getName() : "No name";
+            row[0] = wr.getPassengerPerson() != null ? wr.getPassengerPerson().getName() : "No name";
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
             //String result = ((LabTestWorkRequest) request).getTestResult();
@@ -228,7 +228,7 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
             return;
         }
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-        DiseaseAnalyzerWorkRequest request1 = (DiseaseAnalyzerWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        ImmigrationCheckWorkRequest request1 = (ImmigrationCheckWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == null) {
             request1.gethospitalAllocationWorkRequest().setReceiver(userAccount);
             request.setReceiver(userAccount);
@@ -246,7 +246,7 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
             JOptionPane.showMessageDialog(this, "Please select a row first!");
             return;
         }
-        DiseaseAnalyzerWorkRequest request = (DiseaseAnalyzerWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+        ImmigrationCheckWorkRequest request = (ImmigrationCheckWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == userAccount) {
             if (request.getStatus().equalsIgnoreCase("Completed")) {
                 JOptionPane.showMessageDialog(null, "This request has already been completed!Choose another request");
