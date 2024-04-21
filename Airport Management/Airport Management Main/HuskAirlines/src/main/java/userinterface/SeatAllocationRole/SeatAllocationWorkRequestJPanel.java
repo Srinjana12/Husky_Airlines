@@ -258,16 +258,16 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         request.setStatus("Completed");
         UserAccount account = new UserAccount();
         account.setUsername("None");
-        request.getHospitalAllocationWorkRequest().setReceiver(account);
-        request.getHospitalAllocationWorkRequest().setTestResult("Completed by Symptoms Checker and send to Covid Blood Tester");
+        request.getSecurityCheckWorkRequest().setReceiver(account);
+        request.getSecurityCheckWorkRequest().setTestResult("Completed by Symptoms Checker and send to Covid Blood Tester");
         ArrayList<String> symptoms = new ArrayList<>();
 
         FoodAllocationWorkRequest bloodTestWorkRequest = new FoodAllocationWorkRequest();
         bloodTestWorkRequest.setMessage("Check Blood for Covid");
         bloodTestWorkRequest.setSender(userAccount);
         bloodTestWorkRequest.setStatus("Sent");
-        bloodTestWorkRequest.setHomelessPerson(request.getPassengerPerson());
-        bloodTestWorkRequest.sethospitalAllocationWorkRequest(request.getHospitalAllocationWorkRequest());
+        bloodTestWorkRequest.setPassengerPerson(request.getPassengerPerson());
+        bloodTestWorkRequest.setsecurityCheckWorkRequest(request.getSecurityCheckWorkRequest());
         if (flueCheckBox.isSelected()) {
             symptoms.add("Flu");
         }
@@ -284,7 +284,7 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
             symptoms.add("Kidney");
         }
 
-        request.getHospitalAllocationWorkRequest().setAllocatedSeat(symptoms);
+        request.getSecurityCheckWorkRequest().setAllocatedSeat(symptoms);
         Date d = new Date();
         bloodTestWorkRequest.setRequestDate(d);
         Organization org = null;
@@ -328,8 +328,8 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         }
         UserAccount account = new UserAccount();
         account.setUsername("None");
-        request.getHospitalAllocationWorkRequest().setReceiver(account);
-        request.getHospitalAllocationWorkRequest().setTestResult("The request has been denied by Symptoms Checker as person had criminal record!");
+        request.getSecurityCheckWorkRequest().setReceiver(account);
+        request.getSecurityCheckWorkRequest().setTestResult("The request has been denied by Symptoms Checker as person had criminal record!");
         request.setStatus("Completed");
         JOptionPane.showMessageDialog(this, "Volunteer has been updated abt failure!");
     }//GEN-LAST:event_btnFailCheckActionPerformed

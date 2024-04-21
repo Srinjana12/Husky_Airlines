@@ -53,7 +53,7 @@ public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.
             Object[] row = new Object[4];
             row[0] = request.getPassengerPerson().getName();
             row[1] = request.getPassengerPerson().getIncome();
-            row[2] = request.getHospitalAllocationWorkRequest().getImmigrationDetails().get(0);
+            row[2] = request.getSecurityCheckWorkRequest().getImmigrationDetails().get(0);
             row[3] = request.getPassengerPerson().getContactNo();
             model1.addRow(row);
         }
@@ -104,7 +104,7 @@ public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.
         });
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel1.setText("Medicines Given");
+        jLabel1.setText("No. Of Luggage:");
 
         backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
@@ -120,13 +120,12 @@ public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.
 
             },
             new String [] {
-                "Name", "Income", "Disease Details", "Contact Number"
+                "Name", "Emergency Contact No", "Immigration Details", "Contact Number"
             }
         ));
         jScrollPane1.setViewportView(tblPersonRecords);
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jLabel4.setText("Provide Medicines");
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(114, 158, 161));
@@ -225,15 +224,15 @@ public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.
         request.setStatus("Completed");
         UserAccount account = new UserAccount();
         account.setUsername("None");
-        request.getHospitalAllocationWorkRequest().setReceiver(account);
-        request.getHospitalAllocationWorkRequest().setTestResult("Completed by Scheme Provider and sent to ReportFinalizer");
+        request.getSecurityCheckWorkRequest().setReceiver(account);
+        request.getSecurityCheckWorkRequest().setTestResult("Completed by Scheme Provider and sent to ReportFinalizer");
         JourneyReportGenerationWorkRequest fcRequest = new JourneyReportGenerationWorkRequest();
         fcRequest.setMessage("Finalize Report");
         fcRequest.setSender(userAccount);
         fcRequest.setStatus("Sent");
-        fcRequest.setHomelessPerson(request.getPassengerPerson());
-        fcRequest.sethospitalAllocationWorkRequest(request.getHospitalAllocationWorkRequest());
-        fcRequest.setFinalmedicines(schemes.get(0));
+        fcRequest.setPassengerPerson(request.getPassengerPerson());
+        fcRequest.setsecurityCheckWorkRequest(request.getSecurityCheckWorkRequest());
+        fcRequest.setNumberOfLuggage(schemes.get(0));
         Date d = new Date();
         fcRequest.setRequestDate(d);
         Organization org = null;

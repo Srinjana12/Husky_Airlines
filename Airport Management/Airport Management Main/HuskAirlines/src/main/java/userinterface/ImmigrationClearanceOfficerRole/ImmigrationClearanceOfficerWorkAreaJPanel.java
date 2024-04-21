@@ -230,7 +230,7 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         ImmigrationCheckWorkRequest request1 = (ImmigrationCheckWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == null) {
-            request1.gethospitalAllocationWorkRequest().setReceiver(userAccount);
+            request1.getsecurityCheckWorkRequest().setReceiver(userAccount);
             request.setReceiver(userAccount);
             request.setStatus("Pending");
             populateReceiveTable();

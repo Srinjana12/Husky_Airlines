@@ -293,9 +293,9 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
 
         TicketVerificationWorkRequest sfRequest = new TicketVerificationWorkRequest();
         sfRequest.setMessage("Department Facilitation");
-        sfRequest.setHospitalAllocationWorkRequest(request);
+        sfRequest.setSecurityCheckWorkRequest(request);
         sfRequest.setPassengerPerson(request.getPassengerPerson());
-        sfRequest.getHospitalAllocationWorkRequest().setTerminalReported(hospital_allocator_select_hospitalComboBox.getSelectedItem().toString());
+        sfRequest.getSecurityCheckWorkRequest().setTerminalReported(hospital_allocator_select_hospitalComboBox.getSelectedItem().toString());
         sfRequest.setSender(userAccount);
         sfRequest.setStatus("Sent");
         Date d = new Date();
