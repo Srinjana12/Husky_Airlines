@@ -72,11 +72,9 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="hospital_allocator_select_hospitalComboBox" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton3" min="-2" pref="167" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="551" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -98,7 +96,6 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="hospital_allocator_select_hospitalComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButton2" min="-2" pref="50" max="-2" attributes="0"/>
@@ -139,10 +136,10 @@
                     <Column editable="false" title="Emergency Contact No. " type="java.lang.Object"/>
                     <Column editable="false" title="Name Of Emergency Contact" type="java.lang.Object"/>
                     <Column editable="false" title="Gender" type="java.lang.Object"/>
-                    <Column editable="false" title="Criminal Record" type="java.lang.Object"/>
-                    <Column editable="false" title="Medical Condition" type="java.lang.Object"/>
-                    <Column editable="false" title="Medication" type="java.lang.Object"/>
-                    <Column editable="false" title="Special Requirements" type="java.lang.Object"/>
+                    <Column editable="false" title="Criminal Record?" type="java.lang.Object"/>
+                    <Column editable="false" title="Medical Condition?" type="java.lang.Object"/>
+                    <Column editable="false" title="Medication?" type="java.lang.Object"/>
+                    <Column editable="false" title="Special Requirements?" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -221,7 +218,7 @@
                     <Column editable="false" title="Destination" type="java.lang.Object"/>
                     <Column editable="false" title="Passport No" type="java.lang.Object"/>
                     <Column editable="false" title="Contact No" type="java.lang.Object"/>
-                    <Column editable="false" title="Email Addressl" type="java.lang.Object"/>
+                    <Column editable="false" title="Email Address" type="java.lang.Object"/>
                     <Column editable="false" title="Passport Expiry Date" type="java.lang.Object"/>
                   </Table>
                 </Property>
@@ -322,14 +319,6 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="SHOW ON MAP"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
