@@ -78,9 +78,9 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         reportrequeststable = new javax.swing.JTable();
-        assignJButton1 = new javax.swing.JButton();
-        processJButton1 = new javax.swing.JButton();
-        refreshJButton1 = new javax.swing.JButton();
+        btnAssign = new javax.swing.JButton();
+        btnProcess = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -211,30 +211,30 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(reportrequeststable);
 
-        assignJButton1.setBackground(new java.awt.Color(181, 189, 137));
-        assignJButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        assignJButton1.setText("Assign to me");
-        assignJButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAssign.setBackground(new java.awt.Color(181, 189, 137));
+        btnAssign.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnAssign.setText("Assign to me");
+        btnAssign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignJButton1ActionPerformed(evt);
+                btnAssignActionPerformed(evt);
             }
         });
 
-        processJButton1.setBackground(new java.awt.Color(181, 189, 137));
-        processJButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        processJButton1.setText("Process");
-        processJButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnProcess.setBackground(new java.awt.Color(181, 189, 137));
+        btnProcess.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnProcess.setText("Process");
+        btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processJButton1ActionPerformed(evt);
+                btnProcessActionPerformed(evt);
             }
         });
 
-        refreshJButton1.setBackground(new java.awt.Color(181, 189, 137));
-        refreshJButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        refreshJButton1.setText("Refresh");
-        refreshJButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setBackground(new java.awt.Color(181, 189, 137));
+        btnRefresh.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshJButton1ActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
 
@@ -255,11 +255,11 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(assignJButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(processJButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnProcess, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
-                        .addComponent(refreshJButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -276,9 +276,9 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(refreshJButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(assignJButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(processJButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProcess, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
 
@@ -307,7 +307,7 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
         int selectedRow = reportrequeststable.getSelectedRow();
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Enter a row to assign!");
+            JOptionPane.showMessageDialog(null, "Select a row to assign!");
             return;
         }
         WorkRequest request = (WorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
@@ -327,18 +327,18 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
         int selectedRow = reportrequeststable.getSelectedRow();
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from table to proceed!");
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to proceed!");
             return;
         }
         JourneyReportGenerationWorkRequest request = (JourneyReportGenerationWorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == userAccount) {
             if (request.getStatus().equalsIgnoreCase("Completed")) {
-                JOptionPane.showMessageDialog(null, "This request has already been completed!Choose another request");
+                JOptionPane.showMessageDialog(null, "This request has already been completed! Choose another request");
                 return;
             }
             request.setStatus("Processing");
             JourneyReportWorkRequestJPanel processWorkRequestJPanel = new JourneyReportWorkRequestJPanel(userProcessContainer, request, userAccount, business);
-            userProcessContainer.add("HealthReport", processWorkRequestJPanel);
+            userProcessContainer.add("Journey Report", processWorkRequestJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         } else {
@@ -353,7 +353,7 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
-    private void assignJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButton1ActionPerformed
+    private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed
         int selectedRow = reportrequeststable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Enter a row to assign!");
@@ -371,9 +371,9 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-    }//GEN-LAST:event_assignJButton1ActionPerformed
+    }//GEN-LAST:event_btnAssignActionPerformed
 
-    private void processJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButton1ActionPerformed
+    private void btnProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessActionPerformed
         int selectedRow = reportrequeststable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from table to proceed!");
@@ -382,12 +382,12 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
         JourneyReportGenerationWorkRequest request = (JourneyReportGenerationWorkRequest) reportrequeststable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == userAccount) {
             if (request.getStatus().equalsIgnoreCase("Completed")) {
-                JOptionPane.showMessageDialog(null, "This request has already been completed!Choose another request");
+                JOptionPane.showMessageDialog(null, "This request has already been completed! Choose another request");
                 return;
             }
             request.setStatus("Processing");
             JourneyReportWorkRequestJPanel processWorkRequestJPanel = new JourneyReportWorkRequestJPanel(userProcessContainer, request, userAccount, business);
-            userProcessContainer.add("ReportWorkRequestJPanel", processWorkRequestJPanel);
+            userProcessContainer.add("JourneyReportWorkRequestJPanel", processWorkRequestJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         } else {
@@ -395,16 +395,18 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-    }//GEN-LAST:event_processJButton1ActionPerformed
+    }//GEN-LAST:event_btnProcessActionPerformed
 
-    private void refreshJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButton1ActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         populateReceiveTable();
 
-    }//GEN-LAST:event_refreshJButton1ActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
-    private javax.swing.JButton assignJButton1;
+    private javax.swing.JButton btnAssign;
+    private javax.swing.JButton btnProcess;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
@@ -414,9 +416,7 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton processJButton;
-    private javax.swing.JButton processJButton1;
     private javax.swing.JButton refreshJButton;
-    private javax.swing.JButton refreshJButton1;
     private javax.swing.JTable reportrequeststable;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables

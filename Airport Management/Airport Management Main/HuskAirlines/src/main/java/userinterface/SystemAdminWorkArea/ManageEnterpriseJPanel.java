@@ -81,11 +81,11 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         nameJTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         enterpriseTypeJComboBox = new javax.swing.JComboBox();
-        submitJButton = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        deleteJButton = new javax.swing.JButton();
-        updateJButton = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(223, 190, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -132,15 +132,15 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         enterpriseTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(enterpriseTypeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 216, -1));
 
-        submitJButton.setBackground(new java.awt.Color(181, 189, 137));
-        submitJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        submitJButton.setText("Submit");
-        submitJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setBackground(new java.awt.Color(181, 189, 137));
+        btnSubmit.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButtonActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 430, 250, 50));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 430, 250, 50));
 
         backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
@@ -158,28 +158,28 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         jLabel6.setText("Manage Enterprise");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, 1145, -1));
 
-        deleteJButton.setBackground(new java.awt.Color(181, 189, 137));
-        deleteJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        deleteJButton.setText("Delete");
-        deleteJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setBackground(new java.awt.Color(181, 189, 137));
+        btnDelete.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteJButtonActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
-        add(deleteJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 250, 50));
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 250, 50));
 
-        updateJButton.setBackground(new java.awt.Color(181, 189, 137));
-        updateJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        updateJButton.setText("Update");
-        updateJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.setBackground(new java.awt.Color(181, 189, 137));
+        btnUpdate.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateJButtonActionPerformed(evt);
+                btnUpdateActionPerformed(evt);
             }
         });
-        add(updateJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 250, 50));
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 250, 50));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
 
         Network network = (Network) networkJComboBox.getSelectedItem();
         Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) enterpriseTypeJComboBox.getSelectedItem();
@@ -195,7 +195,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         populateTable();
 
-    }//GEN-LAST:event_submitJButtonActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         userProcessContainer.remove(this);
@@ -208,7 +208,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
-    private void deleteJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteJButtonActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         int selectedRow = enterpriseJTable.getSelectedRow();
         if (selectedRow >= 0) {
@@ -232,9 +232,9 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please select enterprise to delete!");
         }
-    }//GEN-LAST:event_deleteJButtonActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void updateJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateJButtonActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
         String name = nameJTextField.getText();
         if(name.equals("")) {
@@ -263,11 +263,13 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please select enterprise to delete!");
         }
-    }//GEN-LAST:event_updateJButtonActionPerformed
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
-    private javax.swing.JButton deleteJButton;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JTable enterpriseJTable;
     private javax.swing.JComboBox enterpriseTypeJComboBox;
     private javax.swing.JLabel jLabel1;
@@ -277,7 +279,5 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox networkJComboBox;
-    private javax.swing.JButton submitJButton;
-    private javax.swing.JButton updateJButton;
     // End of variables declaration//GEN-END:variables
 }

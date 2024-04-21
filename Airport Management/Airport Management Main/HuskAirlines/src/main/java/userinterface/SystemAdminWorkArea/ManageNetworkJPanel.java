@@ -57,12 +57,12 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         networkJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        submitJButton = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
         nameJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        deleteButton = new javax.swing.JButton();
-        updateButton = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(223, 190, 153));
         setLayout(null);
@@ -104,16 +104,16 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(jLabel1);
         jLabel1.setBounds(6, 305, 50, 22);
 
-        submitJButton.setBackground(new java.awt.Color(181, 189, 137));
-        submitJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        submitJButton.setText("Submit");
-        submitJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setBackground(new java.awt.Color(181, 189, 137));
+        btnSubmit.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButtonActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(submitJButton);
-        submitJButton.setBounds(6, 359, 250, 50);
+        add(btnSubmit);
+        btnSubmit.setBounds(6, 359, 250, 50);
         add(nameJTextField);
         nameJTextField.setBounds(116, 307, 257, 23);
 
@@ -135,30 +135,30 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(jLabel6);
         jLabel6.setBounds(112, 31, 807, 43);
 
-        deleteButton.setBackground(new java.awt.Color(181, 189, 137));
-        deleteButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        deleteButton.setText("Delete");
-        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setBackground(new java.awt.Color(181, 189, 137));
+        btnDelete.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteButtondeleteNetworkPerformed(evt);
+                btnDeletedeleteNetworkPerformed(evt);
             }
         });
-        add(deleteButton);
-        deleteButton.setBounds(270, 360, 260, 50);
+        add(btnDelete);
+        btnDelete.setBounds(270, 360, 260, 50);
 
-        updateButton.setBackground(new java.awt.Color(181, 189, 137));
-        updateButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        updateButton.setText("Update");
-        updateButton.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.setBackground(new java.awt.Color(181, 189, 137));
+        btnUpdate.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateButtondeleteNetworkPerformed(evt);
+                btnUpdatedeleteNetworkPerformed(evt);
             }
         });
-        add(updateButton);
-        updateButton.setBounds(540, 360, 260, 50);
+        add(btnUpdate);
+        btnUpdate.setBounds(540, 360, 260, 50);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
 
         String name = nameJTextField.getText();
 
@@ -166,7 +166,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         network.setName(name);
 
         populateNetworkTable();
-    }//GEN-LAST:event_submitJButtonActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         userProcessContainer.remove(this);
@@ -178,7 +178,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
-    private void deleteButtondeleteNetworkPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtondeleteNetworkPerformed
+    private void btnDeletedeleteNetworkPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletedeleteNetworkPerformed
         // TODO add your handling code here:
         int selectedRow = networkJTable.getSelectedRow();
         if (selectedRow >= 0) {
@@ -200,9 +200,9 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please select network to delete!");
         }
-    }//GEN-LAST:event_deleteButtondeleteNetworkPerformed
+    }//GEN-LAST:event_btnDeletedeleteNetworkPerformed
 
-    private void updateButtondeleteNetworkPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtondeleteNetworkPerformed
+    private void btnUpdatedeleteNetworkPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatedeleteNetworkPerformed
         // TODO add your handling code here:
         String name = nameJTextField.getText();
         if(name.isEmpty()) {
@@ -229,17 +229,17 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please select network to update!");
         }
-    }//GEN-LAST:event_updateButtondeleteNetworkPerformed
+    }//GEN-LAST:event_btnUpdatedeleteNetworkPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
-    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JTable networkJTable;
-    private javax.swing.JButton submitJButton;
-    private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 }

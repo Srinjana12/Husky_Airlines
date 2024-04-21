@@ -16,7 +16,6 @@ import userinterface.SecurityOfficerRole.SecurityOfficerWorkAreaJPanel;
  *
  * @author 
  */
-// Hospital Allocator inherits from role class
 public class SecurityOfficer extends Role {
 
     @Override

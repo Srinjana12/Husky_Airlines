@@ -39,9 +39,9 @@
                               <Component id="organizationJComboBox" min="-2" pref="192" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="addJButton" min="-2" pref="250" max="-2" attributes="0"/>
+                              <Component id="btnAddOrg" min="-2" pref="250" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="deleteJButton" min="-2" pref="250" max="-2" attributes="0"/>
+                              <Component id="btnDeleteOrg" min="-2" pref="250" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="625" max="32767" attributes="0"/>
@@ -67,8 +67,8 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="addJButton" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="deleteJButton" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="btnAddOrg" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="btnDeleteOrg" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="251" max="32767" attributes="0"/>
           </Group>
@@ -115,7 +115,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="addJButton">
+    <Component class="javax.swing.JButton" name="btnAddOrg">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="89" green="bd" red="b5" type="rgb"/>
@@ -126,7 +126,7 @@
         <Property name="text" type="java.lang.String" value="Add Organization"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddOrgActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="organizationJComboBox">
@@ -143,6 +143,9 @@
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="organizationJComboBoxActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -178,7 +181,7 @@
         <Property name="text" type="java.lang.String" value="Manage Organization"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="deleteJButton">
+    <Component class="javax.swing.JButton" name="btnDeleteOrg">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="89" green="bd" red="b5" type="rgb"/>
@@ -189,7 +192,7 @@
         <Property name="text" type="java.lang.String" value="Delete Organization"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteOrgActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

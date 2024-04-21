@@ -297,7 +297,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 150, 30));
 
         jLabel15.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel15.setText("Source Location:");
+        jLabel15.setText("Departure Location:");
         add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 150, 30));
 
         jLabel31.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
@@ -355,7 +355,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
         add(txtEmailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 259, 29));
 
         jLabel14.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel14.setText("Passport No.:");
+        jLabel14.setText("Passport Number:");
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 120, 30));
 
         jLabel32.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
@@ -398,7 +398,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
         add(txtEmergencyContactName, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, 240, 29));
 
         jLabel29.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel29.setText("Contact no of emergency contact:");
+        jLabel29.setText("Contact number of emergency contact:");
         add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 300, 29));
 
         txtEmergencyContactNo.addActionListener(new java.awt.event.ActionListener() {
@@ -413,8 +413,8 @@ public class PassengerJPanel extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 430, 30));
 
         jLabel18.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        jLabel18.setText("Have you ever pled guilty to OR being convicted OR found guilty of misdemeanor in any U.S. or non-U.S. OR military court?");
-        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 560, 30));
+        jLabel18.setText("Have you ever pled guilty OR being convicted OR found guilty of misdemeanor in any U.S.?");
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 630, 30));
 
         radioBtnCriminalCheckYes.setText("Yes");
         radioBtnCriminalCheckYes.addActionListener(new java.awt.event.ActionListener() {
@@ -548,7 +548,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
 
         btnClear.setBackground(new java.awt.Color(114, 158, 161));
         btnClear.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnClear.setText("Clear Feilds");
+        btnClear.setText("Clear Fields");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
@@ -628,25 +628,25 @@ public class PassengerJPanel extends javax.swing.JPanel {
         }
 
         if (txtPassportNo.getText().length() != 9) {
-            JOptionPane.showMessageDialog(null, "Enter only 9 digits of SSN (without '-')");
+            JOptionPane.showMessageDialog(null, "Enter only 9 digits of passport (without '-')");
             return;
         }
 
         try {
             Integer.parseInt(txtPassportExpiryDate.getText());
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Please type in a number for Dependents");
+            JOptionPane.showMessageDialog(null, "Please type in a date format for Passporst Expiry Date");
             return;
         }
         try {
             Integer.parseInt(txtEmergencyContactNo.getText());
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Please type in a number for Income");
+            JOptionPane.showMessageDialog(null, "Please type in a number for Emergency Contact Number");
             return;
         }
 
         if (Integer.parseInt(txtEmergencyContactNo.getText()) > 1500) {
-            JOptionPane.showMessageDialog(null, "The person cannot be allowed to register as his monthly income is greater than $1500.");
+            JOptionPane.showMessageDialog(null, "!");
             return;
         }
         if (!radioBtnMaleGender.isSelected() && !radioBtnFemaleGender.isSelected()) {
@@ -658,15 +658,15 @@ public class PassengerJPanel extends javax.swing.JPanel {
             return;
         }
         if (!radioBtnPreIllnessYes.isSelected() && !radioBtnPreIllnessNo.isSelected()) {
-            JOptionPane.showMessageDialog(null, "Select a yes or no for illness criteria!");
+            JOptionPane.showMessageDialog(null, "Select a yes or no for pre-existing medical conditions or disabilities!");
             return;
         }
         if (!radioBtnAnyMedYes.isSelected() && !radioBtnAnyMedNo.isSelected()) {
-            JOptionPane.showMessageDialog(null, "Select a yes or no for carrier of disease!");
+            JOptionPane.showMessageDialog(null, "Select a yes or no for taking any medications!");
             return;
         }
         if (!radioBtnAccommodationYes.isSelected() && !radioBtnAccommodationNo.isSelected()) {
-            JOptionPane.showMessageDialog(null, "Select a yes or no for genetic inherited disease");
+            JOptionPane.showMessageDialog(null, "Select a yes or no for any special requirements or accommodations ");
             return;
         }
 
@@ -712,64 +712,10 @@ public class PassengerJPanel extends javax.swing.JPanel {
         Passenger person = new Passenger(name, dob, city, addresss, ssnNo,
                 contactNo, emailAddresss, dependents, qualifications, accomplishments,
                 employmentStatus, income, gender, criminalRecord, majorIllnes, carrierDisease, geneticDisease, prefLocation);
-//        ShelterAllocateWorkRequest request = new ShelterAllocateWorkRequest();
-//        request.setHomelessPerson(person);
-//        request.setMessage("Shelter search");
-//        request.setSender(userAccount);
-//        request.setStatus("Sent");
-//        Date d = new Date();
-//        request.setRequestDate(d);
-//        Organization org = null;
-//
-//        for (Network network : business.getNetworkList()) {
-//            //Step 2.a: check against each enterprise
-//            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-//                if (enterprise instanceof PublicShelterEnterprise) {
-//                    for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-//                        if (organization instanceof ShelterAllocationOrganization) {
-//                            org = organization;
-//                            break;
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        if (org != null) {
-//            org.getWorkQueue().getWorkRequestList().add(request);
-//            userAccount.getWorkQueue().getWorkRequestList().add(request);
-//        }
-//        JOptionPane.showMessageDialog(this, "Request Sent to Shelter Allocator!");
 
-//        MealDistributionWorkRequest mealDistributionWorkRequest = new MealDistributionWorkRequest();
-//        mealDistributionWorkRequest.setHomelessPerson(person);
-//        mealDistributionWorkRequest.setMessage("Meal Plan Allocation Request");
-//        mealDistributionWorkRequest.setSender(userAccount);
-//        mealDistributionWorkRequest.setStatus("Sent");
-//        Date date = new Date();
-//        mealDistributionWorkRequest.setRequestDate(date);
-//        Organization mealdistributionorganization = null;
-//
-//        for (Network network : business.getNetworkList()) {
-//            //Step 2.a: check against each enterprise
-//            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-//                if (enterprise instanceof MealPlanEnterprise) {
-//                    for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-//                        if (organization instanceof MealDistributionOrganization) {
-//                            mealdistributionorganization = organization;
-//                            break;
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        if (mealdistributionorganization != null) {
-//            mealdistributionorganization.getWorkQueue().getWorkRequestList().add(mealDistributionWorkRequest);
-//            userAccount.getWorkQueue().getWorkRequestList().add(mealDistributionWorkRequest);
-//        }
-//        JOptionPane.showMessageDialog(this, "Request Sent to Meal Distribution Organization!");
         SecurityCheckWorkRequest allocationWorkRequest = new SecurityCheckWorkRequest();
         allocationWorkRequest.setPassengerPerson(person);
-        allocationWorkRequest.setMessage("Hospital Allocation Request");
+        allocationWorkRequest.setMessage("Security Check Request");
         allocationWorkRequest.setSender(userAccount);
         allocationWorkRequest.setStatus("Sent");
         Date date = new Date();
@@ -793,7 +739,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
             hospitalAllocationOganization.getWorkQueue().getWorkRequestList().add(allocationWorkRequest);
             userAccount.getWorkQueue().getWorkRequestList().add(allocationWorkRequest);
         }
-        JOptionPane.showMessageDialog(this, "Request Sent to Hospital Allocation!");
+        JOptionPane.showMessageDialog(this, "Request Sent to Security Check-in!");
 
         clearFields();
     }//GEN-LAST:event_btnSubmitActionPerformed

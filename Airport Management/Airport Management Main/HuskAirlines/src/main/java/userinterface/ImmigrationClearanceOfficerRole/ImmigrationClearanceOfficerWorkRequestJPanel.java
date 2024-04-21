@@ -55,19 +55,19 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
             Object[] row = new Object[8];
             row[0] = request.getPassengerPerson().getName();
             row[1] = request.getsecurityCheckWorkRequest().getDepartmentDetais();
-            row[2] = request.getPassengerPerson().getCity();
-            row[3] = request.getPassengerPerson().getCurrentAddress();
-            row[4] = request.getPassengerPerson().getSSNNo();
+            row[2] = request.getPassengerPerson().getDestinationCity();
+            row[3] = request.getPassengerPerson().getSourceLocation();
+            row[4] = request.getPassengerPerson().getPassportNumber();
             row[5] = request.getPassengerPerson().getContactNo();
             row[6] = request.getPassengerPerson().getEmailAddress();
-            row[7] = request.getPassengerPerson().getDependents();
+            row[7] = request.getPassengerPerson().getPassportExpiry();
             model1.addRow(row);
             Object[] rowSecond = new Object[5];
             rowSecond[0] = request.getPassengerPerson().getGender();
             rowSecond[1] = request.getPassengerPerson().isHasCriminalRecord() ? "Yes" : "No";
-            rowSecond[2] = request.getPassengerPerson().isMajorIllness() ? "Yes" : "No";
-            rowSecond[3] = request.getPassengerPerson().isCarrierDisease() ? "Yes" : "No";
-            rowSecond[4] = request.getPassengerPerson().isGeneticDisease() ? "Yes" : "No";
+            rowSecond[2] = request.getPassengerPerson().isPreConditions() ? "Yes" : "No";
+            rowSecond[3] = request.getPassengerPerson().isMedication() ? "Yes" : "No";
+            rowSecond[4] = request.getPassengerPerson().isAccomodationReq() ? "Yes" : "No";
             model2.addRow(rowSecond);
 
         }
@@ -202,15 +202,15 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
 
     private void btnFailResultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFailResultsActionPerformed
         if (request.getStatus().equals("Completed")) {
-            JOptionPane.showMessageDialog(null, "This request has already been completed by you!");
+            JOptionPane.showMessageDialog(null, "You have passed the Immigration Check-in!");
             return;
         }
         UserAccount account = new UserAccount();
         account.setUsername("None");
         request.getsecurityCheckWorkRequest().setReceiver(account);
-        request.getsecurityCheckWorkRequest().setTestResult("The request has been denied by Disease Analyzer");
+        request.getsecurityCheckWorkRequest().setTestResult("Passenger has been denied by Immigration");
         request.setStatus("Completed");
-        JOptionPane.showMessageDialog(null, "Volunteer has been informed abt failure!");
+        JOptionPane.showMessageDialog(null, "Passenger has been informed about Immigration Decision!");
     }//GEN-LAST:event_btnFailResultsActionPerformed
 
     private void btnPassResultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassResultsActionPerformed
@@ -224,14 +224,14 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
             diseases.add(txtFieldHousingOption1.getText());
         }
         request.setStatus("Completed");
-        request.setTestResult("Sent to Pharmacy");
-        request.getsecurityCheckWorkRequest().setTestResult("Completed by Disease Analysis and and sent to Pharmacy");
+        request.setTestResult("Sent to Luggage Check-out");
+        request.getsecurityCheckWorkRequest().setTestResult("Completed by Immigration and and sent to  Transportation Security Administrator (For Luggage Checking)");
         UserAccount account = new UserAccount();
         account.setUsername("None");
         request.getsecurityCheckWorkRequest().setReceiver(account);
         request.getsecurityCheckWorkRequest().setImmigrationDetails(diseases);
         LuggageCheckOutWorkRequest fcRequest = new LuggageCheckOutWorkRequest();
-        fcRequest.setMessage("Provide Medicines");
+        fcRequest.setMessage("Luggage Check-out");
         fcRequest.setSender(userAccount);
         fcRequest.setStatus("Sent");
         fcRequest.setPassengerPerson(request.getPassengerPerson());
@@ -256,7 +256,7 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         if (org != null) {
             org.getWorkQueue().getWorkRequestList().add(fcRequest);
             userAccount.getWorkQueue().getWorkRequestList().add(fcRequest);
-            JOptionPane.showMessageDialog(this, "Request Sent to Pharmacy Organization");
+            JOptionPane.showMessageDialog(this, "Request Sent to Luggage Check-out Organization");
         }
     }//GEN-LAST:event_btnPassResultsActionPerformed
 

@@ -16,7 +16,6 @@ import userinterface.SeatAllocationRole.SeatAllocationWorkAreaJPanel;
  *
  * @author 
  */
-// Symtoms inherits from role
 public class SeatAllocationManagerRole extends Role {
 
     @Override
