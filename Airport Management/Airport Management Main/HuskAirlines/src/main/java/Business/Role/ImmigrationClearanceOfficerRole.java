@@ -16,7 +16,6 @@ import userinterface.ImmigrationClearanceOfficerRole.ImmigrationClearanceOfficer
  *
  * @author 
  */
-// Disease analyzer inherits from role
 public class ImmigrationClearanceOfficerRole extends Role {
 
     @Override

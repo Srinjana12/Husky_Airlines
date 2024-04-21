@@ -57,9 +57,9 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
-        refreshJButton = new javax.swing.JButton();
-        assignJButton = new javax.swing.JButton();
-        processJButton = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
+        btnAssign = new javax.swing.JButton();
+        btnProcess = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         SentWorkReqJTable = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
@@ -97,35 +97,35 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 129, 1135, 151));
 
-        refreshJButton.setBackground(new java.awt.Color(181, 189, 137));
-        refreshJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        refreshJButton.setText("Refresh");
-        refreshJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setBackground(new java.awt.Color(181, 189, 137));
+        btnRefresh.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshJButtonActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
-        jPanel1.add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(891, 298, 250, 50));
+        jPanel1.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(891, 298, 250, 50));
 
-        assignJButton.setBackground(new java.awt.Color(181, 189, 137));
-        assignJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        assignJButton.setText("Assign to me");
-        assignJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnAssign.setBackground(new java.awt.Color(181, 189, 137));
+        btnAssign.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnAssign.setText("Assign to me");
+        btnAssign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignJButtonActionPerformed(evt);
+                btnAssignActionPerformed(evt);
             }
         });
-        jPanel1.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 298, 250, 50));
+        jPanel1.add(btnAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 298, 250, 50));
 
-        processJButton.setBackground(new java.awt.Color(181, 189, 137));
-        processJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        processJButton.setText("Process");
-        processJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnProcess.setBackground(new java.awt.Color(181, 189, 137));
+        btnProcess.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnProcess.setText("Process");
+        btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processJButtonActionPerformed(evt);
+                btnProcessActionPerformed(evt);
             }
         });
-        jPanel1.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 298, 250, 50));
+        jPanel1.add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 298, 250, 50));
 
         SentWorkReqJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         SentWorkReqJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -184,10 +184,10 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         populateReceiveTable();
         populateSentTable();
-    }//GEN-LAST:event_refreshJButtonActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
     public void populateReceiveTable() {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
@@ -224,7 +224,7 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
         }
     }
 
-    private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
+    private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed
 
         int selectedRow = workRequestJTable.getSelectedRow();
         if (selectedRow < 0) {
@@ -242,9 +242,9 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
             return;
 
         }
-    }//GEN-LAST:event_assignJButtonActionPerformed
+    }//GEN-LAST:event_btnAssignActionPerformed
 
-    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
+    private void btnProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessActionPerformed
 
         int selectedRow = workRequestJTable.getSelectedRow();
 
@@ -256,7 +256,7 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
         SecurityCheckWorkRequest request = (SecurityCheckWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == userAccount) {
             if (request.getStatus().equalsIgnoreCase("Completed")) {
-                JOptionPane.showMessageDialog(null, "This request has already been completed!Choose another request");
+                JOptionPane.showMessageDialog(null, "This request has already been completed! Choose another request");
                 return;
 
             }
@@ -270,19 +270,19 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-    }//GEN-LAST:event_processJButtonActionPerformed
+    }//GEN-LAST:event_btnProcessActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable SentWorkReqJTable;
-    private javax.swing.JButton assignJButton;
+    private javax.swing.JButton btnAssign;
+    private javax.swing.JButton btnProcess;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton processJButton;
-    private javax.swing.JButton refreshJButton;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }

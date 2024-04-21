@@ -16,7 +16,6 @@ import userinterface.FoodAllocation.FoodAllocationTestWorkAreaJPanel;
  *
  * @author 
  */
- // FoodHospitalityManagerRole inherits from Role
 public class FoodHospitalityManagerRole extends Role {
 
     @Override

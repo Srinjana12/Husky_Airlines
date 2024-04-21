@@ -52,7 +52,7 @@ public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.
         if (request.getPassengerPerson() != null) {
             Object[] row = new Object[4];
             row[0] = request.getPassengerPerson().getName();
-            row[1] = request.getPassengerPerson().getIncome();
+            row[1] = request.getPassengerPerson().getEmergencyNo();
             row[2] = request.getSecurityCheckWorkRequest().getImmigrationDetails().get(0);
             row[3] = request.getPassengerPerson().getContactNo();
             model1.addRow(row);
@@ -220,12 +220,12 @@ public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.
             schemes.add(txtFieldSchemeOption1.getText());
         }
 
-        request.setTestResult("Send For Health Report Genration");
+        request.setTestResult("Send For Journey Report Genration");
         request.setStatus("Completed");
         UserAccount account = new UserAccount();
         account.setUsername("None");
         request.getSecurityCheckWorkRequest().setReceiver(account);
-        request.getSecurityCheckWorkRequest().setTestResult("Completed by Scheme Provider and sent to ReportFinalizer");
+        request.getSecurityCheckWorkRequest().setTestResult("Completed by Transportation Security Administrator  and sent to Journey Report Creator");
         JourneyReportGenerationWorkRequest fcRequest = new JourneyReportGenerationWorkRequest();
         fcRequest.setMessage("Finalize Report");
         fcRequest.setSender(userAccount);
@@ -252,7 +252,7 @@ public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.
         if (org != null) {
             org.getWorkQueue().getWorkRequestList().add(fcRequest);
             userAccount.getWorkQueue().getWorkRequestList().add(fcRequest);
-            JOptionPane.showMessageDialog(this, "Request Sent to Health Report Generation");
+            JOptionPane.showMessageDialog(this, "Request Sent to Journey Report Generation");
         }
     }//GEN-LAST:event_submitJButtonActionPerformed
 
