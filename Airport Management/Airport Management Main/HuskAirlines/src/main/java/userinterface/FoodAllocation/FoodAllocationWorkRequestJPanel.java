@@ -63,7 +63,7 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
             row[7] = request.getPassengerPerson().getDependents();
             model1.addRow(row);
             Object[] rowSecond = new Object[6];
-            rowSecond[0] = request.gethospitalAllocationWorkRequest().getAllocatedSeat().toString();
+            rowSecond[0] = request.getsecurityCheckWorkRequest().getAllocatedSeat().toString();
             rowSecond[1] = request.getPassengerPerson().getGender();
             rowSecond[2] = request.getPassengerPerson().isHasCriminalRecord() ? "Yes" : "No";
             rowSecond[3] = request.getPassengerPerson().isMajorIllness() ? "Yes" : "No";
@@ -206,14 +206,14 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
         request.setTestResult("Sent to Disease Analyzer");
         UserAccount account = new UserAccount();
         account.setUsername("None");
-        request.gethospitalAllocationWorkRequest().setReceiver(account);
-        request.gethospitalAllocationWorkRequest().setTestResult("Completed by Covid Blood Tester and and sent to Disease Analyzerr");
+        request.getsecurityCheckWorkRequest().setReceiver(account);
+        request.getsecurityCheckWorkRequest().setTestResult("Completed by Covid Blood Tester and and sent to Disease Analyzerr");
         ImmigrationCheckWorkRequest fcRequest = new ImmigrationCheckWorkRequest();
         fcRequest.setMessage("Disease Analysis");
         fcRequest.setSender(userAccount);
         fcRequest.setStatus("Sent");
-        fcRequest.setHomelessPerson(request.getPassengerPerson());
-        fcRequest.sethospitalAllocationWorkRequest(request.gethospitalAllocationWorkRequest());
+        fcRequest.setPassengerPerson(request.getPassengerPerson());
+        fcRequest.setsecurityCheckWorkRequest(request.getsecurityCheckWorkRequest());
         Date d = new Date();
         fcRequest.setRequestDate(d);
         Organization org = null;
@@ -245,8 +245,8 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
         }
         UserAccount account = new UserAccount();
         account.setUsername("None");
-        request.gethospitalAllocationWorkRequest().setReceiver(account);
-        request.gethospitalAllocationWorkRequest().setTestResult("The request has been denied by Covid Blood Checker!");
+        request.getsecurityCheckWorkRequest().setReceiver(account);
+        request.getsecurityCheckWorkRequest().setTestResult("The request has been denied by Covid Blood Checker!");
         request.setStatus("Completed");
         JOptionPane.showMessageDialog(this, "Volunteer has been updated abt failure!");
     }//GEN-LAST:event_btnFailCheckActionPerformed

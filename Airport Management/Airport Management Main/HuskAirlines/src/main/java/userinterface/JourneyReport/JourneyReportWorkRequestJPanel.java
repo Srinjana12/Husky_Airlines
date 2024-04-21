@@ -63,8 +63,8 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
             model1.addRow(row);
         }
         Object[] row = new Object[2];
-        row[0] = request.gethospitalAllocationWorkRequest().getImmigrationDetails().get(0);
-        row[1] = request.getFinalmedicines();
+        row[0] = request.getsecurityCheckWorkRequest().getImmigrationDetails().get(0);
+        row[1] = request.getNumberOfLuggage();
         model2.addRow(row);
 
     }
@@ -125,7 +125,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Name", "Income", "Dependents", "Contact Number"
+                "Name", "Emergency Contact No", "Passport Expiry Date", "Contact Number"
             }
         ));
         jScrollPane1.setViewportView(tblPersonRecords);
@@ -138,7 +138,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Disease Details", "Medicines Given"
+                "Immigration Details", "No. of Luggage"
             }
         ));
         jScrollPane2.setViewportView(tblHousingDetails);
@@ -157,11 +157,11 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         jPanel1.add(downloadPdfBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 603, 250, 50));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jLabel1.setText("Report will be generated of");
+        jLabel1.setText("Journey Report will be generated of");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 133, 538, 49));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jLabel3.setText("Report Details");
+        jLabel3.setText("Journey Report Details");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 368, 538, 49));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -193,10 +193,10 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
             return;
         }
         request.setStatus("Completed");
-        request.gethospitalAllocationWorkRequest().setTestResult("Completed and Journey Report is generated!");
+        request.getsecurityCheckWorkRequest().setTestResult("Completed and Journey Report is generated!");
         UserAccount account = new UserAccount();
         account.setUsername("None");
-        request.gethospitalAllocationWorkRequest().setReceiver(account);
+        request.getsecurityCheckWorkRequest().setReceiver(account);
         downloadPdfBtn.setEnabled(true);
         JOptionPane.showMessageDialog(null, "Journey Report is generated successfully.");
     }//GEN-LAST:event_submitJButtonActionPerformed
@@ -257,11 +257,11 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         String accomplishments = request.getPassengerPerson().getAccomplishments();
         String employmentStatus = request.getPassengerPerson().getEmploymentStatus();
         String houseAddress = request.getPassengerPerson().getCurrentAddress();
-        String hospital = request.gethospitalAllocationWorkRequest().getTerminalReported();
-        String department = request.gethospitalAllocationWorkRequest().getDepartmentDetais();
-        String finalmedicines = request.getFinalmedicines();
-        String diseasedetails = request.gethospitalAllocationWorkRequest().getImmigrationDetails().get(0);
-        ArrayList<String> symptoms = request.gethospitalAllocationWorkRequest().getAllocatedSeat();
+        String hospital = request.getsecurityCheckWorkRequest().getTerminalReported();
+        String department = request.getsecurityCheckWorkRequest().getDepartmentDetais();
+        String finalmedicines = request.getNumberOfLuggage();
+        String diseasedetails = request.getsecurityCheckWorkRequest().getImmigrationDetails().get(0);
+        ArrayList<String> symptoms = request.getsecurityCheckWorkRequest().getAllocatedSeat();
         try {
             Document document = new Document();
             PdfWriter.getInstance(document, new FileOutputStream("HealthReport_" + counter + ".pdf"));

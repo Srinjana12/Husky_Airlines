@@ -65,7 +65,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
             row[1] = request.getPassengerPerson().getContactNo();
             row[2] = request.getPassengerPerson().getEmailAddress();
             row[3] = request.getPassengerPerson().getCurrentAddress();
-            row[4] = request.getHospitalAllocationWorkRequest().getTerminalReported();
+            row[4] = request.getSecurityCheckWorkRequest().getTerminalReported();
             row[5] = request.getPassengerPerson().getDependents();
             model1.addRow(row);
         }
@@ -235,17 +235,17 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         }
         request.setTestResult("Sent to Symptoms Check");
         request.setStatus("Completed");
-        request.getHospitalAllocationWorkRequest().setTestResult("Completed by Department Facilitator and send to Symptoms Checker");
-        request.getHospitalAllocationWorkRequest().setDepartmentDetails(departmentFacilitatorWorkRequest_departmentJComboBox.getSelectedItem().toString());
+        request.getSecurityCheckWorkRequest().setTestResult("Completed by Department Facilitator and send to Symptoms Checker");
+        request.getSecurityCheckWorkRequest().setDepartmentDetails(departmentFacilitatorWorkRequest_departmentJComboBox.getSelectedItem().toString());
         UserAccount account = new UserAccount();
         account.setUsername("None");
-        request.getHospitalAllocationWorkRequest().setReceiver(account);
+        request.getSecurityCheckWorkRequest().setReceiver(account);
         SeatAllocationWorkRequest symptomsCheckWorkRequest = new SeatAllocationWorkRequest();
         symptomsCheckWorkRequest.setMessage("Check Symptoms");
         symptomsCheckWorkRequest.setSender(userAccount);
         symptomsCheckWorkRequest.setStatus("Sent");
-        symptomsCheckWorkRequest.setHomelessPerson(request.getPassengerPerson());
-        symptomsCheckWorkRequest.setHospitalAllocationWorkRequest(request.getHospitalAllocationWorkRequest());
+        symptomsCheckWorkRequest.setPassengerPerson(request.getPassengerPerson());
+        symptomsCheckWorkRequest.setSecurityCheckWorkRequest(request.getSecurityCheckWorkRequest());
         Date d = new Date();
         symptomsCheckWorkRequest.setRequestDate(d);
         Organization org = null;
@@ -286,10 +286,10 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "This request has already been completed by you!");
             return;
         }
-        request.getHospitalAllocationWorkRequest().setTestResult("The request has been denied by Department Facilitator as he was unable to locate the person!");
+        request.getSecurityCheckWorkRequest().setTestResult("The request has been denied by Department Facilitator as he was unable to locate the person!");
         UserAccount account = new UserAccount();
         account.setUsername("None");
-        request.getHospitalAllocationWorkRequest().setReceiver(account);
+        request.getSecurityCheckWorkRequest().setReceiver(account);
         request.setStatus("Completed");
         JOptionPane.showMessageDialog(this, "Volunteer has been updated!");
     }//GEN-LAST:event_btnNoActionPerformed

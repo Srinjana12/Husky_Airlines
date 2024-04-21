@@ -263,7 +263,7 @@ public class TransportationSecurityAdministratorWorkAreaJPanel extends javax.swi
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         LuggageCheckOutWorkRequest request1 = (LuggageCheckOutWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == null) {
-            request1.getHospitalAllocationWorkRequest().setReceiver(userAccount);
+            request1.getSecurityCheckWorkRequest().setReceiver(userAccount);
             request.setReceiver(userAccount);
             request.setStatus("Pending");
             populateReceiveTable();

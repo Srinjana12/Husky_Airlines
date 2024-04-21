@@ -24,8 +24,8 @@ public class SecurityCheckWorkRequest extends WorkRequest {
         return allocatedSeat;
     }
 
-    public void setAllocatedSeat(ArrayList<String> symptoms) {
-        this.allocatedSeat = symptoms;
+    public void setAllocatedSeat(ArrayList<String> allocatedSeat) {
+        this.allocatedSeat = allocatedSeat;
     }
 
     //private String testResult;
@@ -41,16 +41,16 @@ public class SecurityCheckWorkRequest extends WorkRequest {
         this.department = department;
     }
 
-    public void setPassengerPerson(Passenger homelessPerson) {
-        this.passengerPerson = homelessPerson;
+    public void setPassengerPerson(Passenger passengerPerson) {
+        this.passengerPerson = passengerPerson;
     }
 
     public List<String> getImmigrationDetails() {
         return immigrationDetails;
     }
 
-    public void setImmigrationDetails(List<String> diseasesForHomeless) {
-        this.immigrationDetails = diseasesForHomeless;
+    public void setImmigrationDetails(List<String> immigrationDetails) {
+        this.immigrationDetails = immigrationDetails;
     }
 
     public String getTerminalReported() {
