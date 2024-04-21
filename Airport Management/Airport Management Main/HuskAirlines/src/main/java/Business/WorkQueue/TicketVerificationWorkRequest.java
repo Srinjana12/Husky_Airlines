@@ -14,7 +14,7 @@ import Business.Passenger;
 public class TicketVerificationWorkRequest extends WorkRequest {
 
     private Passenger passengerPerson;
-    private String hospitalToBePlaced;
+    private String terminalReported;
     private SecurityCheckWorkRequest securityCheckWorkRequest;
 
     public Passenger getPassengerPerson() {
@@ -25,20 +25,20 @@ public class TicketVerificationWorkRequest extends WorkRequest {
         this.passengerPerson = passengerPerson;
     }
 
-    public String gethospitalToBePlaced() {
-        return hospitalToBePlaced;
+    public String getTerminalReported() {
+        return terminalReported;
     }
 
-    public void sethospitalToBePlaced(String addressToBePlaced) {
-        this.hospitalToBePlaced = addressToBePlaced;
+    public void setTerminalReported(String addressToBePlaced) {
+        this.terminalReported = addressToBePlaced;
     }
 
-    public SecurityCheckWorkRequest getHospitalAllocationWorkRequest() {
+    public SecurityCheckWorkRequest getSecurityCheckWorkRequest() {
         return securityCheckWorkRequest;
     }
 
-    public void setHospitalAllocationWorkRequest(SecurityCheckWorkRequest allocationWorkRequest) {
-        this.securityCheckWorkRequest = allocationWorkRequest;
+    public void setSecurityCheckWorkRequest(SecurityCheckWorkRequest securityCheckWorkRequest) {
+        this.securityCheckWorkRequest = securityCheckWorkRequest;
     }
 
     @Override

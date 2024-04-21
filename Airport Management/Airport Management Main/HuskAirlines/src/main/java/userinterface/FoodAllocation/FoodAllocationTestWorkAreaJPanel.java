@@ -213,7 +213,7 @@ public class FoodAllocationTestWorkAreaJPanel extends javax.swing.JPanel {
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         FoodAllocationWorkRequest request1 = (FoodAllocationWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == null) {
-            request1.gethospitalAllocationWorkRequest().setReceiver(userAccount);
+            request1.getsecurityCheckWorkRequest().setReceiver(userAccount);
             request.setReceiver(userAccount);
             request.setStatus("Pending");
             populateReceiveTable();

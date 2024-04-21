@@ -20,16 +20,16 @@ public class LuggageCheckOutWorkRequest extends WorkRequest {
         return passengerPerson;
     }
 
-    public void setHomelessPerson(Passenger homelessPerson) {
-        this.passengerPerson = homelessPerson;
+    public void setPassengerPerson(Passenger passengerPerson) {
+        this.passengerPerson = passengerPerson;
     }
 
-    public SecurityCheckWorkRequest getHospitalAllocationWorkRequest() {
+    public SecurityCheckWorkRequest getSecurityCheckWorkRequest() {
         return securityCheckWorkRequest;
     }
 
-    public void setHospitalAllocationWorkRequest(SecurityCheckWorkRequest hospitalAllocationWorkRequest) {
-        this.securityCheckWorkRequest = hospitalAllocationWorkRequest;
+    public void setSecurityCheckWorkRequest(SecurityCheckWorkRequest securityCheckWorkRequest) {
+        this.securityCheckWorkRequest = securityCheckWorkRequest;
     }
 
     @Override

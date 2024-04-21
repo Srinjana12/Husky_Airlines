@@ -233,7 +233,7 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         TicketVerificationWorkRequest request1 = (TicketVerificationWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         if (request.getReceiver() == null) {
-            request1.getHospitalAllocationWorkRequest().setReceiver(userAccount);
+            request1.getSecurityCheckWorkRequest().setReceiver(userAccount);
             request.setReceiver(userAccount);
             request.setStatus("Pending");
             populateReceiveTable();

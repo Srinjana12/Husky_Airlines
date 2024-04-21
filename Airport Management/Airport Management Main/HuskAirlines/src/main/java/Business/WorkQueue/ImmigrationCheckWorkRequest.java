@@ -16,30 +16,30 @@ public class ImmigrationCheckWorkRequest extends WorkRequest {
 
     private Passenger passengerPerson;
     private SecurityCheckWorkRequest securityCheckWorkRequest;
-    private List<List<String>> diseasedetails;
+    private List<List<String>> immigrationDetails;
 
     public Passenger getPassengerPerson() {
         return passengerPerson;
     }
 
-    public void setHomelessPerson(Passenger homelessPerson) {
-        this.passengerPerson = homelessPerson;
+    public void setPassengerPerson(Passenger passengerPerson) {
+        this.passengerPerson = passengerPerson;
     }
 
-    public SecurityCheckWorkRequest gethospitalAllocationWorkRequest() {
+    public SecurityCheckWorkRequest getsecurityCheckWorkRequest() {
         return securityCheckWorkRequest;
     }
 
-    public void sethospitalAllocationWorkRequest(SecurityCheckWorkRequest hospitalAllocationWorkRequest) {
-        this.securityCheckWorkRequest = hospitalAllocationWorkRequest;
+    public void setsecurityCheckWorkRequest(SecurityCheckWorkRequest securityCheckWorkRequest) {
+        this.securityCheckWorkRequest = securityCheckWorkRequest;
     }
 
-    public List<List<String>> getDiseasedetailsForHomeless() {
-        return diseasedetails;
+    public List<List<String>> getImmigrationDetails() {
+        return immigrationDetails;
     }
 
-    public void setDiseasedetailsForHomeless(List<List<String>> addressesForHomeless) {
-        this.diseasedetails = addressesForHomeless;
+    public void setImmigrationDetails(List<List<String>> addressesForHomeless) {
+        this.immigrationDetails = addressesForHomeless;
     }
 
     @Override
