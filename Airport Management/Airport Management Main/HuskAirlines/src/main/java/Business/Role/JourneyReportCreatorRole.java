@@ -15,7 +15,6 @@ import userinterface.JourneyReport.JourneyReportWorkAreaJPanel;
  *
  * @author 
  */
-// Report inherits from role
 public class JourneyReportCreatorRole extends Role {
 
     @Override

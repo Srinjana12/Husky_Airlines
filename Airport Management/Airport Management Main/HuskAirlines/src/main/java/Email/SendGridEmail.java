@@ -22,9 +22,9 @@ import java.util.logging.Logger;
 public class SendGridEmail {
     public static void sendMail(String email) throws IOException {
    Email from = new Email("lnu.ke@northeastern.edu");
-    String subject = "Sending with SendGrid is Fun";
+    String subject = "Sending";
     Email to = new Email(email);
-    Content content = new Content("text/plain", "Thank you! You have been successfully registered to Homeless Helpers.");
+    Content content = new Content("text/plain", "Thank you! For traveling with us.");
     Mail mail = new Mail(from, subject, to, content);
 
     SendGrid sg = new SendGrid("API_KEY");

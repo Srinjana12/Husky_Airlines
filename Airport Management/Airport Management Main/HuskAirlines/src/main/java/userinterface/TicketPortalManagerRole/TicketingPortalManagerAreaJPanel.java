@@ -57,8 +57,7 @@ public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
             row[0] = wr.getPassengerPerson() != null ? wr.getPassengerPerson().getName() : "No name";
             row[1] = request.getReceiver();
             row[2] = request.getTestResult();
-            //String result = ((LabTestWorkRequest) request).getTestResult();
-            row[3] = request.getRequestDate(); //result == null ? "Waiting" : result;
+            row[3] = request.getRequestDate();
             model.addRow(row);
         }
     }
@@ -153,7 +152,7 @@ public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
     private void RegisterHomelessJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterHomelessJButtonActionPerformed
         // TODO add your handling code here:
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("RegisterHomelessJPanel", new PassengerJPanel(userProcessContainer, userAccount, enterprise, business));
+        userProcessContainer.add("RegisterPassengerJPanel", new PassengerJPanel(userProcessContainer, userAccount, enterprise, business));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_RegisterHomelessJButtonActionPerformed
 

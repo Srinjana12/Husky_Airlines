@@ -23,7 +23,7 @@ public abstract class Enterprise extends Organization {
     }
 
     public enum EnterpriseType {
-        TicketBooking("Ticket Booking Enterprise"), AirportCheckin("Airport Checkin Enterprise"), FlightBoarding("Flight Boarding Enterprise"), Arrival("Arrival");
+        TicketBooking("Ticket Booking Enterprise"), AirportCheckin("Airport Check-in Enterprise"), FlightBoarding("Flight Boarding Enterprise"), Arrival("Arrival Enterprise");
 
         private String value;
 

@@ -168,7 +168,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="SansSerif" size="13" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Source Location:"/>
+        <Property name="text" type="java.lang.String" value="Departure Location:"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -271,7 +271,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="SansSerif" size="13" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Passport No.:"/>
+        <Property name="text" type="java.lang.String" value="Passport Number:"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -372,7 +372,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="SansSerif" size="13" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Contact no of emergency contact:"/>
+        <Property name="text" type="java.lang.String" value="Contact number of emergency contact:"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -408,11 +408,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="SansSerif" size="13" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Have you ever pled guilty to OR being convicted OR found guilty of misdemeanor in any U.S. or non-U.S. OR military court?"/>
+        <Property name="text" type="java.lang.String" value="Have you ever pled guilty OR being convicted OR found guilty of misdemeanor in any U.S.?"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="440" y="220" width="560" height="30"/>
+          <AbsoluteConstraints x="440" y="220" width="630" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -687,7 +687,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Clear Feilds"/>
+        <Property name="text" type="java.lang.String" value="Clear Fields"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>

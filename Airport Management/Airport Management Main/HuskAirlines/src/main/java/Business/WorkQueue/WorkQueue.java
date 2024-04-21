@@ -14,7 +14,7 @@ public class WorkQueue {
     
     private ArrayList<WorkRequest> workRequestList;
 
-    public WorkQueue() {  //constructor
+    public WorkQueue() {
         workRequestList = new ArrayList();
     }
 

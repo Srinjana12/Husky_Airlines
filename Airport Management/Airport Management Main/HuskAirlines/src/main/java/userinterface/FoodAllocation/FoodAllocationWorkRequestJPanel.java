@@ -47,28 +47,28 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
      * Populates table
      */
     public void populateTable() {
-        DefaultTableModel model1 = (DefaultTableModel) tblHomelessPersonRecords1.getModel();
-        DefaultTableModel model2 = (DefaultTableModel) tblHomelessPersonRecords2.getModel();
+        DefaultTableModel model1 = (DefaultTableModel) tblPassengerRecords.getModel();
+        DefaultTableModel model2 = (DefaultTableModel) tblPassengerRecords1.getModel();
         model1.setRowCount(0);
         model2.setRowCount(0);
         if (request.getPassengerPerson() != null) {
             Object[] row = new Object[8];
             row[0] = request.getPassengerPerson().getName();
             row[1] = request.getPassengerPerson().getDob();
-            row[2] = request.getPassengerPerson().getCity();
-            row[3] = request.getPassengerPerson().getCurrentAddress();
-            row[4] = request.getPassengerPerson().getSSNNo();
+            row[2] = request.getPassengerPerson().getDestinationCity();
+            row[3] = request.getPassengerPerson().getSourceLocation();
+            row[4] = request.getPassengerPerson().getPassportNumber();
             row[5] = request.getPassengerPerson().getContactNo();
             row[6] = request.getPassengerPerson().getEmailAddress();
-            row[7] = request.getPassengerPerson().getDependents();
+            row[7] = request.getPassengerPerson().getPassportExpiry();
             model1.addRow(row);
             Object[] rowSecond = new Object[6];
             rowSecond[0] = request.getsecurityCheckWorkRequest().getAllocatedSeat().toString();
-            rowSecond[1] = request.getPassengerPerson().getGender();
+            rowSecond[1] = request.getPassengerPerson().getFoodPreference();
             rowSecond[2] = request.getPassengerPerson().isHasCriminalRecord() ? "Yes" : "No";
-            rowSecond[3] = request.getPassengerPerson().isMajorIllness() ? "Yes" : "No";
-            rowSecond[4] = request.getPassengerPerson().isCarrierDisease() ? "Yes" : "No";
-            rowSecond[5] = request.getPassengerPerson().isGeneticDisease() ? "Yes" : "No";
+            rowSecond[3] = request.getPassengerPerson().isPreConditions() ? "Yes" : "No";
+            rowSecond[4] = request.getPassengerPerson().isMedication() ? "Yes" : "No";
+            rowSecond[5] = request.getPassengerPerson().isAccomodationReq() ? "Yes" : "No";
             model2.addRow(rowSecond);
 
         }
@@ -86,10 +86,10 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         backJButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblHomelessPersonRecords1 = new javax.swing.JTable();
+        tblPassengerRecords = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblHomelessPersonRecords2 = new javax.swing.JTable();
-        btnPassCheck = new javax.swing.JButton();
+        tblPassengerRecords1 = new javax.swing.JTable();
+        btnFoodAllocated = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -106,8 +106,8 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
 
-        tblHomelessPersonRecords1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        tblHomelessPersonRecords1.setModel(new javax.swing.table.DefaultTableModel(
+        tblPassengerRecords.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        tblPassengerRecords.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -115,32 +115,32 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
                 "Name", "DOB", "Source", "current address", "Passport No", "Contact No", "Email Address", "Passport Expiry Date"
             }
         ));
-        jScrollPane1.setViewportView(tblHomelessPersonRecords1);
+        jScrollPane1.setViewportView(tblPassengerRecords);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 185, 1155, 103));
 
-        tblHomelessPersonRecords2.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        tblHomelessPersonRecords2.setModel(new javax.swing.table.DefaultTableModel(
+        tblPassengerRecords1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        tblPassengerRecords1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Seat Type", "Gender", "Criminal Record?", "Medical Condition??", "Medication??", "Special Requirements??"
+                "Seat Type", "Food Preference", "Criminal Record?", "Medical Condition??", "Medication??", "Special Requirements??"
             }
         ));
-        jScrollPane2.setViewportView(tblHomelessPersonRecords2);
+        jScrollPane2.setViewportView(tblPassengerRecords1);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 300, 1155, 105));
 
-        btnPassCheck.setBackground(new java.awt.Color(104, 144, 146));
-        btnPassCheck.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        btnPassCheck.setText("Food Allocated");
-        btnPassCheck.addActionListener(new java.awt.event.ActionListener() {
+        btnFoodAllocated.setBackground(new java.awt.Color(104, 144, 146));
+        btnFoodAllocated.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        btnFoodAllocated.setText("Food Allocated");
+        btnFoodAllocated.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPassCheckActionPerformed(evt);
+                btnFoodAllocatedActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPassCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 423, 250, 50));
+        jPanel1.add(btnFoodAllocated, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 423, 250, 50));
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(104, 144, 146));
@@ -186,19 +186,19 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
-    private void btnPassCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassCheckActionPerformed
+    private void btnFoodAllocatedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFoodAllocatedActionPerformed
         if (request.getStatus().equals("Completed")) {
             JOptionPane.showMessageDialog(null, "This request has already been completed by you!");
             return;
         }
         request.setStatus("Completed");
-        request.setTestResult("Sent to Disease Analyzer");
+        request.setTestResult("Sent to Immigration.");
         UserAccount account = new UserAccount();
         account.setUsername("None");
         request.getsecurityCheckWorkRequest().setReceiver(account);
-        request.getsecurityCheckWorkRequest().setTestResult("Completed by Covid Blood Tester and and sent to Disease Analyzerr");
+        request.getsecurityCheckWorkRequest().setTestResult("Completed by Food Allocator and and sent to Immigration Clearance Officer");
         ImmigrationCheckWorkRequest fcRequest = new ImmigrationCheckWorkRequest();
-        fcRequest.setMessage("Disease Analysis");
+        fcRequest.setMessage("Immigration Check-in");
         fcRequest.setSender(userAccount);
         fcRequest.setStatus("Sent");
         fcRequest.setPassengerPerson(request.getPassengerPerson());
@@ -223,19 +223,19 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
         if (org != null) {
             org.getWorkQueue().getWorkRequestList().add(fcRequest);
             userAccount.getWorkQueue().getWorkRequestList().add(fcRequest);
-            JOptionPane.showMessageDialog(this, "Request Sent to Disease Analysis Organization");
+            JOptionPane.showMessageDialog(this, "Request Sent to Immigration Check-in Organization");
         }
-    }//GEN-LAST:event_btnPassCheckActionPerformed
+    }//GEN-LAST:event_btnFoodAllocatedActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
-    private javax.swing.JButton btnPassCheck;
+    private javax.swing.JButton btnFoodAllocated;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tblHomelessPersonRecords1;
-    private javax.swing.JTable tblHomelessPersonRecords2;
+    private javax.swing.JTable tblPassengerRecords;
+    private javax.swing.JTable tblPassengerRecords1;
     // End of variables declaration//GEN-END:variables
 }

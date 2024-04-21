@@ -67,11 +67,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="backJButton" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Component id="jLabel8" min="-2" pref="146" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="departmentFacilitatorWorkRequest_departmentJComboBox" min="-2" pref="122" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="dboxGateNumber" min="-2" pref="122" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnYes" min="-2" pref="250" max="-2" attributes="0"/>
@@ -96,12 +96,12 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="btnYes" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="btnNo" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="dboxGateNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="departmentFacilitatorWorkRequest_departmentJComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnYes" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="btnNo" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -130,7 +130,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="SansSerif" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Has the passenger pass the Security Check?"/>
+            <Property name="text" type="java.lang.String" value="Is the ticket verified?"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="backJButton">
@@ -166,7 +166,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="tblHomelessPersonRecord">
+            <Component class="javax.swing.JTable" name="tblPassengerRecord">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Comic Sans MS" size="16" style="0"/>
@@ -245,7 +245,7 @@
             <Property name="text" type="java.lang.String" value="Passenger Details:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="departmentFacilitatorWorkRequest_departmentJComboBox">
+        <Component class="javax.swing.JComboBox" name="dboxGateNumber">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
@@ -256,7 +256,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="departmentFacilitatorWorkRequest_departmentJComboBoxActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dboxGateNumberActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
