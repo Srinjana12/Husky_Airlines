@@ -16,39 +16,39 @@ public class JourneyReportGenerationWorkRequest extends WorkRequest {
 
     private Passenger passengerPerson;
     private SecurityCheckWorkRequest securityCheckWorkRequest;
-    private List<String> diseasesForHomeless;
-    private String finalmedicines;
+    private List<String> immigrationDetails;
+    private String numberOfLuggage;
 
     public Passenger getPassengerPerson() {
         return passengerPerson;
     }
 
-    public void setHomelessPerson(Passenger homelessPerson) {
-        this.passengerPerson = homelessPerson;
+    public void setPassengerPerson(Passenger passengerPerson) {
+        this.passengerPerson = passengerPerson;
     }
 
-    public SecurityCheckWorkRequest gethospitalAllocationWorkRequest() {
+    public SecurityCheckWorkRequest getsecurityCheckWorkRequest() {
         return securityCheckWorkRequest;
     }
 
-    public void sethospitalAllocationWorkRequest(SecurityCheckWorkRequest hospitalAllocationWorkRequest) {
-        this.securityCheckWorkRequest = hospitalAllocationWorkRequest;
+    public void setsecurityCheckWorkRequest(SecurityCheckWorkRequest securityCheckWorkRequest) {
+        this.securityCheckWorkRequest = securityCheckWorkRequest;
     }
 
-    public List<String> getDiseasesForHomeless() {
-        return diseasesForHomeless;
+    public List<String> getImmigrationDetails() {
+        return immigrationDetails;
     }
 
-    public void setDiseasesForHomeless(List<String> diseasesForHomeless) {
-        this.diseasesForHomeless = diseasesForHomeless;
+    public void setImmigrationDetails(List<String> immigrationDetails) {
+        this.immigrationDetails = immigrationDetails;
     }
 
-    public String getFinalmedicines() {
-        return finalmedicines;
+    public String getNumberOfLuggage() {
+        return numberOfLuggage;
     }
 
-    public void setFinalmedicines(String scheme) {
-        this.finalmedicines = scheme;
+    public void setNumberOfLuggage(String scheme) {
+        this.numberOfLuggage = scheme;
     }
 
     @Override

@@ -54,7 +54,7 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         if (request.getPassengerPerson() != null) {
             Object[] row = new Object[8];
             row[0] = request.getPassengerPerson().getName();
-            row[1] = request.gethospitalAllocationWorkRequest().getDepartmentDetais();
+            row[1] = request.getsecurityCheckWorkRequest().getDepartmentDetais();
             row[2] = request.getPassengerPerson().getCity();
             row[3] = request.getPassengerPerson().getCurrentAddress();
             row[4] = request.getPassengerPerson().getSSNNo();
@@ -207,8 +207,8 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         }
         UserAccount account = new UserAccount();
         account.setUsername("None");
-        request.gethospitalAllocationWorkRequest().setReceiver(account);
-        request.gethospitalAllocationWorkRequest().setTestResult("The request has been denied by Disease Analyzer");
+        request.getsecurityCheckWorkRequest().setReceiver(account);
+        request.getsecurityCheckWorkRequest().setTestResult("The request has been denied by Disease Analyzer");
         request.setStatus("Completed");
         JOptionPane.showMessageDialog(null, "Volunteer has been informed abt failure!");
     }//GEN-LAST:event_btnFailResultsActionPerformed
@@ -225,17 +225,17 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         }
         request.setStatus("Completed");
         request.setTestResult("Sent to Pharmacy");
-        request.gethospitalAllocationWorkRequest().setTestResult("Completed by Disease Analysis and and sent to Pharmacy");
+        request.getsecurityCheckWorkRequest().setTestResult("Completed by Disease Analysis and and sent to Pharmacy");
         UserAccount account = new UserAccount();
         account.setUsername("None");
-        request.gethospitalAllocationWorkRequest().setReceiver(account);
-        request.gethospitalAllocationWorkRequest().setImmigrationDetails(diseases);
+        request.getsecurityCheckWorkRequest().setReceiver(account);
+        request.getsecurityCheckWorkRequest().setImmigrationDetails(diseases);
         LuggageCheckOutWorkRequest fcRequest = new LuggageCheckOutWorkRequest();
         fcRequest.setMessage("Provide Medicines");
         fcRequest.setSender(userAccount);
         fcRequest.setStatus("Sent");
-        fcRequest.setHomelessPerson(request.getPassengerPerson());
-        fcRequest.setHospitalAllocationWorkRequest(request.gethospitalAllocationWorkRequest());
+        fcRequest.setPassengerPerson(request.getPassengerPerson());
+        fcRequest.setSecurityCheckWorkRequest(request.getsecurityCheckWorkRequest());
         Date d = new Date();
         fcRequest.setRequestDate(d);
         Organization org = null;
