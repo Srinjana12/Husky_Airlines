@@ -122,7 +122,7 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
 
             },
             new String [] {
-                "Name", "Department", "City", "current address", "SSNNo", "Contact No", "Email Address", "Dependents"
+                "Name", "Gate No", "Source", "current address", "Passport No", "Contact No", "Email Address", "Passport Expiry Date"
             }
         ));
         jScrollPane1.setViewportView(tblHomelessPersonRecords1);
@@ -135,7 +135,7 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
 
             },
             new String [] {
-                "Qualifications", "Accomplishments", "Income", "Employ Status", "Gender", "Criminal Record?", "Major Illness??", "Carrier Illness??", "Genetic Illness??"
+                "Gender", "Criminal Record?", "Medical Conditions??", "Medication??", "Special Requirements??"
             }
         ));
         jScrollPane2.setViewportView(tblHomelessPersonRecords2);
@@ -149,7 +149,7 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1225, -1));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jLabel3.setText("Enter Detected Disease & Medicines Details");
+        jLabel3.setText("Enter Reason For Immigration Pass Or Fail");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 431, 469, -1));
 
         txtFieldHousingOption1.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +161,7 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
 
         btnPassResults.setBackground(new java.awt.Color(114, 158, 161));
         btnPassResults.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        btnPassResults.setText("Submit Results");
+        btnPassResults.setText("PASS");
         btnPassResults.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPassResultsActionPerformed(evt);
@@ -171,7 +171,7 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
 
         btnFailResults.setBackground(new java.awt.Color(114, 158, 161));
         btnFailResults.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        btnFailResults.setText("No Disease");
+        btnFailResults.setText("FAIL");
         btnFailResults.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFailResultsActionPerformed(evt);

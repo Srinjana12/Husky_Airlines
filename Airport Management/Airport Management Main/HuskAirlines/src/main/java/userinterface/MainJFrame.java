@@ -68,9 +68,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(236, 145, 146));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
-        loginJButton.setBackground(new java.awt.Color(181, 189, 137));
+        loginJButton.setBackground(new java.awt.Color(0, 153, 153));
         loginJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         loginJButton.setText("Login");
         loginJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +91,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         jLabel2.setText("Password:");
 
-        logoutJButton.setBackground(new java.awt.Color(181, 189, 137));
+        logoutJButton.setBackground(new java.awt.Color(0, 153, 153));
         logoutJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         logoutJButton.setText("Logout");
         logoutJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -156,12 +156,12 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(loginJButton)
                 .addGap(29, 29, 29)
                 .addComponent(logoutJButton)
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
 
-        container.setBackground(new java.awt.Color(223, 190, 153));
+        container.setBackground(new java.awt.Color(153, 0, 0));
         container.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         container.setLayout(new java.awt.CardLayout());
         jSplitPane1.setRightComponent(container);

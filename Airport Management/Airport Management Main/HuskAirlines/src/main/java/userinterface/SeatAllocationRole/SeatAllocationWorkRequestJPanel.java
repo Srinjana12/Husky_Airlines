@@ -91,7 +91,6 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         tblHomelessPersonRecords1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblHomelessPersonRecords2 = new javax.swing.JTable();
-        btnFailCheck = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -107,7 +106,7 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
 
         btnPassCheck.setBackground(new java.awt.Color(181, 189, 137));
         btnPassCheck.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnPassCheck.setText("Pass Symptoms Check");
+        btnPassCheck.setText("Seat Allocated");
         btnPassCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPassCheckActionPerformed(evt);
@@ -130,7 +129,7 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Name", "DOB", "City", "Current Location", "SSN", "Contact No", "Email Address", "Dependents"
+                "Name", "DOB", "Source", "Destination", "Passport No", "Contact No", "Email Address", "Passport Expiry Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -150,22 +149,12 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Gender", "Criminal Record?", "Major Illness??", "Carrier Illness??", "Genetic Illness??"
+                "Gender", "Criminal Record?", "Medical Condition?", "Medication??", "Special Requirements??"
             }
         ));
         jScrollPane2.setViewportView(tblHomelessPersonRecords2);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 362, 1064, 150));
-
-        btnFailCheck.setBackground(new java.awt.Color(181, 189, 137));
-        btnFailCheck.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        btnFailCheck.setText("Fail Symptoms Check");
-        btnFailCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFailCheckActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnFailCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 558, 250, 50));
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(114, 158, 161));
@@ -177,18 +166,23 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         jLabel8.setText("Check Seat Allocation From below Passenger:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 148, 580, 34));
 
-        jLabel1.setText("Symptoms");
+        jLabel1.setText("Types Of Seats");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 527, -1, -1));
 
-        flueCheckBox.setText("Flu");
+        flueCheckBox.setText("Standard Economy");
 
-        coldjCheckBox.setText("Cold");
+        coldjCheckBox.setText("Economy Plus");
+        coldjCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coldjCheckBoxActionPerformed(evt);
+            }
+        });
 
-        feverjCheckBox.setText("Fever");
+        feverjCheckBox.setText("Window Seat");
 
-        heartjCheckBox.setText("Heart Pain");
+        heartjCheckBox.setText("Aisle Seat");
 
-        kidneyjCheckBox.setText("Kidney Pain");
+        kidneyjCheckBox.setText("Middle Seat");
 
         jLayeredPane1.setLayer(flueCheckBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(coldjCheckBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -201,8 +195,9 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         jLayeredPane1Layout.setHorizontalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
                 .addComponent(flueCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(coldjCheckBox)
                 .addGap(18, 18, 18)
                 .addComponent(feverjCheckBox)
@@ -210,7 +205,7 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
                 .addComponent(heartjCheckBox)
                 .addGap(18, 18, 18)
                 .addComponent(kidneyjCheckBox)
-                .addGap(0, 324, Short.MAX_VALUE))
+                .addGap(0, 138, Short.MAX_VALUE))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,22 +316,12 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
-    private void btnFailCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFailCheckActionPerformed
-        if (request.getStatus().equals("Completed")) {
-            JOptionPane.showMessageDialog(null, "This request has already been failed by you!");
-            return;
-        }
-        UserAccount account = new UserAccount();
-        account.setUsername("None");
-        request.getSecurityCheckWorkRequest().setReceiver(account);
-        request.getSecurityCheckWorkRequest().setTestResult("The request has been denied by Symptoms Checker as person had criminal record!");
-        request.setStatus("Completed");
-        JOptionPane.showMessageDialog(this, "Volunteer has been updated abt failure!");
-    }//GEN-LAST:event_btnFailCheckActionPerformed
+    private void coldjCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coldjCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_coldjCheckBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
-    private javax.swing.JButton btnFailCheck;
     private javax.swing.JButton btnPassCheck;
     private javax.swing.JCheckBox coldjCheckBox;
     private javax.swing.JCheckBox feverjCheckBox;
