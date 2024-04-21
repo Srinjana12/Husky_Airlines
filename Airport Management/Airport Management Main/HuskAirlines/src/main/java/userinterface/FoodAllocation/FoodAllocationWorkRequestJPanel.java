@@ -90,7 +90,6 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblHomelessPersonRecords2 = new javax.swing.JTable();
         btnPassCheck = new javax.swing.JButton();
-        btnFailCheck = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -113,7 +112,7 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Name", "DOB", "City", "current address", "SSNNo", "Contact No", "Email Address", "Dependents"
+                "Name", "DOB", "Source", "current address", "Passport No", "Contact No", "Email Address", "Passport Expiry Date"
             }
         ));
         jScrollPane1.setViewportView(tblHomelessPersonRecords1);
@@ -126,7 +125,7 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Symptoms", "Gender", "Criminal Record?", "Major Illness??", "Carrier Illness??", "Genetic Illness??"
+                "Seat Type", "Gender", "Criminal Record?", "Medical Condition??", "Medication??", "Special Requirements??"
             }
         ));
         jScrollPane2.setViewportView(tblHomelessPersonRecords2);
@@ -135,23 +134,13 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
 
         btnPassCheck.setBackground(new java.awt.Color(104, 144, 146));
         btnPassCheck.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        btnPassCheck.setText("Mark Covid -");
+        btnPassCheck.setText("Food Allocated");
         btnPassCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPassCheckActionPerformed(evt);
             }
         });
         jPanel1.add(btnPassCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 423, 250, 50));
-
-        btnFailCheck.setBackground(new java.awt.Color(104, 144, 146));
-        btnFailCheck.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        btnFailCheck.setText("Mark Covid +");
-        btnFailCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFailCheckActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnFailCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 423, 250, 50));
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(104, 144, 146));
@@ -238,22 +227,8 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnPassCheckActionPerformed
 
-    private void btnFailCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFailCheckActionPerformed
-        if (request.getStatus().equals("Completed")) {
-            JOptionPane.showMessageDialog(null, "This request has already been completed by you!");
-            return;
-        }
-        UserAccount account = new UserAccount();
-        account.setUsername("None");
-        request.getsecurityCheckWorkRequest().setReceiver(account);
-        request.getsecurityCheckWorkRequest().setTestResult("The request has been denied by Covid Blood Checker!");
-        request.setStatus("Completed");
-        JOptionPane.showMessageDialog(this, "Volunteer has been updated abt failure!");
-    }//GEN-LAST:event_btnFailCheckActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
-    private javax.swing.JButton btnFailCheck;
     private javax.swing.JButton btnPassCheck;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

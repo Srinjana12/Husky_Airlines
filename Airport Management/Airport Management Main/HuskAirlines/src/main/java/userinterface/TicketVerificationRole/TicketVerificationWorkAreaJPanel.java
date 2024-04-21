@@ -99,6 +99,8 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(223, 190, 153));
+
         jPanel1.setBackground(new java.awt.Color(223, 190, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

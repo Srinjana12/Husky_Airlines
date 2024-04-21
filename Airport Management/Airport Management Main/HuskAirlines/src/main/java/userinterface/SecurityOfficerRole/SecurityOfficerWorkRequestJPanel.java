@@ -105,7 +105,6 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         hospital_allocator_select_hospitalComboBox = new javax.swing.JComboBox<>();
-        jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(223, 190, 153));
@@ -121,7 +120,7 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Seat Preference", "Food Preference", "Emergency Contact No. ", "Name Of Emergency Contact", "Gender", "Criminal Record", "Medical Condition", "Medication", "Special Requirements"
+                "Seat Preference", "Food Preference", "Emergency Contact No. ", "Name Of Emergency Contact", "Gender", "Criminal Record?", "Medical Condition?", "Medication?", "Special Requirements?"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -140,7 +139,7 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Name", "DOB", "Source", "Destination", "Passport No", "Contact No", "Email Addressl", "Passport Expiry Date"
+                "Name", "DOB", "Source", "Destination", "Passport No", "Contact No", "Email Address", "Passport Expiry Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -175,13 +174,6 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setText("SHOW ON MAP");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -200,10 +192,8 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
-                                .addComponent(hospital_allocator_select_hospitalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(hospital_allocator_select_hospitalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 551, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -220,8 +210,7 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hospital_allocator_select_hospitalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(hospital_allocator_select_hospitalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(126, Short.MAX_VALUE))
@@ -324,40 +313,6 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        JFrame test = new JFrame("Google Maps");
-        String hospitaladdress = hospital_allocator_select_hospitalComboBox.getSelectedItem().toString();
-        hospitaladdress = hospitaladdress.replaceAll("\\s", "");
-        try {
-            String imageUrl = "https://maps.googleapis.com/maps/api/staticmap?center=" + hospitaladdress + "&zoom=14&size=400x400&key="
-                    + System.getenv("FOO");
-            String destinationFile = "image.jpg";
-            String str = destinationFile;
-            URL url = new URL(imageUrl);
-            InputStream is = url.openStream();
-            OutputStream os = new FileOutputStream(destinationFile);
-
-            byte[] b = new byte[2048];
-            int length;
-
-            while ((length = is.read(b)) != -1) {
-                os.write(b, 0, length);
-            }
-
-            is.close();
-            os.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
-
-        test.add(new JLabel(new ImageIcon((new ImageIcon("image.jpg")).getImage().getScaledInstance(630, 600,
-                java.awt.Image.SCALE_SMOOTH))));
-
-        test.setVisible(true);
-        test.pack();        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void hospital_allocator_select_hospitalComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospital_allocator_select_hospitalComboBoxActionPerformed
         // TODO add your handling code here:
         hospital_allocator_select_hospitalComboBox.getSelectedItem();
@@ -368,7 +323,6 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> hospital_allocator_select_hospitalComboBox;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
