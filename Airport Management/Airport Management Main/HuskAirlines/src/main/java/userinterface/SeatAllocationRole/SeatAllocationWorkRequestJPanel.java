@@ -102,10 +102,9 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         cboxMiddleSeat = new javax.swing.JCheckBox();
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSeatAllocated.setBackground(new java.awt.Color(181, 189, 137));
         btnSeatAllocated.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnSeatAllocated.setText("Seat Allocated");
         btnSeatAllocated.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +114,6 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnSeatAllocated, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 558, 250, 50));
 
-        backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         backJButton.setText("< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -158,18 +156,21 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 362, 1064, 150));
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(114, 158, 161));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Seat Allocation");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1064, -1));
 
         jLabel8.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Check Seat Allocation From below Passenger:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 148, 580, 34));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Types Of Seats:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 527, -1, -1));
 
+        checkBoxEconomy.setForeground(new java.awt.Color(255, 255, 255));
         checkBoxEconomy.setText("Economy");
         checkBoxEconomy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +178,7 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
+        cboxBusiness.setForeground(new java.awt.Color(255, 255, 255));
         cboxBusiness.setText("Business");
         cboxBusiness.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,12 +186,16 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
+        cboxWindowSeat.setForeground(new java.awt.Color(255, 255, 255));
         cboxWindowSeat.setText("Window Seat");
 
+        cboxAisleSeat.setForeground(new java.awt.Color(255, 255, 255));
         cboxAisleSeat.setText("Aisle Seat");
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Seats Placement:");
 
+        cboxMiddleSeat.setForeground(new java.awt.Color(255, 255, 255));
         cboxMiddleSeat.setText("Middle Seat");
 
         jLayeredPane1.setLayer(checkBoxEconomy, javax.swing.JLayeredPane.DEFAULT_LAYER);

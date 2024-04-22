@@ -96,7 +96,7 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         btnFailResults = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         resultJTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +106,6 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         });
         jPanel1.add(resultJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 731, 88, 0));
 
-        backJButton.setBackground(new java.awt.Color(114, 158, 161));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         backJButton.setText("<");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -143,12 +142,13 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 313, 1225, 100));
 
         jLabel2.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(104, 144, 146));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText(" Immigration Work Area");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1225, -1));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Enter Reason For Immigration Pass Or Fail");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 431, 469, -1));
 
@@ -159,7 +159,6 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         });
         jPanel1.add(txtImmigrationDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 350, 30));
 
-        btnPassResults.setBackground(new java.awt.Color(114, 158, 161));
         btnPassResults.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnPassResults.setText("PASS");
         btnPassResults.addActionListener(new java.awt.event.ActionListener() {
@@ -169,7 +168,6 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         });
         jPanel1.add(btnPassResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 160, 50));
 
-        btnFailResults.setBackground(new java.awt.Color(114, 158, 161));
         btnFailResults.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnFailResults.setText("FAIL");
         btnFailResults.addActionListener(new java.awt.event.ActionListener() {
@@ -180,6 +178,7 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         jPanel1.add(btnFailResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 160, 50));
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("Passenger Details:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 143, 1225, 34));

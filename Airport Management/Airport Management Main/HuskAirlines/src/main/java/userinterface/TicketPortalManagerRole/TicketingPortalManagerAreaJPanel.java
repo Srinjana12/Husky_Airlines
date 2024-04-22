@@ -77,9 +77,9 @@ public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(223, 190, 153));
+        setBackground(new java.awt.Color(153, 0, 0));
 
-        RegisterPassengerJButton.setBackground(new java.awt.Color(114, 158, 161));
+        RegisterPassengerJButton.setBackground(new java.awt.Color(204, 204, 204));
         RegisterPassengerJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         RegisterPassengerJButton.setText("Register Passenger");
         RegisterPassengerJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -110,12 +110,15 @@ public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
             TicketManagerJTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(104, 144, 146));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ticket Portal Manager");
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("List of Passengers Registered By You:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

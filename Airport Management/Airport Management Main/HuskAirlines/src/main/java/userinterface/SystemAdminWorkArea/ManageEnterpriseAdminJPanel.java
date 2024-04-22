@@ -101,7 +101,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(223, 190, 153));
+        setBackground(new java.awt.Color(153, 0, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterpriseJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
@@ -126,6 +126,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 160, 1135, 146));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Network");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 327, -1, -1));
 
@@ -139,11 +140,13 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 324, 208, -1));
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Username");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 414, -1, -1));
         add(usernameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 208, -1));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Enterprise");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 372, -1, -1));
 
@@ -151,7 +154,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         enterpriseJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(enterpriseJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 369, 208, -1));
 
-        btnSubmit.setBackground(new java.awt.Color(181, 189, 137));
+        btnSubmit.setBackground(new java.awt.Color(204, 204, 204));
         btnSubmit.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -159,21 +162,22 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 544, 250, 50));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, 250, 50));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 454, -1, -1));
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 494, 210, -1));
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Name");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 494, -1, -1));
         add(passwordJPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, 208, -1));
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
-        backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -183,7 +187,6 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         });
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(114, 158, 161));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Manage Enterprise Admin");
 
@@ -210,7 +213,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 130));
 
-        btnDelete.setBackground(new java.awt.Color(181, 189, 137));
+        btnDelete.setBackground(new java.awt.Color(204, 204, 204));
         btnDelete.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -218,9 +221,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 btnDeleteActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, 250, 50));
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 560, 250, 50));
 
-        btnUpdate.setBackground(new java.awt.Color(181, 189, 137));
+        btnUpdate.setBackground(new java.awt.Color(204, 204, 204));
         btnUpdate.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +231,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 btnUpdateActionPerformed(evt);
             }
         });
-        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 540, 250, 50));
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 560, 250, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
