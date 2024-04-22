@@ -13,7 +13,7 @@ import userinterface.JourneyReport.JourneyReportWorkAreaJPanel;
 
 /**
  *
- * @author 
+ * @author rishisehgal
  */
 public class JourneyReportCreatorRole extends Role {
 

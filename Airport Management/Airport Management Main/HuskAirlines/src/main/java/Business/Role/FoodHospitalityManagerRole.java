@@ -14,7 +14,7 @@ import userinterface.FoodAllocation.FoodAllocationTestWorkAreaJPanel;
 
 /**
  *
- * @author 
+ * @author rishisehgal
  */
 public class FoodHospitalityManagerRole extends Role {
 

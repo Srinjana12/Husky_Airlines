@@ -9,7 +9,7 @@ import Business.Passenger;
 
 /**
  *
- * @author 
+ * @author rishisehgal
  */
 public class FoodAllocationWorkRequest extends WorkRequest {
 

@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 
+ * @author rethuchrishel
  */
 public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
 

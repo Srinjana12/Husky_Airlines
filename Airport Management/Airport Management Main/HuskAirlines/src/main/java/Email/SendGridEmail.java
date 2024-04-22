@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author 
+ * @author Priyanka
  */
 public class SendGridEmail {
     public static void sendMail(String email) throws IOException {

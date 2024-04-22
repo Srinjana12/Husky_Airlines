@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author
+ * @author rethuchrishel
  */
 public abstract class Enterprise extends Organization {
 

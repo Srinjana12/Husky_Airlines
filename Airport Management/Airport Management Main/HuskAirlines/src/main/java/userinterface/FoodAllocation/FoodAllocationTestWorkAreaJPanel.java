@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 
+ * @author rishisehgal
  */
 public class FoodAllocationTestWorkAreaJPanel extends javax.swing.JPanel {
 

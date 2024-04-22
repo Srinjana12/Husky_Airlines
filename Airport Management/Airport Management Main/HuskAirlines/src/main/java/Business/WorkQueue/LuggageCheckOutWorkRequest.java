@@ -9,7 +9,7 @@ import Business.Passenger;
 
 /**
  *
- * @author 
+ * @author rishisehgal
  */
 public class LuggageCheckOutWorkRequest extends WorkRequest {
 

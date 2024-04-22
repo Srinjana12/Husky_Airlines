@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 
+ * @author rishisehgal
  */
 public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
 

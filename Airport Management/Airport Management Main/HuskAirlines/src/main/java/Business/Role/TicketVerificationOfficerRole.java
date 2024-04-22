@@ -14,7 +14,7 @@ import userinterface.TicketVerificationRole.TicketVerificationWorkAreaJPanel;
 
 /**
  *
- * @author 
+ * @author rethuchrishel
  */
  // class TicketVerificationOfficerRole extends Role
 public class TicketVerificationOfficerRole extends Role {

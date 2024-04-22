@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 
+ * @author rishisehgal
  */
 public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPanel {
 

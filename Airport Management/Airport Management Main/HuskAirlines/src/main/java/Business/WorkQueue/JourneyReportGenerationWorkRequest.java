@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author 
+ * @author rishisehgal
  */
 public class JourneyReportGenerationWorkRequest extends WorkRequest {
 

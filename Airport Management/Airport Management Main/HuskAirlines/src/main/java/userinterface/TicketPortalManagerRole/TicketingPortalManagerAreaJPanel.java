@@ -24,6 +24,10 @@ import java.util.Properties;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+/**
+ *
+ * @author sri15
+ */
 
 public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
 

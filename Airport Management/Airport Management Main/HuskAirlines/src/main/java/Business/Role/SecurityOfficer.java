@@ -14,7 +14,7 @@ import userinterface.SecurityOfficerRole.SecurityOfficerWorkAreaJPanel;
 
 /**
  *
- * @author 
+ * @author rethuchrishel
  */
 public class SecurityOfficer extends Role {
 

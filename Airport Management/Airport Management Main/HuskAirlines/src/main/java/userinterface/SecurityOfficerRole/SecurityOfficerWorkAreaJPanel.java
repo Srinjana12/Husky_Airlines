@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 
+ * @author rethuchrishel
  */
 public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
 

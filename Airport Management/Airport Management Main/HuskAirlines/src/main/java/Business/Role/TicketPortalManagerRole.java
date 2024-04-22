@@ -14,7 +14,7 @@ import userinterface.TicketPortalManagerRole.TicketingPortalManagerAreaJPanel;
 
 /**
  *
- * @author 
+ * @author sri15
  */
 public class TicketPortalManagerRole extends Role {
 

@@ -10,7 +10,7 @@ import Business.WorkQueue.WorkQueue;
 
 /**
  *
- * @author 
+ * @author Priyanka
  */
 public class UserAccount {
 

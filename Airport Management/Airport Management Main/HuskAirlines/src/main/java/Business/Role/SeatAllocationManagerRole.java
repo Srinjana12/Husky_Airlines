@@ -14,7 +14,7 @@ import userinterface.SeatAllocationRole.SeatAllocationWorkAreaJPanel;
 
 /**
  *
- * @author 
+ * @author rishisehgal
  */
 public class SeatAllocationManagerRole extends Role {
 

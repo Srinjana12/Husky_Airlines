@@ -9,7 +9,7 @@ import Business.Passenger;
 
 /**
  *
- * @author 
+ * @author rishisehgal
  */
 public class SeatAllocationWorkRequest extends WorkRequest {
 

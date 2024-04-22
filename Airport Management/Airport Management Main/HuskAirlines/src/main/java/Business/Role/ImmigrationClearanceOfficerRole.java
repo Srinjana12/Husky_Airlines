@@ -14,7 +14,7 @@ import userinterface.ImmigrationClearanceOfficerRole.ImmigrationClearanceOfficer
 
 /**
  *
- * @author 
+ * @author rishisehgal
  */
 public class ImmigrationClearanceOfficerRole extends Role {
 

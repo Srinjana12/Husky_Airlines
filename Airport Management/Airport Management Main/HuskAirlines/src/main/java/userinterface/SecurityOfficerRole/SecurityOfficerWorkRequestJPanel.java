@@ -30,7 +30,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 
+ * @author rethuchrishel
  */
 public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
 
