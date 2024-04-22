@@ -97,7 +97,7 @@ public class FoodAllocationTestWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         workRequestJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
@@ -128,8 +128,9 @@ public class FoodAllocationTestWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 133, 1151, 151));
 
-        btnAssign.setBackground(new java.awt.Color(104, 144, 146));
+        btnAssign.setBackground(new java.awt.Color(0, 0, 0));
         btnAssign.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        btnAssign.setForeground(new java.awt.Color(255, 255, 255));
         btnAssign.setText("Assign to me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,8 +139,9 @@ public class FoodAllocationTestWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 250, 50));
 
-        btnProcess.setBackground(new java.awt.Color(104, 144, 146));
+        btnProcess.setBackground(new java.awt.Color(0, 0, 0));
         btnProcess.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        btnProcess.setForeground(new java.awt.Color(255, 255, 255));
         btnProcess.setText("Process");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,8 +150,9 @@ public class FoodAllocationTestWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 250, 50));
 
-        btnRefresh.setBackground(new java.awt.Color(104, 144, 146));
+        btnRefresh.setBackground(new java.awt.Color(0, 0, 0));
         btnRefresh.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,17 +182,20 @@ public class FoodAllocationTestWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 414, 1145, 151));
 
+        enterpriseLabel.setBackground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(104, 144, 146));
+        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         enterpriseLabel.setText("Food Allocation");
         jPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1151, -1));
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("List of Request received from Seat Allocation");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 89, 722, -1));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("List of Request sent by you to Immigration");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 370, -1, -1));
 

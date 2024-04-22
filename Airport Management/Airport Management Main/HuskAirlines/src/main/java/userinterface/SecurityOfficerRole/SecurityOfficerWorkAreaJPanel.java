@@ -29,7 +29,7 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem business;
     private UserAccount userAccount;
-    private SecurityCheckin hospitalOrganization;
+    private SecurityCheckin SecurityCheckinOrganization;
     private Enterprise enterprise;
 
     public SecurityOfficerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, SecurityCheckin hospitalOrganization, Enterprise enterprise, EcoSystem business) {
@@ -38,7 +38,7 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.business = business;
         this.enterprise = enterprise;
-        this.hospitalOrganization = hospitalOrganization;
+        this.SecurityCheckinOrganization = hospitalOrganization;
 
         populateReceiveTable();
         populateSentTable();
@@ -66,7 +66,7 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         workRequestJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
@@ -97,7 +97,6 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 129, 1135, 151));
 
-        btnRefresh.setBackground(new java.awt.Color(181, 189, 137));
         btnRefresh.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +106,6 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(891, 298, 250, 50));
 
-        btnAssign.setBackground(new java.awt.Color(181, 189, 137));
         btnAssign.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnAssign.setText("Assign to me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +115,6 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 298, 250, 50));
 
-        btnProcess.setBackground(new java.awt.Color(181, 189, 137));
         btnProcess.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnProcess.setText("Process");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
@@ -149,16 +146,18 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 412, 1117, 151));
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(114, 158, 161));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Security Officer");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1135, -1));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("List of Requests received from Ticket Portal Manager:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 71, 481, 40));
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("List of Requests sent by you to Ticket Verification Officer:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 366, 530, 40));
 
@@ -194,7 +193,7 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (WorkRequest request : hospitalOrganization.getWorkQueue().getWorkRequestList()) {
+        for (WorkRequest request : SecurityCheckinOrganization.getWorkQueue().getWorkRequestList()) {
             SecurityCheckWorkRequest wr = (SecurityCheckWorkRequest) request;
             Object[] row = new Object[5];
             row[0] = wr;

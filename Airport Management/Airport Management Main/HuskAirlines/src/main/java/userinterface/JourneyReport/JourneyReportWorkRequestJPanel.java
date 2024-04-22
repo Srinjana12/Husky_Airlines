@@ -90,10 +90,9 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSubmit.setBackground(new java.awt.Color(181, 189, 137));
         btnSubmit.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnSubmit.setText("Submit Result");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +102,6 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 603, 250, 50));
 
-        backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         backJButton.setText("< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -115,6 +113,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
 
         jLabel2.setBackground(new java.awt.Color(223, 190, 153));
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Journey Report");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1296, 51));
@@ -145,7 +144,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 435, 1296, 150));
 
-        downloadPdfBtn.setBackground(new java.awt.Color(0, 102, 255));
+        downloadPdfBtn.setBackground(new java.awt.Color(153, 0, 0));
         downloadPdfBtn.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         downloadPdfBtn.setText("Download Report");
         downloadPdfBtn.setEnabled(false);
@@ -156,11 +155,15 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(downloadPdfBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 603, 250, 50));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Journey Report will be generated of");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 133, 538, 49));
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Journey Report Details");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 368, 538, 49));
 
@@ -214,32 +217,11 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void downloadPdfBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downloadPdfBtnActionPerformed
-//        String name = request.getHomelessPerson().getName();
-//        String departureLocation = request.getHomelessPerson().getSourceLocation();
-//        String gateNumber = request.gethospitalAllocationWorkRequest().getDepartment();
-//        String numberOfLuggage = request.getFinalmedicines();
-//        String immigrationDetails = request.gethospitalAllocationWorkRequest().getDiseasesForHomeless().get(0);
-//        ArrayList<String> seatDetails = request.gethospitalAllocationWorkRequest().getSymptoms();
-//        String hospitaltobeplaced = request.gethospitalAllocationWorkRequest().gethospitalToBePlaced();
-//        try {
-//            Document document = new Document();
-//            PdfWriter.getInstance(document, new FileOutputStream("HealthReport_" + counter + ".pdf"));
-//            document.open();
-//            addMetaData(document);
-//            addTitlePage(document, name, departureLocation, hospitaltobeplaced, gateNumber, immigrationDetails, numberOfLuggage, seatDetails);
-//            document.close();
-//            counter++;
-//            JOptionPane.showMessageDialog(null, "Health Report file has been downloaded");
-//
-//        } catch (Exception e) {
-//            //            e.printStackTrace();
-//            JOptionPane.showMessageDialog(null, "Pdf generator error");
-//        }
-//    }
+
 
         String name = request.getPassengerPerson().getName();
         String contact = request.getPassengerPerson().getContactNo();
-        int emegencyContactNumber = request.getPassengerPerson().getEmergencyNo();
+        String emegencyContactNumber = request.getPassengerPerson().getEmergencyNo();
         String dob = request.getPassengerPerson().getDob();
         String Destinationcity = request.getPassengerPerson().getDestinationCity();
         String passportNumber = request.getPassengerPerson().getPassportNumber();
@@ -252,7 +234,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         boolean preExtingDisease = request.getPassengerPerson().isPreConditions();
         boolean anyMedication = request.getPassengerPerson().isMedication();
         boolean hasCriminalRecord = request.getPassengerPerson().isHasCriminalRecord();
-        int passortExpiryDate = request.getPassengerPerson().getPassportExpiry();
+        String passortExpiryDate = request.getPassengerPerson().getPassportExpiry();
         String foodPreference = request.getPassengerPerson().getFoodPreference();
         String emergencyName = request.getPassengerPerson().getEmergencyName();
         String departureLocation = request.getPassengerPerson().getSourceLocation();
@@ -288,7 +270,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         document.addCreator("Husky Air");
     }
 
-    private static void addTitlePage(Document document, String name, String contact, int emegencyContactNumber, String dob, String Destinationcity, String passportNumber, String contactNo, String emailAddress, String seatPreference, String gender, String address, boolean accomodationReq, boolean preExtingDisease, boolean anyMedication, boolean hasCriminalRecord, int passortExpiryDate, String foodPreference, String emergencyName, String departureLocation, String terminalPassengerReported, String gateNumber, String numberOfLuggage, String immigrationDetails, ArrayList<String> seatDetails)
+    private static void addTitlePage(Document document, String name, String contact, String emegencyContactNumber, String dob, String Destinationcity, String passportNumber, String contactNo, String emailAddress, String seatPreference, String gender, String address, boolean accomodationReq, boolean preExtingDisease, boolean anyMedication, boolean hasCriminalRecord, String passortExpiryDate, String foodPreference, String emergencyName, String departureLocation, String terminalPassengerReported, String gateNumber, String numberOfLuggage, String immigrationDetails, ArrayList<String> seatDetails)
             throws DocumentException {
 
         Paragraph preface = new Paragraph();

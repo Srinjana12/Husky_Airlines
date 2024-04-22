@@ -105,12 +105,15 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         btnSubmit = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         dboxTerminal = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        setBackground(new java.awt.Color(153, 0, 0));
+
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(114, 158, 161));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Security Officer");
 
@@ -153,9 +156,9 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(tblPassengerRecords);
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Select Terminal");
 
-        btnSubmit.setBackground(new java.awt.Color(181, 189, 137));
         btnSubmit.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -165,12 +168,20 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ticket will be verified for below Person:");
 
-        dboxTerminal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Terminal A", "Terminal B", "Terminal C" }));
+        dboxTerminal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Terminal A - 1 Harborside Dr Boston MA 02128", "Terminal B - Logan Airport Terminal B Boston MA 02128", "Terminal C - Logan Airport Terminal C Boston MA 02128" }));
         dboxTerminal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dboxTerminalActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Show Airport Map");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -192,8 +203,10 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnSubmit, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
-                                .addComponent(dboxTerminal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 551, Short.MAX_VALUE)))
+                                .addComponent(dboxTerminal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(204, 204, 204)
+                                .addComponent(jButton2)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -210,13 +223,13 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dboxTerminal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dboxTerminal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2))
                 .addGap(18, 18, 18)
                 .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(126, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(181, 189, 137));
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         jButton1.setText("< Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -319,10 +332,45 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_dboxTerminalActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        JFrame test = new JFrame("Google Maps");
+        String terminalAddress = dboxTerminal.getSelectedItem().toString();
+        terminalAddress = terminalAddress.replaceAll("\\s", "");
+        try {
+            String imageUrl = "https://maps.googleapis.com/maps/api/staticmap?center=" + terminalAddress + "&zoom=14&size=400x400&key=AIzaSyDQCNrJobG6vR5mRt13VsqZaw10RRx0VAc";
+            String destinationFile = "image.jpg";
+            String str = destinationFile;
+            URL url = new URL(imageUrl);
+            InputStream is = url.openStream();
+            OutputStream os = new FileOutputStream(destinationFile);
+ 
+            byte[] b = new byte[2048];
+            int length;
+ 
+            while ((length = is.read(b)) != -1) {
+                os.write(b, 0, length);
+            }
+ 
+            is.close();
+            os.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+ 
+        test.add(new JLabel(new ImageIcon((new ImageIcon("image.jpg")).getImage().getScaledInstance(630, 600,
+                java.awt.Image.SCALE_SMOOTH))));
+ 
+        test.setVisible(true);
+        test.pack();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox<String> dboxTerminal;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;

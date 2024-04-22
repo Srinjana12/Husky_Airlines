@@ -92,9 +92,8 @@ public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        jPanel2.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel2.setBackground(new java.awt.Color(153, 0, 0));
 
-        submitJButton.setBackground(new java.awt.Color(181, 189, 137));
         submitJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         submitJButton.setText("Submit Result");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -103,10 +102,11 @@ public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("No. Of Luggage:");
 
-        backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         backJButton.setText("< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -127,12 +127,15 @@ public class TransportationSecurityAdministratorWorkRequestJPanel extends javax.
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
 
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(114, 158, 161));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText(" Luggage Checkout");
 
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Luggage is being checked out:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

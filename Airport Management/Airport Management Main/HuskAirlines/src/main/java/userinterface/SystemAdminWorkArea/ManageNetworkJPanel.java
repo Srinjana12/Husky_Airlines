@@ -64,7 +64,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(223, 190, 153));
+        setBackground(new java.awt.Color(153, 0, 0));
         setLayout(null);
 
         networkJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
@@ -100,11 +100,11 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jScrollPane1.setBounds(0, 110, 913, 139);
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Name");
         add(jLabel1);
         jLabel1.setBounds(6, 305, 50, 22);
 
-        btnSubmit.setBackground(new java.awt.Color(181, 189, 137));
         btnSubmit.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +117,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(nameJTextField);
         nameJTextField.setBounds(116, 307, 257, 23);
 
-        backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -129,13 +128,12 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         backJButton.setBounds(6, 24, 100, 50);
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(114, 158, 161));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Manage Network");
         add(jLabel6);
         jLabel6.setBounds(112, 31, 807, 43);
 
-        btnDelete.setBackground(new java.awt.Color(181, 189, 137));
         btnDelete.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -146,7 +144,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(btnDelete);
         btnDelete.setBounds(270, 360, 260, 50);
 
-        btnUpdate.setBackground(new java.awt.Color(181, 189, 137));
         btnUpdate.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {

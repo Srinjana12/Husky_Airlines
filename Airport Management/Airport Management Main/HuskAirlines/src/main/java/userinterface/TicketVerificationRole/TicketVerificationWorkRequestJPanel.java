@@ -92,9 +92,8 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         dboxGateNumber = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
 
-        btnYes.setBackground(new java.awt.Color(181, 189, 137));
         btnYes.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnYes.setText("Yes");
         btnYes.addActionListener(new java.awt.event.ActionListener() {
@@ -104,9 +103,9 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Is the ticket verified?");
 
-        backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         backJButton.setText("< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +115,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(114, 158, 161));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ticket Verification");
 
@@ -131,7 +130,6 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblPassengerRecord);
 
-        btnNo.setBackground(new java.awt.Color(181, 189, 137));
         btnNo.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnNo.setText("No");
         btnNo.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +139,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("Passenger Details:");
 
@@ -152,6 +151,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel8.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Gate No:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -291,7 +291,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         account.setUsername("None");
         request.getSecurityCheckWorkRequest().setReceiver(account);
         request.setStatus("Completed");
-        JOptionPane.showMessageDialog(this, "Passenger has been updated!");
+        JOptionPane.showMessageDialog(this, "Ticket Verification Officer has been updated!");
     }//GEN-LAST:event_btnNoActionPerformed
 
     private void dboxGateNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dboxGateNumberActionPerformed

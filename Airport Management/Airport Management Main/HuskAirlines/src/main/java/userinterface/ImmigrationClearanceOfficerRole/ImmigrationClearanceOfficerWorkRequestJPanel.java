@@ -47,8 +47,8 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
     }
 
     public void populateTable() {
-        DefaultTableModel model1 = (DefaultTableModel) tblHomelessPersonRecords1.getModel();
-        DefaultTableModel model2 = (DefaultTableModel) tblHomelessPersonRecords2.getModel();
+        DefaultTableModel model1 = (DefaultTableModel) tblPassengerRecords1.getModel();
+        DefaultTableModel model2 = (DefaultTableModel) tblPassengerRecords.getModel();
         model1.setRowCount(0);
         model2.setRowCount(0);
         if (request.getPassengerPerson() != null) {
@@ -86,17 +86,17 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         resultJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblHomelessPersonRecords1 = new javax.swing.JTable();
+        tblPassengerRecords1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblHomelessPersonRecords2 = new javax.swing.JTable();
+        tblPassengerRecords = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtFieldHousingOption1 = new javax.swing.JTextField();
+        txtImmigrationDetails = new javax.swing.JTextField();
         btnPassResults = new javax.swing.JButton();
         btnFailResults = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         resultJTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +106,6 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         });
         jPanel1.add(resultJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 731, 88, 0));
 
-        backJButton.setBackground(new java.awt.Color(114, 158, 161));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         backJButton.setText("<");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -116,8 +115,8 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         });
         jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
 
-        tblHomelessPersonRecords1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        tblHomelessPersonRecords1.setModel(new javax.swing.table.DefaultTableModel(
+        tblPassengerRecords1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        tblPassengerRecords1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -125,12 +124,12 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
                 "Name", "Gate No", "Source", "current address", "Passport No", "Contact No", "Email Address", "Passport Expiry Date"
             }
         ));
-        jScrollPane1.setViewportView(tblHomelessPersonRecords1);
+        jScrollPane1.setViewportView(tblPassengerRecords1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 195, 1225, 100));
 
-        tblHomelessPersonRecords2.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        tblHomelessPersonRecords2.setModel(new javax.swing.table.DefaultTableModel(
+        tblPassengerRecords.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        tblPassengerRecords.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -138,28 +137,28 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
                 "Gender", "Criminal Record?", "Medical Conditions??", "Medication??", "Special Requirements??"
             }
         ));
-        jScrollPane2.setViewportView(tblHomelessPersonRecords2);
+        jScrollPane2.setViewportView(tblPassengerRecords);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 313, 1225, 100));
 
         jLabel2.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(104, 144, 146));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText(" Immigration Work Area");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1225, -1));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Enter Reason For Immigration Pass Or Fail");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 431, 469, -1));
 
-        txtFieldHousingOption1.addActionListener(new java.awt.event.ActionListener() {
+        txtImmigrationDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFieldHousingOption1ActionPerformed(evt);
+                txtImmigrationDetailsActionPerformed(evt);
             }
         });
-        jPanel1.add(txtFieldHousingOption1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 350, 30));
+        jPanel1.add(txtImmigrationDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 350, 30));
 
-        btnPassResults.setBackground(new java.awt.Color(114, 158, 161));
         btnPassResults.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnPassResults.setText("PASS");
         btnPassResults.addActionListener(new java.awt.event.ActionListener() {
@@ -167,9 +166,8 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
                 btnPassResultsActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPassResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 659, 250, 50));
+        jPanel1.add(btnPassResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 160, 50));
 
-        btnFailResults.setBackground(new java.awt.Color(114, 158, 161));
         btnFailResults.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnFailResults.setText("FAIL");
         btnFailResults.addActionListener(new java.awt.event.ActionListener() {
@@ -177,9 +175,10 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
                 btnFailResultsActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFailResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 659, -1, 50));
+        jPanel1.add(btnFailResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 160, 50));
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("Passenger Details:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 143, 1225, 34));
@@ -220,8 +219,8 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         }
 
         List<String> diseases = new ArrayList<>();
-        if (!txtFieldHousingOption1.getText().equals("")) {
-            diseases.add(txtFieldHousingOption1.getText());
+        if (!txtImmigrationDetails.getText().equals("")) {
+            diseases.add(txtImmigrationDetails.getText());
         }
         request.setStatus("Completed");
         request.setTestResult("Sent to Luggage Check-out");
@@ -260,9 +259,9 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
         }
     }//GEN-LAST:event_btnPassResultsActionPerformed
 
-    private void txtFieldHousingOption1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldHousingOption1ActionPerformed
+    private void txtImmigrationDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtImmigrationDetailsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFieldHousingOption1ActionPerformed
+    }//GEN-LAST:event_txtImmigrationDetailsActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
@@ -291,8 +290,8 @@ public class ImmigrationClearanceOfficerWorkRequestJPanel extends javax.swing.JP
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField resultJTextField;
-    private javax.swing.JTable tblHomelessPersonRecords1;
-    private javax.swing.JTable tblHomelessPersonRecords2;
-    private javax.swing.JTextField txtFieldHousingOption1;
+    private javax.swing.JTable tblPassengerRecords;
+    private javax.swing.JTable tblPassengerRecords1;
+    private javax.swing.JTextField txtImmigrationDetails;
     // End of variables declaration//GEN-END:variables
 }
