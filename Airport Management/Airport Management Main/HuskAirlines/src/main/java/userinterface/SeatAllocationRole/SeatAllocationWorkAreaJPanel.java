@@ -104,7 +104,7 @@ public class SeatAllocationWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
 
         workRequestJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -132,7 +132,6 @@ public class SeatAllocationWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        btnProcess.setBackground(new java.awt.Color(181, 189, 137));
         btnProcess.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnProcess.setText("Process");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +140,6 @@ public class SeatAllocationWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnRefresh.setBackground(new java.awt.Color(181, 189, 137));
         btnRefresh.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -150,7 +148,6 @@ public class SeatAllocationWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnAssign.setBackground(new java.awt.Color(181, 189, 137));
         btnAssign.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnAssign.setText("Assign to me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -179,14 +176,16 @@ public class SeatAllocationWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(SentWorkReqJTable);
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(114, 158, 161));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Seat Allocation");
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("List of Requests received from Ticket Verification & ID:");
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("List of Requests sent by you to Food Allocation:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

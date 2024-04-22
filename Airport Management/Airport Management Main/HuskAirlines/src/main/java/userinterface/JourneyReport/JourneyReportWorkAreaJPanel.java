@@ -183,7 +183,7 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
                 .addContainerGap(112, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel2.setBackground(new java.awt.Color(153, 0, 0));
 
         reportrequeststable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         reportrequeststable.setModel(new javax.swing.table.DefaultTableModel(
@@ -211,7 +211,6 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(reportrequeststable);
 
-        btnAssign.setBackground(new java.awt.Color(181, 189, 137));
         btnAssign.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnAssign.setText("Assign to me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -220,7 +219,6 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnProcess.setBackground(new java.awt.Color(181, 189, 137));
         btnProcess.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnProcess.setText("Process");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
@@ -229,7 +227,6 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnRefresh.setBackground(new java.awt.Color(181, 189, 137));
         btnRefresh.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -239,10 +236,13 @@ public class JourneyReportWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         jLabel8.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Journey Report Creator Work Area");
 
+        jLabel2.setBackground(new java.awt.Color(153, 0, 0));
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("List of Requests received from Transportation Security Administrator:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
