@@ -55,31 +55,31 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
      * Populates table
      */
     public void populateTable() {
-        DefaultTableModel model1 = (DefaultTableModel) tblHomelessPersonRecords1.getModel();
-        DefaultTableModel model2 = (DefaultTableModel) tblHomelessPersonRecords2.getModel();
+        DefaultTableModel model1 = (DefaultTableModel) tblPassengerRecords.getModel();
+        DefaultTableModel model2 = (DefaultTableModel) tblPassengerRecords1.getModel();
         model1.setRowCount(0);
         model2.setRowCount(0);
         if (request.getPassengerPerson() != null) {
             Object[] row = new Object[8];
             row[0] = request.getPassengerPerson().getName();
             row[1] = request.getPassengerPerson().getDob();
-            row[2] = request.getPassengerPerson().getCity();
-            row[3] = request.getPassengerPerson().getCurrentAddress();
-            row[4] = request.getPassengerPerson().getSSNNo();
+            row[2] = request.getPassengerPerson().getDestinationCity();
+            row[3] = request.getPassengerPerson().getSourceLocation();
+            row[4] = request.getPassengerPerson().getPassportNumber();
             row[5] = request.getPassengerPerson().getContactNo();
             row[6] = request.getPassengerPerson().getEmailAddress();
-            row[7] = request.getPassengerPerson().getDependents();
+            row[7] = request.getPassengerPerson().getPassportExpiry();
             model1.addRow(row);
             Object[] rowSecond = new Object[9];
-            rowSecond[0] = request.getPassengerPerson().getQualifications();
-            rowSecond[1] = request.getPassengerPerson().getAccomplishments();
-            rowSecond[2] = request.getPassengerPerson().getIncome();
-            rowSecond[3] = request.getPassengerPerson().getEmploymentStatus();
+            rowSecond[0] = request.getPassengerPerson().getSeatPreference();
+            rowSecond[1] = request.getPassengerPerson().getFoodPreference();
+            rowSecond[2] = request.getPassengerPerson().getEmergencyNo();
+            rowSecond[3] = request.getPassengerPerson().getEmergencyName();
             rowSecond[4] = request.getPassengerPerson().getGender();
             rowSecond[5] = request.getPassengerPerson().isHasCriminalRecord() ? "Yes" : "No";
-            rowSecond[6] = request.getPassengerPerson().isMajorIllness() ? "Yes" : "No";
-            rowSecond[7] = request.getPassengerPerson().isCarrierDisease() ? "Yes" : "No";
-            rowSecond[8] = request.getPassengerPerson().isGeneticDisease() ? "Yes" : "No";
+            rowSecond[6] = request.getPassengerPerson().isPreConditions() ? "Yes" : "No";
+            rowSecond[7] = request.getPassengerPerson().isMedication() ? "Yes" : "No";
+            rowSecond[8] = request.getPassengerPerson().isAccomodationReq() ? "Yes" : "No";
             model2.addRow(rowSecond);
 
         }
@@ -98,14 +98,13 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblHomelessPersonRecords2 = new javax.swing.JTable();
+        tblPassengerRecords1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblHomelessPersonRecords1 = new javax.swing.JTable();
+        tblPassengerRecords = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        hospital_allocator_select_hospitalComboBox = new javax.swing.JComboBox<>();
-        jButton3 = new javax.swing.JButton();
+        dboxTerminal = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(223, 190, 153));
@@ -115,13 +114,13 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Security Officer");
 
-        tblHomelessPersonRecords2.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        tblHomelessPersonRecords2.setModel(new javax.swing.table.DefaultTableModel(
+        tblPassengerRecords1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        tblPassengerRecords1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Seat Preference", "Food Preference", "Emergency Contact No. ", "Name Of Emergency Contact", "Gender", "Criminal Record", "Medical Condition", "Medication", "Special Requirements"
+                "Seat Preference", "Food Preference", "Emergency Contact No. ", "Name Of Emergency Contact", "Gender", "Criminal Record?", "Medical Condition?", "Medication?", "Special Requirements?"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -132,15 +131,15 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblHomelessPersonRecords2);
+        jScrollPane1.setViewportView(tblPassengerRecords1);
 
-        tblHomelessPersonRecords1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        tblHomelessPersonRecords1.setModel(new javax.swing.table.DefaultTableModel(
+        tblPassengerRecords.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        tblPassengerRecords.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Name", "DOB", "Source", "Destination", "Passport No", "Contact No", "Email Addressl", "Passport Expiry Date"
+                "Name", "DOB", "Source", "Destination", "Passport No", "Contact No", "Email Address", "Passport Expiry Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -151,34 +150,27 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tblHomelessPersonRecords1);
+        jScrollPane2.setViewportView(tblPassengerRecords);
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         jLabel1.setText("Select Terminal");
 
-        jButton2.setBackground(new java.awt.Color(181, 189, 137));
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jButton2.setText("Submit");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setBackground(new java.awt.Color(181, 189, 137));
+        btnSubmit.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         jLabel2.setText("Ticket will be verified for below Person:");
 
-        hospital_allocator_select_hospitalComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Terminal A", "Terminal B", "Terminal C" }));
-        hospital_allocator_select_hospitalComboBox.addActionListener(new java.awt.event.ActionListener() {
+        dboxTerminal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Terminal A", "Terminal B", "Terminal C" }));
+        dboxTerminal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hospital_allocator_select_hospitalComboBoxActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("SHOW ON MAP");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                dboxTerminalActionPerformed(evt);
             }
         });
 
@@ -198,12 +190,10 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
+                                    .addComponent(btnSubmit, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
-                                .addComponent(hospital_allocator_select_hospitalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(dboxTerminal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 551, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -220,10 +210,9 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hospital_allocator_select_hospitalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(dboxTerminal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(126, Short.MAX_VALUE))
         );
 
@@ -274,28 +263,28 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         if (request.getStatus().equals("Completed")) {
             JOptionPane.showMessageDialog(null, "This request has already been completed by you!");
             return;
         }
-        if (hospital_allocator_select_hospitalComboBox.getSelectedItem().equals("")) {
+        if (dboxTerminal.getSelectedItem().equals("")) {
             JOptionPane.showMessageDialog(null, "Enter the address field to proceed the request!");
             return;
         }
-        request.setTestResult("Sent to SA");
+        request.setTestResult("Sent to Ticket Verification Officer");
         request.setStatus("Completed");
         UserAccount account = new UserAccount();
         account.setUsername("None");
         request.setReceiver(account);
-        request.setTestResult("Completed by Hospital Allocator and passed to Department Facilitator.");
+        request.setTestResult("Completed by Security Officer and passed to Ticket Verification Officer.");
 
         TicketVerificationWorkRequest sfRequest = new TicketVerificationWorkRequest();
-        sfRequest.setMessage("Department Facilitation");
+        sfRequest.setMessage("Ticket Verification");
         sfRequest.setSecurityCheckWorkRequest(request);
         sfRequest.setPassengerPerson(request.getPassengerPerson());
-        sfRequest.getSecurityCheckWorkRequest().setTerminalReported(hospital_allocator_select_hospitalComboBox.getSelectedItem().toString());
+        sfRequest.getSecurityCheckWorkRequest().setTerminalReported(dboxTerminal.getSelectedItem().toString());
         sfRequest.setSender(userAccount);
         sfRequest.setStatus("Sent");
         Date d = new Date();
@@ -318,64 +307,29 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         if (org != null) {
             org.getWorkQueue().getWorkRequestList().add(sfRequest);
             userAccount.getWorkQueue().getWorkRequestList().add(sfRequest);
-            JOptionPane.showMessageDialog(this, "Request Sent to Department Facilitator");
+            JOptionPane.showMessageDialog(this, "Request Sent for Ticket Verification");
 
         }
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        JFrame test = new JFrame("Google Maps");
-        String hospitaladdress = hospital_allocator_select_hospitalComboBox.getSelectedItem().toString();
-        hospitaladdress = hospitaladdress.replaceAll("\\s", "");
-        try {
-            String imageUrl = "https://maps.googleapis.com/maps/api/staticmap?center=" + hospitaladdress + "&zoom=14&size=400x400&key="
-                    + System.getenv("FOO");
-            String destinationFile = "image.jpg";
-            String str = destinationFile;
-            URL url = new URL(imageUrl);
-            InputStream is = url.openStream();
-            OutputStream os = new FileOutputStream(destinationFile);
-
-            byte[] b = new byte[2048];
-            int length;
-
-            while ((length = is.read(b)) != -1) {
-                os.write(b, 0, length);
-            }
-
-            is.close();
-            os.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
-
-        test.add(new JLabel(new ImageIcon((new ImageIcon("image.jpg")).getImage().getScaledInstance(630, 600,
-                java.awt.Image.SCALE_SMOOTH))));
-
-        test.setVisible(true);
-        test.pack();        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void hospital_allocator_select_hospitalComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospital_allocator_select_hospitalComboBoxActionPerformed
+    private void dboxTerminalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dboxTerminalActionPerformed
         // TODO add your handling code here:
-        hospital_allocator_select_hospitalComboBox.getSelectedItem();
+        dboxTerminal.getSelectedItem();
 
-    }//GEN-LAST:event_hospital_allocator_select_hospitalComboBoxActionPerformed
+    }//GEN-LAST:event_dboxTerminalActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> hospital_allocator_select_hospitalComboBox;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JComboBox<String> dboxTerminal;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tblHomelessPersonRecords1;
-    private javax.swing.JTable tblHomelessPersonRecords2;
+    private javax.swing.JTable tblPassengerRecords;
+    private javax.swing.JTable tblPassengerRecords1;
     // End of variables declaration//GEN-END:variables
 }

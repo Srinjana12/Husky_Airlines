@@ -28,9 +28,6 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
     private Immigration organization;
     private Enterprise enterprise;
 
-    /**
-     * Creates new form LabAssistantWorkAreaJPanel
-     */
     public ImmigrationClearanceOfficerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Immigration organization, EcoSystem business, Enterprise enterprise) {
         initComponents();
         this.enterprise = enterprise;
@@ -38,14 +35,10 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
         this.userAccount = account;
         this.business = business;
         this.organization = organization;
-//        valueLabel.setText(enterprise.getName());
         populateReceiveTable();
         populateSentTable();
     }
 
-    /**
-     * Populates table
-     */
     public void populateReceiveTable() {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
 
@@ -76,8 +69,7 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
             row[0] = wr.getPassengerPerson() != null ? wr.getPassengerPerson().getName() : "No name";
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
-            //String result = ((LabTestWorkRequest) request).getTestResult();
-            row[3] = request.getRequestDate(); //result == null ? "Waiting" : result;
+            row[3] = request.getRequestDate();
 
             model.addRow(row);
         }
@@ -95,9 +87,9 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
-        assignJButton = new javax.swing.JButton();
-        processJButton = new javax.swing.JButton();
-        refreshJButton = new javax.swing.JButton();
+        btnAssign = new javax.swing.JButton();
+        btnProcess = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         SentWorkReqJTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
@@ -135,35 +127,35 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 156, 1135, 150));
 
-        assignJButton.setBackground(new java.awt.Color(104, 144, 146));
-        assignJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        assignJButton.setText("Assign to me");
-        assignJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnAssign.setBackground(new java.awt.Color(104, 144, 146));
+        btnAssign.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        btnAssign.setText("Assign to me");
+        btnAssign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignJButtonActionPerformed(evt);
+                btnAssignActionPerformed(evt);
             }
         });
-        jPanel1.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 250, 50));
+        jPanel1.add(btnAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 250, 50));
 
-        processJButton.setBackground(new java.awt.Color(104, 144, 146));
-        processJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        processJButton.setText("Process");
-        processJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnProcess.setBackground(new java.awt.Color(104, 144, 146));
+        btnProcess.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        btnProcess.setText("Process");
+        btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processJButtonActionPerformed(evt);
+                btnProcessActionPerformed(evt);
             }
         });
-        jPanel1.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 250, 50));
+        jPanel1.add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 250, 50));
 
-        refreshJButton.setBackground(new java.awt.Color(104, 144, 146));
-        refreshJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        refreshJButton.setText("Refresh");
-        refreshJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setBackground(new java.awt.Color(104, 144, 146));
+        btnRefresh.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshJButtonActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
-        jPanel1.add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 320, 250, 50));
+        jPanel1.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 320, 250, 50));
 
         SentWorkReqJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         SentWorkReqJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -221,10 +213,10 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
+    private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed
         int selectedRow = workRequestJTable.getSelectedRow();
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a request to proceed!");
+            JOptionPane.showMessageDialog(null, "Please select a row to proceed!");
             return;
         }
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
@@ -238,9 +230,9 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
             JOptionPane.showMessageDialog(null, "Either this request does not belong to your account or it has already been assigned to you.");
             return;
         }
-    }//GEN-LAST:event_assignJButtonActionPerformed
+    }//GEN-LAST:event_btnAssignActionPerformed
 
-    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
+    private void btnProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessActionPerformed
         int selectedRow = workRequestJTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select a row first!");
@@ -254,31 +246,31 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
             }
             request.setStatus("Processing");
             ImmigrationClearanceOfficerWorkRequestJPanel processWorkRequestJPanel = new ImmigrationClearanceOfficerWorkRequestJPanel(userProcessContainer, request, userAccount, business);
-            userProcessContainer.add("MedicineProcessRequestJPanel", processWorkRequestJPanel);
+            userProcessContainer.add("ImmigrationClearanceOfficerWorkRequestJPanel", processWorkRequestJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         } else {
             JOptionPane.showMessageDialog(null, "This request doesnt belong to your account!");
             return;
         }
-    }//GEN-LAST:event_processJButtonActionPerformed
+    }//GEN-LAST:event_btnProcessActionPerformed
 
-    private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         populateReceiveTable();
         populateSentTable();
-    }//GEN-LAST:event_refreshJButtonActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable SentWorkReqJTable;
-    private javax.swing.JButton assignJButton;
+    private javax.swing.JButton btnAssign;
+    private javax.swing.JButton btnProcess;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton processJButton;
-    private javax.swing.JButton refreshJButton;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }

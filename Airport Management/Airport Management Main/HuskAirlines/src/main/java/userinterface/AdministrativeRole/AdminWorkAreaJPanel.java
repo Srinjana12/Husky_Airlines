@@ -38,14 +38,14 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(223, 190, 153));
+        setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(104, 144, 146));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("My Work Area -Adminstrative Role");
 
-        userJButton.setBackground(new java.awt.Color(181, 189, 137));
+        userJButton.setBackground(new java.awt.Color(0, 153, 153));
         userJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         userJButton.setText("Manage User");
         userJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +54,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        manageEmployeeJButton.setBackground(new java.awt.Color(181, 189, 137));
+        manageEmployeeJButton.setBackground(new java.awt.Color(0, 153, 153));
         manageEmployeeJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         manageEmployeeJButton.setText("Manage Employee");
         manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +63,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        manageOrganizationJButton.setBackground(new java.awt.Color(181, 189, 137));
+        manageOrganizationJButton.setBackground(new java.awt.Color(0, 153, 153));
         manageOrganizationJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         manageOrganizationJButton.setText("Manage Organization");
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {

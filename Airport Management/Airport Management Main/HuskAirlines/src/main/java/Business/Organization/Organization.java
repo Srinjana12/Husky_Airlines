@@ -25,7 +25,7 @@ public abstract class Organization {
 
     public enum Type {
         Admin("Admin Organization"), TicketBookingOrganization("Ticket Booking Organization"),
-        SecurityCheckin("Security Checkin"), TicketVerification("Ticket Verification"), SeatAllocation("Seat Allocation"), FoodAllocation("Food Allocation"),
+        SecurityCheckin("Security Check-in"), TicketVerification("Ticket Verification"), SeatAllocation("Seat Allocation"), FoodAllocation("Food Allocation"),
         Immigration("Immigration"), JourneyReport("Journey Report"), LuggageCheckout("Luggage Checkout");
         private String value;
 

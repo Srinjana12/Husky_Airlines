@@ -73,7 +73,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         organizationJTable = new javax.swing.JTable();
-        addJButton = new javax.swing.JButton();
+        btnCreate = new javax.swing.JButton();
         organizationJComboBox = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
@@ -82,8 +82,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         organizationEmpJComboBox = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        updateJButton = new javax.swing.JButton();
-        deleteJButton = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(223, 190, 153));
         setLayout(null);
@@ -121,16 +121,16 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(0, 190, 1146, 109);
 
-        addJButton.setBackground(new java.awt.Color(181, 189, 137));
-        addJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        addJButton.setText("Create Employee");
-        addJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnCreate.setBackground(new java.awt.Color(181, 189, 137));
+        btnCreate.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        btnCreate.setText("Create Employee");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addJButtonActionPerformed(evt);
+                btnCreateActionPerformed(evt);
             }
         });
-        add(addJButton);
-        addJButton.setBounds(6, 414, 250, 50);
+        add(btnCreate);
+        btnCreate.setBounds(6, 414, 250, 50);
 
         organizationJComboBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -167,6 +167,11 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         organizationEmpJComboBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        organizationEmpJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                organizationEmpJComboBoxActionPerformed(evt);
+            }
+        });
         add(organizationEmpJComboBox);
         organizationEmpJComboBox.setBounds(131, 322, 206, 28);
 
@@ -182,30 +187,30 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(jLabel5);
         jLabel5.setBounds(6, 325, 113, 22);
 
-        updateJButton.setBackground(new java.awt.Color(181, 189, 137));
-        updateJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        updateJButton.setText("Update Employee");
-        updateJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.setBackground(new java.awt.Color(181, 189, 137));
+        btnUpdate.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        btnUpdate.setText("Update Employee");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateJButtonActionPerformed(evt);
+                btnUpdateActionPerformed(evt);
             }
         });
-        add(updateJButton);
-        updateJButton.setBounds(580, 420, 250, 50);
+        add(btnUpdate);
+        btnUpdate.setBounds(580, 420, 250, 50);
 
-        deleteJButton.setBackground(new java.awt.Color(181, 189, 137));
-        deleteJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        deleteJButton.setText("Delete Employee");
-        deleteJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setBackground(new java.awt.Color(181, 189, 137));
+        btnDelete.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        btnDelete.setText("Delete Employee");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteJButtonActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
-        add(deleteJButton);
-        deleteJButton.setBounds(290, 420, 250, 50);
+        add(btnDelete);
+        btnDelete.setBounds(290, 420, 250, 50);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
 
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
         String name = nameJTextField.getText();
@@ -213,7 +218,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         organization.getEmployeeDirectory().createEmployee(name);
         populateTable(organization);
 
-    }//GEN-LAST:event_addJButtonActionPerformed
+    }//GEN-LAST:event_btnCreateActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
@@ -229,11 +234,11 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
-    private void updateJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateJButtonActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
         String name = nameJTextField.getText();
         if(name.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please select enter to name to update!");
+            JOptionPane.showMessageDialog(null, "Please select enter the name to update!");
             return;
         }
         int selectedRow = organizationJTable.getSelectedRow();
@@ -258,9 +263,9 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please select employee to update!");
         }
-    }//GEN-LAST:event_updateJButtonActionPerformed
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
-    private void deleteJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteJButtonActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         int selectedRow = organizationJTable.getSelectedRow();
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
@@ -284,12 +289,17 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please select employee to delete!");
         }
-    }//GEN-LAST:event_deleteJButtonActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void organizationEmpJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationEmpJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_organizationEmpJComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addJButton;
     private javax.swing.JButton backJButton;
-    private javax.swing.JButton deleteJButton;
+    private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -299,6 +309,5 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox organizationEmpJComboBox;
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTable organizationJTable;
-    private javax.swing.JButton updateJButton;
     // End of variables declaration//GEN-END:variables
 }

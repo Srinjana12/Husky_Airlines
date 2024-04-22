@@ -37,25 +37,25 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     }
 
     public void popOrganizationComboBox() {
-        organizationJComboBox.removeAllItems();
+        comboxOrganization.removeAllItems();
 
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-            organizationJComboBox.addItem(organization);
+            comboxOrganization.addItem(organization);
         }
     }
 
     public void populateEmployeeComboBox(Organization organization) {
-        employeeJComboBox.removeAllItems();
+        jComboBoxEmployee.removeAllItems();
 
         for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
-            employeeJComboBox.addItem(employee);
+            jComboBoxEmployee.addItem(employee);
         }
     }
 
     private void populateRoleComboBox(Organization organization) {
-        roleJComboBox.removeAllItems();
+        jComboBoxRole.removeAllItems();
         for (Role role : organization.getSupportedRole()) {
-            roleJComboBox.addItem(role);
+            jComboBoxRole.addItem(role);
         }
     }
 
@@ -85,19 +85,19 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         createUserJButton = new javax.swing.JButton();
-        nameJTextField = new javax.swing.JTextField();
+        txtUserName = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         userJTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        passwordJTextField = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        employeeJComboBox = new javax.swing.JComboBox();
+        jComboBoxEmployee = new javax.swing.JComboBox();
         backjButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        organizationJComboBox = new javax.swing.JComboBox();
+        comboxOrganization = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
-        roleJComboBox = new javax.swing.JComboBox();
+        jComboBoxRole = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
         deleteJButton = new javax.swing.JButton();
         updateJButton = new javax.swing.JButton();
@@ -114,7 +114,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
         add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 518, 250, 50));
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, 201, -1));
+        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, 201, -1));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         jLabel1.setText("User Name");
@@ -155,15 +155,15 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         jLabel2.setText("Password");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 478, -1, -1));
-        add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 201, -1));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 201, -1));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         jLabel3.setText("Employee");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 351, -1, -1));
 
-        employeeJComboBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        employeeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(employeeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 198, -1));
+        jComboBoxEmployee.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jComboBoxEmployee.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(jComboBoxEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 198, -1));
 
         backjButton1.setBackground(new java.awt.Color(181, 189, 137));
         backjButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
@@ -179,27 +179,27 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel5.setText("Organization");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 306, -1, -1));
 
-        organizationJComboBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
+        comboxOrganization.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        comboxOrganization.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboxOrganization.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                organizationJComboBoxActionPerformed(evt);
+                comboxOrganizationActionPerformed(evt);
             }
         });
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 198, -1));
+        add(comboxOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 198, -1));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         jLabel4.setText("Role");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 396, -1, -1));
 
-        roleJComboBox.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        roleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        roleJComboBox.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxRole.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jComboBoxRole.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxRole.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                roleJComboBoxActionPerformed(evt);
+                jComboBoxRoleActionPerformed(evt);
             }
         });
-        add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 198, -1));
+        add(jComboBoxRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 198, -1));
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(114, 158, 161));
@@ -229,11 +229,11 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
-        String userName = nameJTextField.getText();
-        String password = passwordJTextField.getText();
-        Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-        Employee employee = (Employee) employeeJComboBox.getSelectedItem();
-        Role role = (Role) roleJComboBox.getSelectedItem();
+        String userName = txtUserName.getText();
+        String password = txtPassword.getText();
+        Organization organization = (Organization) comboxOrganization.getSelectedItem();
+        Employee employee = (Employee) jComboBoxEmployee.getSelectedItem();
+        Role role = (Role) jComboBoxRole.getSelectedItem();
 
         if (organization.getUserAccountDirectory().checkIfUsernameIsUnique(userName) == true) {
             organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
@@ -251,17 +251,17 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         layout.previous(container);
     }//GEN-LAST:event_backjButton1ActionPerformed
 
-    private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
-        Organization organization = (Organization) organizationJComboBox.getSelectedItem();
+    private void comboxOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxOrganizationActionPerformed
+        Organization organization = (Organization) comboxOrganization.getSelectedItem();
         if (organization != null) {
             populateEmployeeComboBox(organization);
             populateRoleComboBox(organization);
         }
-    }//GEN-LAST:event_organizationJComboBoxActionPerformed
+    }//GEN-LAST:event_comboxOrganizationActionPerformed
 
-    private void roleJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roleJComboBoxActionPerformed
+    private void jComboBoxRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRoleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_roleJComboBoxActionPerformed
+    }//GEN-LAST:event_jComboBoxRoleActionPerformed
 
     private void deleteJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteJButtonActionPerformed
         // TODO add your handling code here:
@@ -292,10 +292,10 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private void updateJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateJButtonActionPerformed
         // TODO add your handling code here:
         int selectedRow = userJTable.getSelectedRow();
-        String userNameUpdated = nameJTextField.getText();
-        String passwordUpdated = passwordJTextField.getText();
+        String userNameUpdated = txtUserName.getText();
+        String passwordUpdated = txtPassword.getText();
         if(userNameUpdated.isEmpty() && passwordUpdated.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please select enter to name, password to update!");
+            JOptionPane.showMessageDialog(null, "Please select enter the name, password to update!");
             return;
         }
         if (selectedRow >= 0) {
@@ -322,9 +322,11 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backjButton1;
+    private javax.swing.JComboBox comboxOrganization;
     private javax.swing.JButton createUserJButton;
     private javax.swing.JButton deleteJButton;
-    private javax.swing.JComboBox employeeJComboBox;
+    private javax.swing.JComboBox jComboBoxEmployee;
+    private javax.swing.JComboBox jComboBoxRole;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -332,10 +334,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nameJTextField;
-    private javax.swing.JComboBox organizationJComboBox;
-    private javax.swing.JTextField passwordJTextField;
-    private javax.swing.JComboBox roleJComboBox;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtUserName;
     private javax.swing.JButton updateJButton;
     private javax.swing.JTable userJTable;
     // End of variables declaration//GEN-END:variables

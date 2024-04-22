@@ -57,16 +57,16 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
     }
 
     public void populateTable() {
-        DefaultTableModel model1 = (DefaultTableModel) tblHomelessPersonRecord.getModel();
+        DefaultTableModel model1 = (DefaultTableModel) tblPassengerRecord.getModel();
         model1.setRowCount(0);
         if (request.getPassengerPerson() != null) {
             Object[] row = new Object[6];
             row[0] = request.getPassengerPerson().getName();
             row[1] = request.getPassengerPerson().getContactNo();
             row[2] = request.getPassengerPerson().getEmailAddress();
-            row[3] = request.getPassengerPerson().getCurrentAddress();
+            row[3] = request.getPassengerPerson().getSourceLocation();
             row[4] = request.getSecurityCheckWorkRequest().getTerminalReported();
-            row[5] = request.getPassengerPerson().getDependents();
+            row[5] = request.getPassengerPerson().getPassportExpiry();
             model1.addRow(row);
         }
     }
@@ -86,10 +86,10 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblHomelessPersonRecord = new javax.swing.JTable();
+        tblPassengerRecord = new javax.swing.JTable();
         btnNo = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        departmentFacilitatorWorkRequest_departmentJComboBox = new javax.swing.JComboBox<>();
+        dboxGateNumber = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(223, 190, 153));
@@ -104,7 +104,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel1.setText("Has the passenger reported at selected Terminal?");
+        jLabel1.setText("Is the ticket verified?");
 
         backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
@@ -120,8 +120,8 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ticket Verification");
 
-        tblHomelessPersonRecord.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        tblHomelessPersonRecord.setModel(new javax.swing.table.DefaultTableModel(
+        tblPassengerRecord.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        tblPassengerRecord.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -129,7 +129,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
                 "Name", "Contact No", "Email Address", "Source", "Terminal", "Passport Expiry Date"
             }
         ));
-        jScrollPane1.setViewportView(tblHomelessPersonRecord);
+        jScrollPane1.setViewportView(tblPassengerRecord);
 
         btnNo.setBackground(new java.awt.Color(181, 189, 137));
         btnNo.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
@@ -144,10 +144,10 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("Passenger Details:");
 
-        departmentFacilitatorWorkRequest_departmentJComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
-        departmentFacilitatorWorkRequest_departmentJComboBox.addActionListener(new java.awt.event.ActionListener() {
+        dboxGateNumber.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        dboxGateNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                departmentFacilitatorWorkRequest_departmentJComboBoxActionPerformed(evt);
+                dboxGateNumberActionPerformed(evt);
             }
         });
 
@@ -171,11 +171,11 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(12, 12, 12)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(departmentFacilitatorWorkRequest_departmentJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(dboxGateNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(btnYes, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -196,13 +196,13 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnYes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnNo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dboxGateNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(departmentFacilitatorWorkRequest_departmentJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8)
+                        .addComponent(btnYes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnNo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(356, Short.MAX_VALUE))
+                .addContainerGap(437, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -218,7 +218,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 793, Short.MAX_VALUE)
+            .addGap(0, 874, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -233,15 +233,15 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "This request has already been completed by you!");
             return;
         }
-        request.setTestResult("Sent to Symptoms Check");
+        request.setTestResult("Sent to Seat Allocation");
         request.setStatus("Completed");
-        request.getSecurityCheckWorkRequest().setTestResult("Completed by Department Facilitator and send to Symptoms Checker");
-        request.getSecurityCheckWorkRequest().setDepartmentDetails(departmentFacilitatorWorkRequest_departmentJComboBox.getSelectedItem().toString());
+        request.getSecurityCheckWorkRequest().setTestResult("Completed by Ticket Verification Officer and send to Security Officer");
+        request.getSecurityCheckWorkRequest().setDepartmentDetails(dboxGateNumber.getSelectedItem().toString());
         UserAccount account = new UserAccount();
         account.setUsername("None");
         request.getSecurityCheckWorkRequest().setReceiver(account);
         SeatAllocationWorkRequest symptomsCheckWorkRequest = new SeatAllocationWorkRequest();
-        symptomsCheckWorkRequest.setMessage("Check Symptoms");
+        symptomsCheckWorkRequest.setMessage("Check Ticket");
         symptomsCheckWorkRequest.setSender(userAccount);
         symptomsCheckWorkRequest.setStatus("Sent");
         symptomsCheckWorkRequest.setPassengerPerson(request.getPassengerPerson());
@@ -265,7 +265,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         if (org != null) {
             org.getWorkQueue().getWorkRequestList().add(symptomsCheckWorkRequest);
             userAccount.getWorkQueue().getWorkRequestList().add(symptomsCheckWorkRequest);
-            JOptionPane.showMessageDialog(this, "Request Sent to Symptoms check");
+            JOptionPane.showMessageDialog(this, "Request Sent for Seat Allocation");
         }
     }//GEN-LAST:event_btnYesActionPerformed
 
@@ -286,29 +286,29 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "This request has already been completed by you!");
             return;
         }
-        request.getSecurityCheckWorkRequest().setTestResult("The request has been denied by Department Facilitator as he was unable to locate the person!");
+        request.getSecurityCheckWorkRequest().setTestResult("The ticket is not beeing verified!");
         UserAccount account = new UserAccount();
         account.setUsername("None");
         request.getSecurityCheckWorkRequest().setReceiver(account);
         request.setStatus("Completed");
-        JOptionPane.showMessageDialog(this, "Volunteer has been updated!");
+        JOptionPane.showMessageDialog(this, "Passenger has been updated!");
     }//GEN-LAST:event_btnNoActionPerformed
 
-    private void departmentFacilitatorWorkRequest_departmentJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_departmentFacilitatorWorkRequest_departmentJComboBoxActionPerformed
+    private void dboxGateNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dboxGateNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_departmentFacilitatorWorkRequest_departmentJComboBoxActionPerformed
+    }//GEN-LAST:event_dboxGateNumberActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JButton btnNo;
     private javax.swing.JButton btnYes;
-    private javax.swing.JComboBox<String> departmentFacilitatorWorkRequest_departmentJComboBox;
+    private javax.swing.JComboBox<String> dboxGateNumber;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblHomelessPersonRecord;
+    private javax.swing.JTable tblPassengerRecord;
     // End of variables declaration//GEN-END:variables
 }

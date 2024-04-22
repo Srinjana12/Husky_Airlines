@@ -16,7 +16,6 @@ import userinterface.TicketPortalManagerRole.TicketingPortalManagerAreaJPanel;
  *
  * @author 
  */
- // volunteerrole inherits from role
 public class TicketPortalManagerRole extends Role {
 
     @Override

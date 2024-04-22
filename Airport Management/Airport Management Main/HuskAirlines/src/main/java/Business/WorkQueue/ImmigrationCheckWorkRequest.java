@@ -38,8 +38,8 @@ public class ImmigrationCheckWorkRequest extends WorkRequest {
         return immigrationDetails;
     }
 
-    public void setImmigrationDetails(List<List<String>> addressesForHomeless) {
-        this.immigrationDetails = addressesForHomeless;
+    public void setImmigrationDetails(List<List<String>> detailsForPassenger) {
+        this.immigrationDetails = detailsForPassenger;
     }
 
     @Override

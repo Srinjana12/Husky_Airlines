@@ -51,7 +51,7 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnPassCheck">
+        <Component class="javax.swing.JButton" name="btnSeatAllocated">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="89" green="bd" red="b5" type="rgb"/>
@@ -59,10 +59,10 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Pass Symptoms Check"/>
+            <Property name="text" type="java.lang.String" value="Seat Allocated"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPassCheckActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSeatAllocatedActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -101,19 +101,63 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="tblHomelessPersonRecords1">
+            <Component class="javax.swing.JTable" name="tblPassengerRecords">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="8" rowCount="0">
                     <Column editable="false" title="Name" type="java.lang.Object"/>
                     <Column editable="false" title="DOB" type="java.lang.Object"/>
-                    <Column editable="false" title="City" type="java.lang.Object"/>
-                    <Column editable="false" title="Current Location" type="java.lang.Object"/>
-                    <Column editable="false" title="SSN" type="java.lang.Object"/>
+                    <Column editable="false" title="Source" type="java.lang.Object"/>
+                    <Column editable="false" title="Destination" type="java.lang.Object"/>
+                    <Column editable="false" title="Passport No" type="java.lang.Object"/>
                     <Column editable="false" title="Contact No" type="java.lang.Object"/>
                     <Column editable="false" title="Email Address" type="java.lang.Object"/>
-                    <Column editable="false" title="Dependents" type="java.lang.Object"/>
+                    <Column editable="false" title="Passport Expiry Date" type="java.lang.Object"/>
                   </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
                 </Property>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -134,16 +178,45 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="tblHomelessPersonRecords2">
+            <Component class="javax.swing.JTable" name="tblPassengerRecords1">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="5" rowCount="0">
                     <Column editable="true" title="Gender" type="java.lang.Object"/>
                     <Column editable="true" title="Criminal Record?" type="java.lang.Object"/>
-                    <Column editable="true" title="Major Illness??" type="java.lang.Object"/>
-                    <Column editable="true" title="Carrier Illness??" type="java.lang.Object"/>
-                    <Column editable="true" title="Genetic Illness??" type="java.lang.Object"/>
+                    <Column editable="true" title="Medical Condition?" type="java.lang.Object"/>
+                    <Column editable="true" title="Medication??" type="java.lang.Object"/>
+                    <Column editable="true" title="Special Requirements??" type="java.lang.Object"/>
                   </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
                 </Property>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -152,25 +225,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btnFailCheck">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="89" green="bd" red="b5" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Comic Sans MS" size="18" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Fail Symptoms Check"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFailCheckActionPerformed"/>
-          </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="274" y="558" width="250" height="50"/>
-            </Constraint>
-          </Constraints>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -203,7 +257,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Symptoms"/>
+            <Property name="text" type="java.lang.String" value="Types Of Seats:"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -222,16 +276,19 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="flueCheckBox" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="checkBoxEconomy" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Business" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="59" max="32767" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cboxWindowSeat" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="cboxMiddleSeat" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="coldjCheckBox" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="feverjCheckBox" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="heartjCheckBox" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="kidneyjCheckBox" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="324" max="32767" attributes="0"/>
+                      <Component id="cboxAisleSeat" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -240,11 +297,12 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="flueCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="coldjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="feverjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="heartjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="kidneyjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkBoxEconomy" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Business" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboxWindowSeat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboxAisleSeat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboxMiddleSeat" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -252,29 +310,40 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JCheckBox" name="flueCheckBox">
+            <Component class="javax.swing.JCheckBox" name="checkBoxEconomy">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Flu"/>
+                <Property name="text" type="java.lang.String" value="Economy"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBoxEconomyActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="Business">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Economy Plus"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BusinessActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="cboxWindowSeat">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Window Seat"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="coldjCheckBox">
+            <Component class="javax.swing.JCheckBox" name="cboxAisleSeat">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cold"/>
+                <Property name="text" type="java.lang.String" value="Aisle Seat"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="feverjCheckBox">
+            <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Fever"/>
+                <Property name="text" type="java.lang.String" value="Seats Placement:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="heartjCheckBox">
+            <Component class="javax.swing.JCheckBox" name="cboxMiddleSeat">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Heart Pain"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="kidneyjCheckBox">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Kidney Pain"/>
+                <Property name="text" type="java.lang.String" value="Middle Seat"/>
               </Properties>
             </Component>
           </SubComponents>

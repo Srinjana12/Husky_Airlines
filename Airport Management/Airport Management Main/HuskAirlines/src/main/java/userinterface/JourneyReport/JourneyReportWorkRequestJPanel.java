@@ -50,15 +50,15 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
     }
 
     public void populateTable() {
-        DefaultTableModel model1 = (DefaultTableModel) tblPersonRecords.getModel();
-        DefaultTableModel model2 = (DefaultTableModel) tblHousingDetails.getModel();
+        DefaultTableModel model1 = (DefaultTableModel) tblPassenger.getModel();
+        DefaultTableModel model2 = (DefaultTableModel) tblImmigrationDetails.getModel();
         model1.setRowCount(0);
         model2.setRowCount(0);
         if (request.getPassengerPerson() != null) {
             Object[] row = new Object[4];
             row[0] = request.getPassengerPerson().getName();
-            row[1] = request.getPassengerPerson().getIncome();
-            row[2] = request.getPassengerPerson().getDependents();
+            row[1] = request.getPassengerPerson().getEmergencyNo();
+            row[2] = request.getPassengerPerson().getPassportExpiry();
             row[3] = request.getPassengerPerson().getContactNo();
             model1.addRow(row);
         }
@@ -79,13 +79,13 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        submitJButton = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblPersonRecords = new javax.swing.JTable();
+        tblPassenger = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblHousingDetails = new javax.swing.JTable();
+        tblImmigrationDetails = new javax.swing.JTable();
         downloadPdfBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -93,15 +93,15 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(223, 190, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        submitJButton.setBackground(new java.awt.Color(181, 189, 137));
-        submitJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        submitJButton.setText("Submit Result");
-        submitJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setBackground(new java.awt.Color(181, 189, 137));
+        btnSubmit.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        btnSubmit.setText("Submit Result");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButtonActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        jPanel1.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 603, 250, 50));
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 603, 250, 50));
 
         backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
@@ -119,8 +119,8 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         jLabel2.setText("Journey Report");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1296, 51));
 
-        tblPersonRecords.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        tblPersonRecords.setModel(new javax.swing.table.DefaultTableModel(
+        tblPassenger.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        tblPassenger.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -128,12 +128,12 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
                 "Name", "Emergency Contact No", "Passport Expiry Date", "Contact Number"
             }
         ));
-        jScrollPane1.setViewportView(tblPersonRecords);
+        jScrollPane1.setViewportView(tblPassenger);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 200, 1302, 150));
 
-        tblHousingDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        tblHousingDetails.setModel(new javax.swing.table.DefaultTableModel(
+        tblImmigrationDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        tblImmigrationDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -141,7 +141,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
                 "Immigration Details", "No. of Luggage"
             }
         ));
-        jScrollPane2.setViewportView(tblHousingDetails);
+        jScrollPane2.setViewportView(tblImmigrationDetails);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 435, 1296, 150));
 
@@ -186,7 +186,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         //request.setTestResult("Send to Housing Agreement");
         if (request.getStatus().equals("Completed")) {
             JOptionPane.showMessageDialog(null, "This request has already been completed by you!");
@@ -199,7 +199,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         request.getsecurityCheckWorkRequest().setReceiver(account);
         downloadPdfBtn.setEnabled(true);
         JOptionPane.showMessageDialog(null, "Journey Report is generated successfully.");
-    }//GEN-LAST:event_submitJButtonActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
@@ -215,18 +215,18 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
 
     private void downloadPdfBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downloadPdfBtnActionPerformed
 //        String name = request.getHomelessPerson().getName();
-//        String houseAddress = request.getHomelessPerson().getCurrentAddress();
-//        String department = request.gethospitalAllocationWorkRequest().getDepartment();
-//        String finalmedicines = request.getFinalmedicines();
-//        String diseasedetails = request.gethospitalAllocationWorkRequest().getDiseasesForHomeless().get(0);
-//        ArrayList<String> symptoms = request.gethospitalAllocationWorkRequest().getSymptoms();
+//        String departureLocation = request.getHomelessPerson().getSourceLocation();
+//        String gateNumber = request.gethospitalAllocationWorkRequest().getDepartment();
+//        String numberOfLuggage = request.getFinalmedicines();
+//        String immigrationDetails = request.gethospitalAllocationWorkRequest().getDiseasesForHomeless().get(0);
+//        ArrayList<String> seatDetails = request.gethospitalAllocationWorkRequest().getSymptoms();
 //        String hospitaltobeplaced = request.gethospitalAllocationWorkRequest().gethospitalToBePlaced();
 //        try {
 //            Document document = new Document();
 //            PdfWriter.getInstance(document, new FileOutputStream("HealthReport_" + counter + ".pdf"));
 //            document.open();
 //            addMetaData(document);
-//            addTitlePage(document, name, houseAddress, hospitaltobeplaced, department, diseasedetails, finalmedicines, symptoms);
+//            addTitlePage(document, name, departureLocation, hospitaltobeplaced, gateNumber, immigrationDetails, numberOfLuggage, seatDetails);
 //            document.close();
 //            counter++;
 //            JOptionPane.showMessageDialog(null, "Health Report file has been downloaded");
@@ -239,38 +239,37 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
 
         String name = request.getPassengerPerson().getName();
         String contact = request.getPassengerPerson().getContactNo();
-        int income = request.getPassengerPerson().getIncome();
+        int emegencyContactNumber = request.getPassengerPerson().getEmergencyNo();
         String dob = request.getPassengerPerson().getDob();
-        String city = request.getPassengerPerson().getCity();
-        String ssn = request.getPassengerPerson().getSSNNo();
+        String Destinationcity = request.getPassengerPerson().getDestinationCity();
+        String passportNumber = request.getPassengerPerson().getPassportNumber();
         String contactNo = request.getPassengerPerson().getContactNo();
         String emailAddress = request.getPassengerPerson().getEmailAddress();
-        String qualifications = request.getPassengerPerson().getQualifications();  
-        int income1 = request.getPassengerPerson().getIncome();
+        String seatPreference = request.getPassengerPerson().getSeatPreference();  
         String gender = request.getPassengerPerson().getGender();
-        String preferredLocation = request.getPassengerPerson().getPreferredLocation();
-        boolean geneticDisease = request.getPassengerPerson().isGeneticDisease();
-        boolean majorIllness = request.getPassengerPerson().isMajorIllness();
-        boolean carrierDisease = request.getPassengerPerson().isCarrierDisease();
+        String address = request.getPassengerPerson().getAddress();
+        boolean accomodationReq = request.getPassengerPerson().isAccomodationReq();
+        boolean preExtingDisease = request.getPassengerPerson().isPreConditions();
+        boolean anyMedication = request.getPassengerPerson().isMedication();
         boolean hasCriminalRecord = request.getPassengerPerson().isHasCriminalRecord();
-        int dependents = request.getPassengerPerson().getDependents();
-        String accomplishments = request.getPassengerPerson().getAccomplishments();
-        String employmentStatus = request.getPassengerPerson().getEmploymentStatus();
-        String houseAddress = request.getPassengerPerson().getCurrentAddress();
-        String hospital = request.getsecurityCheckWorkRequest().getTerminalReported();
-        String department = request.getsecurityCheckWorkRequest().getDepartmentDetais();
-        String finalmedicines = request.getNumberOfLuggage();
-        String diseasedetails = request.getsecurityCheckWorkRequest().getImmigrationDetails().get(0);
-        ArrayList<String> symptoms = request.getsecurityCheckWorkRequest().getAllocatedSeat();
+        int passortExpiryDate = request.getPassengerPerson().getPassportExpiry();
+        String foodPreference = request.getPassengerPerson().getFoodPreference();
+        String emergencyName = request.getPassengerPerson().getEmergencyName();
+        String departureLocation = request.getPassengerPerson().getSourceLocation();
+        String terminalPassengerReported = request.getsecurityCheckWorkRequest().getTerminalReported();
+        String gateNumber = request.getsecurityCheckWorkRequest().getDepartmentDetais();
+        String numberOfLuggage = request.getNumberOfLuggage();
+        String immigrationDetails = request.getsecurityCheckWorkRequest().getImmigrationDetails().get(0);
+        ArrayList<String> seatDetails = request.getsecurityCheckWorkRequest().getAllocatedSeat();
         try {
             Document document = new Document();
-            PdfWriter.getInstance(document, new FileOutputStream("HealthReport_" + counter + ".pdf"));
+            PdfWriter.getInstance(document, new FileOutputStream("JourneyReport_" + counter + ".pdf"));
             document.open();
             addMetaData(document);
-            addTitlePage(document, name, contact, income, dob, city, ssn, contactNo, emailAddress, qualifications, income1, gender, preferredLocation, geneticDisease, majorIllness, carrierDisease, hasCriminalRecord, dependents, accomplishments, employmentStatus, houseAddress, hospital, department, finalmedicines, diseasedetails, symptoms);
+            addTitlePage(document, name, contact, emegencyContactNumber, dob, Destinationcity, passportNumber, contactNo, emailAddress, seatPreference, gender, address, accomodationReq, preExtingDisease, anyMedication, hasCriminalRecord, passortExpiryDate, foodPreference, emergencyName, departureLocation, terminalPassengerReported, gateNumber, numberOfLuggage, immigrationDetails, seatDetails);
             document.close();
             counter++;
-            JOptionPane.showMessageDialog(null, "Health Report file has been downloaded");
+            JOptionPane.showMessageDialog(null, "Journey Report file has been downloaded");
 
         } catch (Exception e) {
             //            e.printStackTrace();
@@ -289,7 +288,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         document.addCreator("Husky Air");
     }
 
-    private static void addTitlePage(Document document, String name, String contact, int income, String dob, String city, String ssn, String contactNo, String emailAddress, String qualifications, int income1, String gender, String preferredLocation, boolean geneticDisease, boolean majorIllness, boolean carrierDisease, boolean hasCriminalRecord, int dependents, String accomplishments, String employmentStatus, String houseAddress, String hospital, String department, String finalmedicines, String diseasedetails, ArrayList<String> symptoms)
+    private static void addTitlePage(Document document, String name, String contact, int emegencyContactNumber, String dob, String Destinationcity, String passportNumber, String contactNo, String emailAddress, String seatPreference, String gender, String address, boolean accomodationReq, boolean preExtingDisease, boolean anyMedication, boolean hasCriminalRecord, int passortExpiryDate, String foodPreference, String emergencyName, String departureLocation, String terminalPassengerReported, String gateNumber, String numberOfLuggage, String immigrationDetails, ArrayList<String> seatDetails)
             throws DocumentException {
 
         Paragraph preface = new Paragraph();
@@ -303,31 +302,28 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         addEmptyLine(preface, 3);
 
         String paragraph = "Journey report is generated for " + name.toUpperCase() + "\n" +
-                            "Income: " + income + "\n" +
                             "Date of Birth: " + dob + "\n" +
-                            "City: " + city + "\n" +
-                            "SSN: " + ssn + "\n" +
+                            "Passport Number: " + passportNumber + "\n" +
+                            "Destination City: " + Destinationcity + "\n" +
                             "Contact No: " + contactNo + "\n" +
                             "Email Address: " + emailAddress + "\n" +
-                            "Qualifications: " + qualifications + "\n" +
+                            "Seat Preference: " + seatPreference + "\n" +
                             "Gender: " + gender + "\n" +
-                            "Preferred Location: " + preferredLocation + "\n" +
-                            "Genetic Disease: " + geneticDisease + "\n" +
-                            "Major Illness: " + majorIllness + "\n" +
-                            "Carrier Disease: " + carrierDisease + "\n" +
+                            "Street Address: " + address + "\n" +
                             "Has Criminal Record: " + hasCriminalRecord + "\n" +
-                            "Dependents: " + dependents + "\n" +
-                            "Accomplishments: " + accomplishments + "\n" +
-                            "Employment Status: " + employmentStatus + "\n" +
-                            "House Address: " + houseAddress + "\n" +
-                            "Was the person placed at selected Hospital?: YES" + "\n" +
-                            "Pass/Fail Symptoms Check: YES" + "\n" +
-                            "Went to Hospital: " + hospital + "\n" +
-                            "Went to department: " + department + "\n" +
-                            "Facing Symptoms: " + symptoms.toString() + "\n" +
-                            "COVID Negative/Positive: Positive" + "\n" +
-                            "Disease & Recommended Medicines Details: " + diseasedetails + "\n" +
-                            "The final medicines are: " + finalmedicines + "\n" +
+                            "Passenger's Passport Expiry Date: " + passortExpiryDate + "\n" +
+                            "Food Served: " + foodPreference + "\n" +
+                            "Emergency Contact Name: " + emergencyName + "\n" +
+                            "Emergency Contact Number:" + emegencyContactNumber + "\n" +
+                            "Departure Location: " + departureLocation + "\n" +
+                            "Reported Terminal: " + terminalPassengerReported + "\n" +
+                            "Reported Gate Number: " + gateNumber + "\n" +
+                            "Passenger's Seat Details: " + seatDetails.toString() + "\n" +
+                            "Immigration Notes: " + immigrationDetails + "\n" +
+                            "Number of Luggages: " + numberOfLuggage + "\n" +
+                            "Do the passenger recieved any  special requirements or accommodations needed during the flight, such as wheelchair assistance or dietary restrictions? : " + accomodationReq + "\n" +
+                            "Do the passenger had any pre-existing medical conditions or disabilities that may require assistance during the flight?: " + preExtingDisease + "\n" +
+                            "Is passenger currently taking any medications that we should be aware of in case of an emergency?: " + anyMedication + "\n" +
                             "Thank you for flying with Husky Air!"+ "\n";
 
         preface.add(new Paragraph(paragraph, smallBold));
@@ -350,6 +346,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JButton downloadPdfBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -357,8 +354,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton submitJButton;
-    private javax.swing.JTable tblHousingDetails;
-    private javax.swing.JTable tblPersonRecords;
+    private javax.swing.JTable tblImmigrationDetails;
+    private javax.swing.JTable tblPassenger;
     // End of variables declaration//GEN-END:variables
 }
