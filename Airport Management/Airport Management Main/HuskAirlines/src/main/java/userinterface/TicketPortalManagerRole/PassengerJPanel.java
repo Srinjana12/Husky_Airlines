@@ -58,7 +58,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
     }
 
     private boolean emailPatternCorrect() {
-        Pattern p = Pattern.compile("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+        Pattern p = Pattern.compile("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$");
         Matcher m = p.matcher(txtEmailAddress.getText());
         boolean b = m.matches();
         return b;
@@ -238,7 +238,8 @@ public class PassengerJPanel extends javax.swing.JPanel {
         btnClear = new javax.swing.JButton();
         btnInsertPass = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(223, 190, 153));
+        setBackground(new java.awt.Color(153, 0, 0));
+        setForeground(new java.awt.Color(204, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -260,7 +261,9 @@ public class PassengerJPanel extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 963, -1, 0));
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Food Preference:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, 171, 28));
 
@@ -271,36 +274,51 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(txtSeatPreference, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 259, 29));
 
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Date of Birth:");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 120, 30));
         add(txtFoodPreference, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 259, 29));
 
         BtnInsertMulPass.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        BtnInsertMulPass.setForeground(new java.awt.Color(204, 204, 204));
         BtnInsertMulPass.setText("Preferences:");
         add(BtnInsertMulPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 590, 30));
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Seat Preference:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 171, 29));
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Name:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 120, 30));
 
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Gender:");
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 120, 30));
 
+        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
         jLabel13.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Passport expiry date:");
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 150, 30));
 
+        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
         jLabel15.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Departure Location:");
         add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 150, 30));
 
+        jLabel31.setBackground(new java.awt.Color(255, 255, 255));
         jLabel31.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("Destination City:");
         add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 120, 30));
 
@@ -354,18 +372,25 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(txtEmailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 259, 29));
 
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
         jLabel14.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Passport Number:");
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 120, 30));
 
+        jLabel32.setBackground(new java.awt.Color(255, 255, 255));
         jLabel32.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("Email Address:");
         add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 99, 30));
 
+        jLabel34.setBackground(new java.awt.Color(255, 255, 255));
         jLabel34.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("Contact Number:");
         add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, 30));
 
+        radioBtnFemaleGender.setForeground(new java.awt.Color(204, 204, 204));
         radioBtnFemaleGender.setText("Female");
         radioBtnFemaleGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -374,6 +399,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(radioBtnFemaleGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 179, -1, -1));
 
+        radioBtnMaleGender.setForeground(new java.awt.Color(204, 204, 204));
         radioBtnMaleGender.setText("Male");
         radioBtnMaleGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -382,11 +408,15 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(radioBtnMaleGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 179, -1, -1));
 
+        jLabel25.setBackground(new java.awt.Color(204, 204, 204));
         jLabel25.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(204, 204, 204));
         jLabel25.setText("Emergency Contact Information:");
         add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 510, 30));
 
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Name of emergency contact information:");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 260, 34));
 
@@ -397,7 +427,9 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(txtEmergencyContactName, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, 240, 29));
 
+        jLabel29.setBackground(new java.awt.Color(255, 255, 255));
         jLabel29.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("Contact number of emergency contact:");
         add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 300, 29));
 
@@ -408,14 +440,19 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(txtEmergencyContactNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, 240, 29));
 
+        jLabel10.setBackground(new java.awt.Color(204, 204, 204));
         jLabel10.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText(" Information for Criminal Check ");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 430, 30));
 
+        jLabel18.setBackground(new java.awt.Color(255, 255, 255));
         jLabel18.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Have you ever pled guilty OR being convicted OR found guilty of misdemeanor in any U.S.?");
         add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 630, 30));
 
+        radioBtnCriminalCheckYes.setForeground(new java.awt.Color(204, 204, 204));
         radioBtnCriminalCheckYes.setText("Yes");
         radioBtnCriminalCheckYes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -424,6 +461,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(radioBtnCriminalCheckYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, -1));
 
+        radioBtnCriminalCheckNo.setForeground(new java.awt.Color(204, 204, 204));
         radioBtnCriminalCheckNo.setText("No");
         radioBtnCriminalCheckNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -432,12 +470,15 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(radioBtnCriminalCheckNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
 
+        jLabel16.setBackground(new java.awt.Color(204, 204, 204));
         jLabel16.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(204, 204, 204));
         jLabel16.setText("Medical and Special Requirements Confirmation Details:");
         add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 570, 30));
 
-        btnSubmit.setBackground(new java.awt.Color(114, 158, 161));
+        btnSubmit.setBackground(new java.awt.Color(0, 0, 0));
         btnSubmit.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -446,8 +487,9 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 250, 50));
 
-        btnBack.setBackground(new java.awt.Color(114, 158, 161));
+        btnBack.setBackground(new java.awt.Color(0, 0, 0));
         btnBack.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("< ");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -457,9 +499,11 @@ public class PassengerJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 40));
 
         jLabel27.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("Do you have any pre-existing medical conditions or disabilities that may require assistance during the flight?");
         add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 700, 20));
 
+        radioBtnPreIllnessYes.setForeground(new java.awt.Color(204, 204, 204));
         radioBtnPreIllnessYes.setText("Yes");
         radioBtnPreIllnessYes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -468,6 +512,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(radioBtnPreIllnessYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 550, -1, -1));
 
+        radioBtnPreIllnessNo.setForeground(new java.awt.Color(204, 204, 204));
         radioBtnPreIllnessNo.setText("No");
         radioBtnPreIllnessNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -477,9 +522,11 @@ public class PassengerJPanel extends javax.swing.JPanel {
         add(radioBtnPreIllnessNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 550, -1, -1));
 
         jLabel26.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Are you currently taking any medications that we should be aware of in case of an emergency?");
         add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 610, 20));
 
+        radioBtnAnyMedYes.setForeground(new java.awt.Color(204, 204, 204));
         radioBtnAnyMedYes.setText("Yes");
         radioBtnAnyMedYes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -488,6 +535,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(radioBtnAnyMedYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 580, -1, -1));
 
+        radioBtnAnyMedNo.setForeground(new java.awt.Color(204, 204, 204));
         radioBtnAnyMedNo.setText("No");
         radioBtnAnyMedNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -497,9 +545,11 @@ public class PassengerJPanel extends javax.swing.JPanel {
         add(radioBtnAnyMedNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 580, -1, -1));
 
         jLabel28.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("Do you have any special requirements or accommodations needed during the flight, such as wheelchair assistance or dietary restrictions? ");
         add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, 880, -1));
 
+        radioBtnAccommodationYes.setForeground(new java.awt.Color(204, 204, 204));
         radioBtnAccommodationYes.setText("Yes");
         radioBtnAccommodationYes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -508,6 +558,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(radioBtnAccommodationYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 610, -1, -1));
 
+        radioBtnAccommodationNo.setForeground(new java.awt.Color(204, 204, 204));
         radioBtnAccommodationNo.setText("No");
         radioBtnAccommodationNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -516,7 +567,9 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(radioBtnAccommodationNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 610, -1, -1));
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Address:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 120, 30));
 
@@ -528,7 +581,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
         add(textAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 259, 29));
 
         jLabel8.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(104, 144, 146));
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("REGISTER A PASSENGER");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 450, -1));
@@ -536,8 +589,9 @@ public class PassengerJPanel extends javax.swing.JPanel {
         jLabel17.setToolTipText("");
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 540, 220, 210));
 
-        btnFakerFill.setBackground(new java.awt.Color(114, 158, 161));
+        btnFakerFill.setBackground(new java.awt.Color(0, 0, 0));
         btnFakerFill.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnFakerFill.setForeground(new java.awt.Color(255, 255, 255));
         btnFakerFill.setText("Scan ID ");
         btnFakerFill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -546,8 +600,9 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(btnFakerFill, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 180, 50));
 
-        btnClear.setBackground(new java.awt.Color(114, 158, 161));
+        btnClear.setBackground(new java.awt.Color(0, 0, 0));
         btnClear.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear Fields");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -556,8 +611,9 @@ public class PassengerJPanel extends javax.swing.JPanel {
         });
         add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 0, 180, 50));
 
-        btnInsertPass.setBackground(new java.awt.Color(114, 158, 161));
+        btnInsertPass.setBackground(new java.awt.Color(0, 0, 0));
         btnInsertPass.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnInsertPass.setForeground(new java.awt.Color(255, 255, 255));
         btnInsertPass.setText("Insert 10 Passenger");
         btnInsertPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -587,7 +643,17 @@ public class PassengerJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
 
     }//GEN-LAST:event_btnBackActionPerformed
-
+    public boolean isDateInFuture(String dateString) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        try {
+            Date inputDate = dateFormat.parse(dateString);
+            Date currentDate = new Date();
+            return inputDate.after(currentDate);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Invalid date format. Please enter date in mm/dd/yyyy format.");
+            return false;
+        }
+    }
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         if (txtFieldName.getText().equals("") || txtFieldDOB.getText().equals("")
@@ -622,7 +688,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
             return;
         }
 
-        if (txtFieldContactNo.getText().length() != 10) {
+        if (txtFieldContactNo.getText().replaceAll("-", "").length() != 10) {
             JOptionPane.showMessageDialog(null, "Contact No should be exactly 10 digits");
             return;
         }
@@ -632,21 +698,16 @@ public class PassengerJPanel extends javax.swing.JPanel {
             return;
         }
 
-        try {
-            Integer.parseInt(txtPassportExpiryDate.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Please type in a date format for Passporst Expiry Date");
-            return;
-        }
-        try {
-            Integer.parseInt(txtEmergencyContactNo.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Please type in a number for Emergency Contact Number");
-            return;
-        }
+         if (!isDateInFuture(txtPassportExpiryDate.getText()))    
+            {
+                JOptionPane.showMessageDialog(null, "Please type in a proper expiry date");
+                return;
+            }
+       
 
-        if (Integer.parseInt(txtEmergencyContactNo.getText()) > 1500) {
-            JOptionPane.showMessageDialog(null, "!");
+         if (txtEmergencyContactNo.getText().replaceAll("-", "").length() != 10)
+ {
+            JOptionPane.showMessageDialog(null, "Emergency Contact No should be exactly 10 digits");
             return;
         }
         if (!radioBtnMaleGender.isSelected() && !radioBtnFemaleGender.isSelected()) {
@@ -666,23 +727,23 @@ public class PassengerJPanel extends javax.swing.JPanel {
             return;
         }
         if (!radioBtnAccommodationYes.isSelected() && !radioBtnAccommodationNo.isSelected()) {
-            JOptionPane.showMessageDialog(null, "Select a yes or no for any special requirements or accommodations ");
+            JOptionPane.showMessageDialog(null, "Select a yes or no for any special requirements or accommodations! ");
             return;
         }
 
         String name = txtFieldName.getText();
         String dob = txtFieldDOB.getText();
-        String city = txtFieldCity.getText();
-        String addresss = txtFieldAddress.getText();
-        String ssnNo = txtPassportNo.getText();
+        String Destinationcity = txtFieldCity.getText();
+        String SourceLoc = txtFieldAddress.getText();
+        String passportNo = txtPassportNo.getText();
         String contactNo = txtFieldContactNo.getText();
-        String emailAddresss = txtEmailAddress.getText();
-        int dependents = Integer.parseInt(txtPassportExpiryDate.getText());
-        String qualifications = txtSeatPreference.getText();
-        String accomplishments = txtFoodPreference.getText();
-        String employmentStatus = txtEmergencyContactName.getText();
-        int income = Integer.parseInt(txtEmergencyContactNo.getText());
-        String prefLocation = textAddress.getText();
+        String emailAddress = txtEmailAddress.getText();
+        String passportExpiry = txtPassportExpiryDate.getText();
+        String seatPreference = txtSeatPreference.getText();
+        String foodPreference = txtFoodPreference.getText();
+        String emergencyName = txtEmergencyContactName.getText();
+        String emergencyNo = txtEmergencyContactNo.getText();
+        String address = textAddress.getText();
         String gender = "Male";
         if (radioBtnFemaleGender.isSelected()) {
             gender = "Female";
@@ -691,27 +752,20 @@ public class PassengerJPanel extends javax.swing.JPanel {
         if (radioBtnCriminalCheckYes.isSelected()) {
             criminalRecord = true;
         }
-        boolean majorIllnes = false;
+        boolean preconditions = false;
         if (radioBtnPreIllnessYes.isSelected()) {
-            majorIllnes = true;
+            preconditions = true;
         }
-        boolean carrierDisease = false;
+        boolean anyMedication = false;
         if (radioBtnAnyMedYes.isSelected()) {
-            carrierDisease = true;
+            anyMedication = true;
         }
-        boolean geneticDisease = false;
+        boolean accomodationRequired = false;
         if (radioBtnAccommodationYes.isSelected()) {
-            geneticDisease = true;
+            accomodationRequired = true;
         }
 
-        try {
-            SendGridEmail.sendMail(emailAddresss);
-        } catch (IOException ex) {
-            Logger.getLogger(PassengerJPanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Passenger person = new Passenger(name, dob, city, addresss, ssnNo,
-                contactNo, emailAddresss, dependents, qualifications, accomplishments,
-                employmentStatus, income, gender, criminalRecord, majorIllnes, carrierDisease, geneticDisease, prefLocation);
+        Passenger person = new Passenger(name, dob, Destinationcity, SourceLoc, passportNo, contactNo, emailAddress, passportExpiry, seatPreference, foodPreference, emergencyName, emergencyNo, gender, criminalRecord, preconditions, anyMedication, accomodationRequired, address);
 
         SecurityCheckWorkRequest allocationWorkRequest = new SecurityCheckWorkRequest();
         allocationWorkRequest.setPassengerPerson(person);
@@ -942,9 +996,9 @@ public class PassengerJPanel extends javax.swing.JPanel {
         txtFieldDOB.setText(dob);
         String email = faker.internet().emailAddress(); //abc@bs.com
         txtEmailAddress.setText(email);
-        String phone = faker.phoneNumber().cellPhone(); // 1234567890
+        String phone = faker.phoneNumber().subscriberNumber(10); // 1234567890
         txtFieldContactNo.setText(phone);
-        String passport = faker.idNumber().ssnValid(); // 123456789
+        String passport = faker.phoneNumber().subscriberNumber(9); // 123456789
         txtPassportNo.setText(passport);
         String sourceLocation = faker.address().city(); // New Amieshire`
         txtFieldAddress.setText(sourceLocation);
@@ -952,7 +1006,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
         txtPassportExpiryDate.setText(passportExpiry);
         String emergencyContactName = faker.name().fullName(); // Miss Samanta Schmidt
         txtEmergencyContactName.setText(emergencyContactName);
-        String emergencyContactNo = faker.phoneNumber().cellPhone(); // 1234567890
+        String emergencyContactNo = faker.phoneNumber().subscriberNumber(10); // 1234567890
         txtEmergencyContactNo.setText(emergencyContactNo);
 
         String[] seatPreferences = {"Window", "Middle", "Aisle"};

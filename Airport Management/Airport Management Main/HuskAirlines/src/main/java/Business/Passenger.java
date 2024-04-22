@@ -14,11 +14,11 @@ public class Passenger {
     private String passportNo;
     private String contactNo;
     private String emailAddress;
-    private int passportExpiry;
+    private String passportExpiry;
     private String seatPreference;
     private String foodPreference;
     private String emergencyName;
-    private int emergencyNo;
+    private String emergencyNo;
     private String gender;
     private boolean hasCriminalRecord;
     private boolean preconditions;
@@ -27,25 +27,25 @@ public class Passenger {
     private String address;
     private static int counter = 0;
 
-    public Passenger(String name, String dob, String city, String address, String SSNNo, String contactNo, String emailAddress, int dependents, String qualifications, String accomplishments, String employmentStatus, int income, String gender, boolean hasCriminalRecord, boolean majorIllness, boolean carrierDisease, boolean geneticDisease, String prefLocation) {
+    public Passenger(String name, String dob, String Destinationcity, String SourceLoc, String passportNo, String contactNo, String emailAddress, String passportExpiry, String seatPreference, String foodPreference, String emergencyName, String emergencyNo, String gender, boolean hasCriminalRecord, boolean preconditions, boolean anyMedication, boolean accomodationRequired, String address) {
         this.name = name;
         this.dob = dob;
-        this.Destinationcity = city;
-        this.SourceLoc = address;
-        this.passportNo = SSNNo;
+        this.Destinationcity = Destinationcity;
+        this.SourceLoc = SourceLoc;
+        this.passportNo = passportNo;
         this.contactNo = contactNo;
         this.emailAddress = emailAddress;
-        this.passportExpiry = dependents;
-        this.seatPreference = qualifications;
-        this.foodPreference = accomplishments;
-        this.emergencyName = employmentStatus;
-        this.emergencyNo = income;
+        this.passportExpiry = passportExpiry;
+        this.seatPreference = seatPreference;
+        this.foodPreference = foodPreference;
+        this.emergencyName = emergencyName;
+        this.emergencyNo = emergencyNo;
         this.gender = gender;
         this.hasCriminalRecord = hasCriminalRecord;
-        this.preconditions = majorIllness;
-        this.anyMedication = carrierDisease;
-        this.accomodationRequired = geneticDisease;
-        this.address = prefLocation;
+        this.preconditions = preconditions;
+        this.anyMedication = anyMedication;
+        this.accomodationRequired = accomodationRequired;
+        this.address = address;
         PersonID = counter;
         ++counter;
     }
@@ -110,11 +110,11 @@ public class Passenger {
         this.emailAddress = emailAddress;
     }
 
-    public int getPassportExpiry() {
+    public String getPassportExpiry() {
         return passportExpiry;
     }
 
-    public void setPassportExpiry(int dependents) {
+    public void setPassportExpiry(String dependents) {
         this.passportExpiry = dependents;
     }
 
@@ -142,11 +142,11 @@ public class Passenger {
         this.emergencyName = employmentStatus;
     }
 
-    public int getEmergencyNo() {
+    public String getEmergencyNo() {
         return emergencyNo;
     }
 
-    public void setEmergencyNo(int income) {
+    public void setEmergencyNo(String income) {
         this.emergencyNo = income;
     }
 

@@ -107,10 +107,12 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         dboxTerminal = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        setBackground(new java.awt.Color(153, 0, 0));
+
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(114, 158, 161));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Security Officer");
 
@@ -153,9 +155,9 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(tblPassengerRecords);
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Select Terminal");
 
-        btnSubmit.setBackground(new java.awt.Color(181, 189, 137));
         btnSubmit.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +167,7 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ticket will be verified for below Person:");
 
         dboxTerminal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Terminal A", "Terminal B", "Terminal C" }));
@@ -216,7 +219,6 @@ public class SecurityOfficerWorkRequestJPanel extends javax.swing.JPanel {
                 .addContainerGap(126, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(181, 189, 137));
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         jButton1.setText("< Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
