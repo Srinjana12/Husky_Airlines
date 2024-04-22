@@ -291,7 +291,7 @@ public class TicketVerificationWorkRequestJPanel extends javax.swing.JPanel {
         account.setUsername("None");
         request.getSecurityCheckWorkRequest().setReceiver(account);
         request.setStatus("Completed");
-        JOptionPane.showMessageDialog(this, "Passenger has been updated!");
+        JOptionPane.showMessageDialog(this, "Ticket Verification Officer has been updated!");
     }//GEN-LAST:event_btnNoActionPerformed
 
     private void dboxGateNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dboxGateNumberActionPerformed

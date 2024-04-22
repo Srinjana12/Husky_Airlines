@@ -28,7 +28,7 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem business;
     private UserAccount userAccount;
-    private TicketVerification departmentFacilitationOrganization;
+    private TicketVerification TicketVerificationOrganization;
     private Enterprise enterprise;
 
     public TicketVerificationWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, TicketVerification departmentFacilitationOrganization, Enterprise enterprise, EcoSystem business) {
@@ -37,7 +37,7 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.business = business;
         this.enterprise = enterprise;
-        this.departmentFacilitationOrganization = departmentFacilitationOrganization;
+        this.TicketVerificationOrganization = departmentFacilitationOrganization;
 
         populateReceiveTable();
         populateSentTable();
@@ -48,7 +48,7 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (WorkRequest request : departmentFacilitationOrganization.getWorkQueue().getWorkRequestList()) {
+        for (WorkRequest request : TicketVerificationOrganization.getWorkQueue().getWorkRequestList()) {
             TicketVerificationWorkRequest wr = (TicketVerificationWorkRequest) request;
             Object[] row = new Object[5];
             row[0] = wr;

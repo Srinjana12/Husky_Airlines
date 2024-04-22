@@ -48,7 +48,7 @@ public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
     }
 
     public void populateRequestTable() {
-        DefaultTableModel model = (DefaultTableModel) VolunteerJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) TicketManagerJTable.getModel();
 
         model.setRowCount(0);
         for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()) {
@@ -71,25 +71,25 @@ public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        RegisterHomelessJButton = new javax.swing.JButton();
+        RegisterPassengerJButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        VolunteerJTable = new javax.swing.JTable();
+        TicketManagerJTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(223, 190, 153));
 
-        RegisterHomelessJButton.setBackground(new java.awt.Color(114, 158, 161));
-        RegisterHomelessJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        RegisterHomelessJButton.setText("Register Passenger");
-        RegisterHomelessJButton.addActionListener(new java.awt.event.ActionListener() {
+        RegisterPassengerJButton.setBackground(new java.awt.Color(114, 158, 161));
+        RegisterPassengerJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        RegisterPassengerJButton.setText("Register Passenger");
+        RegisterPassengerJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterHomelessJButtonActionPerformed(evt);
+                RegisterPassengerJButtonActionPerformed(evt);
             }
         });
 
-        VolunteerJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        VolunteerJTable.setModel(new javax.swing.table.DefaultTableModel(
+        TicketManagerJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        TicketManagerJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -105,9 +105,9 @@ public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(VolunteerJTable);
-        if (VolunteerJTable.getColumnModel().getColumnCount() > 0) {
-            VolunteerJTable.getColumnModel().getColumn(3).setResizable(false);
+        jScrollPane1.setViewportView(TicketManagerJTable);
+        if (TicketManagerJTable.getColumnModel().getColumnCount() > 0) {
+            TicketManagerJTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
@@ -129,7 +129,7 @@ public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RegisterHomelessJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RegisterPassengerJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -140,7 +140,7 @@ public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(28, 28, 28)
-                .addComponent(RegisterHomelessJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegisterPassengerJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -149,16 +149,16 @@ public class TicketingPortalManagerAreaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RegisterHomelessJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterHomelessJButtonActionPerformed
+    private void RegisterPassengerJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPassengerJButtonActionPerformed
         // TODO add your handling code here:
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         userProcessContainer.add("RegisterPassengerJPanel", new PassengerJPanel(userProcessContainer, userAccount, enterprise, business));
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_RegisterHomelessJButtonActionPerformed
+    }//GEN-LAST:event_RegisterPassengerJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton RegisterHomelessJButton;
-    private javax.swing.JTable VolunteerJTable;
+    private javax.swing.JButton RegisterPassengerJButton;
+    private javax.swing.JTable TicketManagerJTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

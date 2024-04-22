@@ -279,8 +279,8 @@
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Component id="checkBoxEconomy" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Business" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="59" max="32767" attributes="0"/>
+                      <Component id="cboxBusiness" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="88" max="32767" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="cboxWindowSeat" min="-2" max="-2" attributes="0"/>
@@ -298,7 +298,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="checkBoxEconomy" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Business" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboxBusiness" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cboxWindowSeat" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cboxAisleSeat" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -318,12 +318,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBoxEconomyActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="Business">
+            <Component class="javax.swing.JCheckBox" name="cboxBusiness">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Economy Plus"/>
+                <Property name="text" type="java.lang.String" value="Business"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BusinessActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboxBusinessActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="cboxWindowSeat">
