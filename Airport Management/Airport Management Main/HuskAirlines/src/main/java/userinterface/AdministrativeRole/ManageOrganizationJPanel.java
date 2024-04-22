@@ -83,7 +83,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         btnDeleteOrg = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(223, 190, 153));
+        setBackground(new java.awt.Color(153, 0, 0));
 
         organizationJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -115,7 +115,6 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             organizationJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        btnAddOrg.setBackground(new java.awt.Color(181, 189, 137));
         btnAddOrg.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnAddOrg.setText("Add Organization");
         btnAddOrg.addActionListener(new java.awt.event.ActionListener() {
@@ -133,9 +132,9 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Organization Type ");
 
-        backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         backJButton.setText("< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -144,12 +143,12 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(114, 158, 161));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Manage Organization");
 
-        btnDeleteOrg.setBackground(new java.awt.Color(181, 189, 137));
         btnDeleteOrg.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnDeleteOrg.setText("Delete Organization");
         btnDeleteOrg.addActionListener(new java.awt.event.ActionListener() {

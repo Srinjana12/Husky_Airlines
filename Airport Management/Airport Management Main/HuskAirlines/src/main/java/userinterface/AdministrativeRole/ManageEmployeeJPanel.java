@@ -85,7 +85,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(223, 190, 153));
+        setBackground(new java.awt.Color(153, 0, 0));
         setLayout(null);
 
         organizationJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
@@ -121,7 +121,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(0, 190, 1146, 109);
 
-        btnCreate.setBackground(new java.awt.Color(181, 189, 137));
         btnCreate.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnCreate.setText("Create Employee");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -142,12 +141,13 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(organizationJComboBox);
         organizationJComboBox.setBounds(134, 155, 203, 28);
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Organization");
         add(jLabel1);
         jLabel1.setBounds(6, 158, 122, 22);
 
-        backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         backJButton.setText("< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +158,9 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(backJButton);
         backJButton.setBounds(6, 21, 100, 50);
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Name");
         add(jLabel2);
         jLabel2.setBounds(6, 368, 82, 22);
@@ -175,19 +177,21 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(organizationEmpJComboBox);
         organizationEmpJComboBox.setBounds(131, 322, 206, 28);
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(114, 158, 161));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Manage Employee");
         add(jLabel4);
         jLabel4.setBounds(112, 21, 1040, 43);
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Organization");
         add(jLabel5);
         jLabel5.setBounds(6, 325, 113, 22);
 
-        btnUpdate.setBackground(new java.awt.Color(181, 189, 137));
         btnUpdate.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnUpdate.setText("Update Employee");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -198,7 +202,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(btnUpdate);
         btnUpdate.setBounds(580, 420, 250, 50);
 
-        btnDelete.setBackground(new java.awt.Color(181, 189, 137));
         btnDelete.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnDelete.setText("Delete Employee");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {

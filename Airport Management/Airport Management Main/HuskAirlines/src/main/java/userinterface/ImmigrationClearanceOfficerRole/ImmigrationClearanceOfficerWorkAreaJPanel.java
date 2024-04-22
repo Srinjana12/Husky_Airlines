@@ -96,7 +96,7 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
         enterpriseLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         workRequestJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
@@ -127,7 +127,6 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 156, 1135, 150));
 
-        btnAssign.setBackground(new java.awt.Color(104, 144, 146));
         btnAssign.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnAssign.setText("Assign to me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -137,7 +136,6 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
         });
         jPanel1.add(btnAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 250, 50));
 
-        btnProcess.setBackground(new java.awt.Color(104, 144, 146));
         btnProcess.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnProcess.setText("Process");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +145,6 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
         });
         jPanel1.add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 250, 50));
 
-        btnRefresh.setBackground(new java.awt.Color(104, 144, 146));
         btnRefresh.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -178,17 +175,22 @@ public class ImmigrationClearanceOfficerWorkAreaJPanel extends javax.swing.JPane
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 476, 1135, 149));
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("List of Request received from Food & Hospitality Manager:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 116, 562, -1));
 
+        enterpriseLabel.setBackground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(104, 144, 146));
+        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         enterpriseLabel.setText("Immigration Clearance Officer Work Area");
         jPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1135, 65));
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("List of Request sent by you to Transportation Security Administrator (For Luggage Checking)");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 436, -1, -1));
 

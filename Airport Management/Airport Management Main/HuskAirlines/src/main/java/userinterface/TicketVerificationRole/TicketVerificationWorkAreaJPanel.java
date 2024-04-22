@@ -98,12 +98,11 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(223, 190, 153));
+        setBackground(new java.awt.Color(153, 0, 0));
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnRefresh.setBackground(new java.awt.Color(181, 189, 137));
         btnRefresh.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +112,6 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(908, 280, 250, 50));
 
-        btnAssign.setBackground(new java.awt.Color(181, 189, 137));
         btnAssign.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnAssign.setText("Assign to me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +121,6 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 280, 250, 50));
 
-        btnProcess.setBackground(new java.awt.Color(181, 189, 137));
         btnProcess.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnProcess.setText("Process");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
@@ -182,17 +179,22 @@ public class TicketVerificationWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 388, 1132, 150));
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("List of Request received from Security Checkin");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 67, 562, -1));
 
+        enterpriseLabel.setBackground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(114, 158, 161));
+        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         enterpriseLabel.setText("Ticket Verification");
         jPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1152, -1));
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("List of Request sent by you to Seat Allocation");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 348, -1, -1));
 

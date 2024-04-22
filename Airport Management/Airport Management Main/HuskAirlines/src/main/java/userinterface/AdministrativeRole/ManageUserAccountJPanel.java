@@ -102,10 +102,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         deleteJButton = new javax.swing.JButton();
         updateJButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(223, 190, 153));
+        setBackground(new java.awt.Color(153, 0, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        createUserJButton.setBackground(new java.awt.Color(181, 189, 137));
         createUserJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         createUserJButton.setText("Create");
         createUserJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +115,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 518, 250, 50));
         add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, 201, -1));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("User Name");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 438, -1, -1));
 
@@ -152,12 +153,16 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 143, 1225, 142));
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 478, -1, -1));
         add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 201, -1));
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Employee");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 351, -1, -1));
 
@@ -165,7 +170,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jComboBoxEmployee.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBoxEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 198, -1));
 
-        backjButton1.setBackground(new java.awt.Color(181, 189, 137));
         backjButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         backjButton1.setText("< Back");
         backjButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -175,7 +179,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         });
         add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 50));
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Organization");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 306, -1, -1));
 
@@ -188,7 +194,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         });
         add(comboxOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 198, -1));
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Role");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 396, -1, -1));
 
@@ -201,13 +209,13 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         });
         add(jComboBoxRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 198, -1));
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(114, 158, 161));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Manage User Accounts");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1586, -1));
 
-        deleteJButton.setBackground(new java.awt.Color(181, 189, 137));
         deleteJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         deleteJButton.setText("Delete");
         deleteJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -217,7 +225,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         });
         add(deleteJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 520, 250, 50));
 
-        updateJButton.setBackground(new java.awt.Color(181, 189, 137));
         updateJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         updateJButton.setText("Update ");
         updateJButton.addActionListener(new java.awt.event.ActionListener() {

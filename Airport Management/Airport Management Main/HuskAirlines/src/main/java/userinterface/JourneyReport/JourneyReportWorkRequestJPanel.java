@@ -90,10 +90,9 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSubmit.setBackground(new java.awt.Color(181, 189, 137));
         btnSubmit.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnSubmit.setText("Submit Result");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +102,6 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 603, 250, 50));
 
-        backJButton.setBackground(new java.awt.Color(181, 189, 137));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         backJButton.setText("< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -115,6 +113,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
 
         jLabel2.setBackground(new java.awt.Color(223, 190, 153));
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Journey Report");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1296, 51));
@@ -145,7 +144,7 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 435, 1296, 150));
 
-        downloadPdfBtn.setBackground(new java.awt.Color(0, 102, 255));
+        downloadPdfBtn.setBackground(new java.awt.Color(153, 0, 0));
         downloadPdfBtn.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         downloadPdfBtn.setText("Download Report");
         downloadPdfBtn.setEnabled(false);
@@ -156,11 +155,15 @@ public class JourneyReportWorkRequestJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(downloadPdfBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 603, 250, 50));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Journey Report will be generated of");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 133, 538, 49));
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Journey Report Details");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 368, 538, 49));
 

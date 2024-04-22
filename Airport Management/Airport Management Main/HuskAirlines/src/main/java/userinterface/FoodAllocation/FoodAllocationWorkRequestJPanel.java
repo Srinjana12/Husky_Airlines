@@ -93,10 +93,9 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(223, 190, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        backJButton.setBackground(new java.awt.Color(104, 144, 146));
         backJButton.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         backJButton.setText("< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +131,6 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 300, 1155, 105));
 
-        btnFoodAllocated.setBackground(new java.awt.Color(104, 144, 146));
         btnFoodAllocated.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         btnFoodAllocated.setText("Food Allocated");
         btnFoodAllocated.addActionListener(new java.awt.event.ActionListener() {
@@ -143,12 +141,13 @@ public class FoodAllocationWorkRequestJPanel extends javax.swing.JPanel {
         jPanel1.add(btnFoodAllocated, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 423, 250, 50));
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(104, 144, 146));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Food Allocation Work Area");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1155, -1));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("Passenger Details:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 143, 1155, 34));
