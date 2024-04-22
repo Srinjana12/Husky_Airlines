@@ -96,7 +96,7 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         checkBoxEconomy = new javax.swing.JCheckBox();
-        Business = new javax.swing.JCheckBox();
+        cboxBusiness = new javax.swing.JCheckBox();
         cboxWindowSeat = new javax.swing.JCheckBox();
         cboxAisleSeat = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
@@ -177,10 +177,10 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        Business.setText("Economy Plus");
-        Business.addActionListener(new java.awt.event.ActionListener() {
+        cboxBusiness.setText("Business");
+        cboxBusiness.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BusinessActionPerformed(evt);
+                cboxBusinessActionPerformed(evt);
             }
         });
 
@@ -193,7 +193,7 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         cboxMiddleSeat.setText("Middle Seat");
 
         jLayeredPane1.setLayer(checkBoxEconomy, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(Business, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(cboxBusiness, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(cboxWindowSeat, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(cboxAisleSeat, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -207,8 +207,8 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(checkBoxEconomy)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Business)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(cboxBusiness)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cboxWindowSeat)
@@ -224,7 +224,7 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(checkBoxEconomy)
-                    .addComponent(Business)
+                    .addComponent(cboxBusiness)
                     .addComponent(cboxWindowSeat)
                     .addComponent(cboxAisleSeat)
                     .addComponent(jLabel2)
@@ -278,7 +278,7 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         if (checkBoxEconomy.isSelected()) {
             symptoms.add("Economy");
         }
-        if (Business.isSelected()) {
+        if (cboxBusiness.isSelected()) {
             symptoms.add("Business");
         }
         if (cboxWindowSeat.isSelected()) {
@@ -328,19 +328,19 @@ public class SeatAllocationWorkRequestJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
-    private void BusinessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusinessActionPerformed
+    private void cboxBusinessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxBusinessActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BusinessActionPerformed
+    }//GEN-LAST:event_cboxBusinessActionPerformed
 
     private void checkBoxEconomyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxEconomyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_checkBoxEconomyActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox Business;
     private javax.swing.JButton backJButton;
     private javax.swing.JButton btnSeatAllocated;
     private javax.swing.JCheckBox cboxAisleSeat;
+    private javax.swing.JCheckBox cboxBusiness;
     private javax.swing.JCheckBox cboxMiddleSeat;
     private javax.swing.JCheckBox cboxWindowSeat;
     private javax.swing.JCheckBox checkBoxEconomy;

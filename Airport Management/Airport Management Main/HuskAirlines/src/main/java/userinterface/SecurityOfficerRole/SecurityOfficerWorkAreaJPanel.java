@@ -29,7 +29,7 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem business;
     private UserAccount userAccount;
-    private SecurityCheckin hospitalOrganization;
+    private SecurityCheckin SecurityCheckinOrganization;
     private Enterprise enterprise;
 
     public SecurityOfficerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, SecurityCheckin hospitalOrganization, Enterprise enterprise, EcoSystem business) {
@@ -38,7 +38,7 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.business = business;
         this.enterprise = enterprise;
-        this.hospitalOrganization = hospitalOrganization;
+        this.SecurityCheckinOrganization = hospitalOrganization;
 
         populateReceiveTable();
         populateSentTable();
@@ -194,7 +194,7 @@ public class SecurityOfficerWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (WorkRequest request : hospitalOrganization.getWorkQueue().getWorkRequestList()) {
+        for (WorkRequest request : SecurityCheckinOrganization.getWorkQueue().getWorkRequestList()) {
             SecurityCheckWorkRequest wr = (SecurityCheckWorkRequest) request;
             Object[] row = new Object[5];
             row[0] = wr;
