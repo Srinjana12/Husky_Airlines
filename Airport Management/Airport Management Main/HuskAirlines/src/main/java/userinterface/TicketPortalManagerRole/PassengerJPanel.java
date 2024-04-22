@@ -58,7 +58,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
     }
 
     private boolean emailPatternCorrect() {
-        Pattern p = Pattern.compile("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+        Pattern p = Pattern.compile("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$");
         Matcher m = p.matcher(txtEmailAddress.getText());
         boolean b = m.matches();
         return b;
@@ -672,17 +672,17 @@ public class PassengerJPanel extends javax.swing.JPanel {
 
         String name = txtFieldName.getText();
         String dob = txtFieldDOB.getText();
-        String city = txtFieldCity.getText();
-        String addresss = txtFieldAddress.getText();
-        String ssnNo = txtPassportNo.getText();
+        String Destinationcity = txtFieldCity.getText();
+        String SourceLoc = txtFieldAddress.getText();
+        String passportNo = txtPassportNo.getText();
         String contactNo = txtFieldContactNo.getText();
-        String emailAddresss = txtEmailAddress.getText();
-        int dependents = Integer.parseInt(txtPassportExpiryDate.getText());
-        String qualifications = txtSeatPreference.getText();
-        String accomplishments = txtFoodPreference.getText();
-        String employmentStatus = txtEmergencyContactName.getText();
-        int income = Integer.parseInt(txtEmergencyContactNo.getText());
-        String prefLocation = textAddress.getText();
+        String emailAddress = txtEmailAddress.getText();
+        String passportExpiry = txtPassportExpiryDate.getText();
+        String seatPreference = txtSeatPreference.getText();
+        String foodPreference = txtFoodPreference.getText();
+        String emergencyName = txtEmergencyContactName.getText();
+        String emergencyNo = txtEmergencyContactNo.getText();
+        String address = textAddress.getText();
         String gender = "Male";
         if (radioBtnFemaleGender.isSelected()) {
             gender = "Female";
@@ -691,27 +691,20 @@ public class PassengerJPanel extends javax.swing.JPanel {
         if (radioBtnCriminalCheckYes.isSelected()) {
             criminalRecord = true;
         }
-        boolean majorIllnes = false;
+        boolean preconditions = false;
         if (radioBtnPreIllnessYes.isSelected()) {
-            majorIllnes = true;
+            preconditions = true;
         }
-        boolean carrierDisease = false;
+        boolean anyMedication = false;
         if (radioBtnAnyMedYes.isSelected()) {
-            carrierDisease = true;
+            anyMedication = true;
         }
-        boolean geneticDisease = false;
+        boolean accomodationRequired = false;
         if (radioBtnAccommodationYes.isSelected()) {
-            geneticDisease = true;
+            accomodationRequired = true;
         }
 
-        try {
-            SendGridEmail.sendMail(emailAddresss);
-        } catch (IOException ex) {
-            Logger.getLogger(PassengerJPanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Passenger person = new Passenger(name, dob, city, addresss, ssnNo,
-                contactNo, emailAddresss, dependents, qualifications, accomplishments,
-                employmentStatus, income, gender, criminalRecord, majorIllnes, carrierDisease, geneticDisease, prefLocation);
+        Passenger person = new Passenger(name, dob, Destinationcity, SourceLoc, passportNo, contactNo, emailAddress, passportExpiry, seatPreference, foodPreference, emergencyName, emergencyNo, gender, criminalRecord, preconditions, anyMedication, accomodationRequired, address);
 
         SecurityCheckWorkRequest allocationWorkRequest = new SecurityCheckWorkRequest();
         allocationWorkRequest.setPassengerPerson(person);
@@ -942,9 +935,9 @@ public class PassengerJPanel extends javax.swing.JPanel {
         txtFieldDOB.setText(dob);
         String email = faker.internet().emailAddress(); //abc@bs.com
         txtEmailAddress.setText(email);
-        String phone = faker.phoneNumber().cellPhone(); // 1234567890
+        String phone = faker.phoneNumber().subscriberNumber(10); // 1234567890
         txtFieldContactNo.setText(phone);
-        String passport = faker.idNumber().ssnValid(); // 123456789
+        String passport = faker.phoneNumber().subscriberNumber(9); // 123456789
         txtPassportNo.setText(passport);
         String sourceLocation = faker.address().city(); // New Amieshire`
         txtFieldAddress.setText(sourceLocation);
@@ -952,7 +945,7 @@ public class PassengerJPanel extends javax.swing.JPanel {
         txtPassportExpiryDate.setText(passportExpiry);
         String emergencyContactName = faker.name().fullName(); // Miss Samanta Schmidt
         txtEmergencyContactName.setText(emergencyContactName);
-        String emergencyContactNo = faker.phoneNumber().cellPhone(); // 1234567890
+        String emergencyContactNo = faker.phoneNumber().subscriberNumber(10); // 1234567890
         txtEmergencyContactNo.setText(emergencyContactNo);
 
         String[] seatPreferences = {"Window", "Middle", "Aisle"};
