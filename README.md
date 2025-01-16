@@ -1,6 +1,6 @@
 # Husky_Airlines
 **Project Overview**
-This project is part of the final assignment for the Application Engineering and Development (AED) course. It implements an Airport Management System, specifically designed to streamline operations for Husky Airlines. The system covers flight scheduling, passenger services, and operational management using Java and Swing for the graphical user interface.
+This project implements an Airport Management System, specifically designed to streamline operations for Husky Airlines. The system covers flight scheduling, passenger services, and operational management using Java and Swing for the graphical user interface.
 
 **Features**
 Flight scheduling and management.
